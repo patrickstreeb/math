@@ -1,0 +1,269 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>math course</title>
+    <meta name="description" content="course description goes here">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <meta name="keywords" content="math, functions, sets">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+</head>
+<body>
+<div id="content-section">
+<header id="toolbar" >
+    <div class="titleofsubsection"> functions  </div>  <div id="countup-timer"> 00:00</div>
+        <div id="progress">
+            <div id="progressbar"> </div>
+        </div>
+</header>
+<footer class="footer">
+    <button class="page-button backward-btn" id="backward-btn" onclick="navigatePage(-1)"> <span class="hidden">back</span> </button>
+        <span id="pageNumber"> </span>
+        <button class="page-button forward-btn" id="forward-btn" onclick="navigatePage(1)"> <span class="hidden">next</span></button>
+</footer>
+<div class="content">
+    <div class="page-content backgroundimage" data-page="0">
+        <div class="coursestartheading"> Part 1 <br> functions  </div> 
+        <br> 
+        <div class="coursestartfont">this part contains the concepts of image, graph and preimage of a function, operations and chains. <br> <br>
+        <button class="forward-btn" class="frame" onclick="navigatePage(1)">start </button>  </div>
+        </div>
+    <div class="page-content" data-page="1">
+        <div class="theoryheader"> <div class="theorynumber">1 </div> <div class="theorytitle">introduction</div></div> </br> 
+        <div class="definition-box">
+        <div class="definition-title">functions (notations)</div> <br>
+        <div class="definition-content">
+            <ul>
+                <li> <span class="bold">domain</span> </li>
+                <li> <span class="bold">codomain</span> </li>
+                <li> <span class="bold">preimage</span> </li>
+                <li> <span class="bold">image</span> </li>
+            </ul>
+        </div>
+        </div> <br/>
+        The domain of a function is the set of all elements that can be mapped by the function, 
+        whereas the codomain is the set of all elements that the function can map to. The first ones, 
+        we call preimages, the second ones images. </br>
+    </div>
+
+
+    <div class="page-content" data-page="6">
+        <div class="theoryheader"> <div class="theorynumber"> 2 </div> <div class="theorytitle">further notations</div></div> </br>
+        <div class="definition-box">
+        <div class="definition-title">functions</div>
+        <div class="definition-content">
+        </div>
+        </div>
+    </div>
+
+
+    <div class="page-content" data-page="11">
+        <div class="theoryheader"> <div class="theorynumber">3 </div> <div class="theorytitle">image</div></div> </br>
+        So far we defined, what the image of an element under a function is. Now we define,
+        what the image of a function is. <br/> <br/>
+        <div class="definition-box">
+        <div class="definition-title">the image \(f(A)\)</div>
+        <div class="definition-content">
+        Let \(f : A \rightarrow B , f(x) = y \) be a function. Then the image of \(f\) is the set of all images of the elements \(a \in A\), that is
+            \[ f(A) = \{ f(x) | x \in A \} .\]
+        </div>
+        </div>
+    </div>
+
+    <div class="page-content" data-page="12">
+        <div class="questioncontainer">
+            <div class=topline> <em>Question</em>      <span class="pointsandtimer"> <em>1 point </em>   </span> </div>
+            <div class="question">  What is the image of the function \[f : \{1,2,3\} \rightarrow \{1,2,3\}, f(x) = x^2 ?\] </div>
+            <div class="margindownAnswerbutton" onclick="checkAnswer(true, this)">\( \{1,4,9\} \)</div>
+            <div class="margindownAnswerbutton" onclick="checkAnswer(false, this)">\( \{1,2,3\} \)</div>
+            <div class="margindownAnswerbutton" onclick="checkAnswer(false, this)">\( \{1,2,3,4,9\} \)</div>
+            <div class="feedback">The image of the function \(f\) is the set of all images of the elements in the domain. 
+            That is, the image of \(f\) is \( \{1,4,9\} \).</div>
+        </div>
+    </div>
+
+    <div class="page-content" data-page="13">
+        <div class="questioncontainer">
+            <div class=topline> <em>Question</em>      <span class="pointsandtimer"> <em>1 point </em>   </span> </div>
+            <div class="question">  What is the image of the function \[f : \{1,2,3\} \rightarrow \{4,9,16\}, f(x) = \sqrt{x}-1 ?\] </div>
+            <div class="margindownAnswerbutton" onclick="checkAnswer(false, this)">\( \{1,4,9\} \)</div>
+            <div class="margindownAnswerbutton" onclick="checkAnswer(true, this)">\( \{1,2,3\} \)</div>
+            <div class="margindownAnswerbutton" onclick="checkAnswer(false, this)">\( \{1,2,3,4,9\} \)</div>
+            <div class="feedback">The image of the function \(f\) is the set of all images of the elements in the domain. 
+            That is, the image of \(f\) is \( \{1,4,9\} \).</div>
+        </div>
+    </div>
+    <div class="page-content" data-page="14">
+        <div class="questioncontainer">
+            <div class=topline> <em>Question</em>      <span class="pointsandtimer"> <em>1 point </em>   </span> </div>
+            <div class="question">  What is the image of the function \[f : \{1,2,3\} \rightarrow \{1,2,3\}, f(x) = x^2 ?\] </div>
+            <div class="margindownAnswerbutton" onclick="checkAnswer([1,4,9], this)">\( \{1,4,9\} \)</div>
+            <div class="margindownAnswerbutton" onclick="checkAnswer([1,2,3], this)">\( \{1,2,3\} \)</div>
+            <div class="margindownAnswerbutton" onclick="checkAnswer([1,2,3,4,9], this)">\( \{1,2,3,4,9\} \)</div>
+            <div class="feedback">The image of the function \(f\) is the set of all images of the elements in the domain.
+                That is, the image of \(f\) is \( \{1,4,9\} \).</div>
+        </div>
+    </div>
+
+
+    <div class="page-content" data-page="16">
+        <div class="theoryheader"> <div class="theorynumber">4 </div> <div class="theorytitle">preimage</div></div> </br>
+        <div class="definition-box">
+        <div class="definition-title">functions</div>
+        <div class="definition-content">
+        A function is
+        </div>
+        </div>
+    </div>
+
+
+    <div class="page-content" data-page="21">
+        <div class="theoryheader"> <div class="theorynumber">5 </div> <div class="theorytitle">graph</div></div> </br>
+        The graph of a function is the set of all ordered pairs \((x,y)\), where \(x\) is an element 
+        in the domain and \(y\) is the image of \(x\). 
+        <br> <br>
+        <div class="definition-box">
+        <div class="definition-title">graphs</div>
+        Let \(f : A \rightarrow B , f(x) = y \) be a function. Then the graph of \(f\) is defined as 
+        \[ \text{graph}(f) = \{ (x,y) | x \in A, y = f(x) \} .\]
+        <div class="definition-content">
+        </div>
+    </div>
+    <br>
+        An example is the graph of the function \(f : \mathbb{R} \rightarrow \mathbb{R}, f(x) = x^2 \), 
+        which is given by \[ \text{graph}(f) = \{ (x,y) | x \in \mathbb{R}, y = x^2 \} ,\]
+        or just
+        \[ \text{graph}(f) = \{ (x,x^2) | x \in \mathbb{R} \} .\] The graph can be drawn as follows: </br>
+    </div>
+    
+    <div class="page-content" data-page="22">
+        <div class="questioncontainer">
+            <div class=topline> <em>Question</em>      <span class="pointsandtimer"> <em>2 points </em>   </span> </div>
+            <div class="question">  Can you plot a graph of the function \[f : \mathbb{R} \rightarrow \mathbb{R}, f(x) = x^2 ?\] </div>
+            <div class="margindownAnswerbutton" onclick="checkAnswer(true, this)">Yes</div>
+            <div class="margindownAnswerbutton" onclick="checkAnswer(false, this)">No</div>
+            <div class="feedback">The function \(f\) is a function from the real numbers to the real numbers. 
+                Thus we can plot a graph of the function \(f\). 
+                <img src="graph.png" alt="graph" class="graph">.</div>
+        </div>
+    </div>
+
+
+    <div class="page-content" data-page="23">
+        <div class="questioncontainer">
+            <div class=topline> <em>Question</em>      <span class="pointsandtimer"> <em>2 points </em>   </span> </div>
+            <div class="question">  Which of the following four graphs shows the function \(f : \mathbb{R} \rightarrow \mathbb{R}, f(x) = x^2 ?\) </div>
+            <div class="margindownAnswerbutton" onclick="checkAnswer(false, this)"> <img src="graph1.png" alt="graph1" class="graph"> </div>
+            <div class="margindownAnswerbutton" onclick="checkAnswer(false, this)"> <img src="graph2.png" alt="graph2" class="graph"> </div>
+            <div class="margindownAnswerbutton" onclick="checkAnswer(true, this)"> <img src="graph3.png" alt="graph3" class="graph"> </div>
+            <div class="margindownAnswerbutton" onclick="checkAnswer(false, this)"> <img src="graph4.png" alt="graph4" class="graph"> </div>
+            <div class="feedback">The function \(f\) is a function from the real numbers to the real numbers. 
+                Thus we can plot a graph of the function \(f\). </div>
+        </div>
+    </div>
+
+    
+
+
+
+
+
+    <div class="page-content" data-page="26">
+        <div class="theoryheader"> <div class="theorynumber">6 </div> <div class="theorytitle">well defined</div></div> </br>
+        We will take closer look on how to define mathematical objects without contradictions and apply this concept to functions. </br> </br>
+        <div class="definition-box">
+        <div class="definition-title">well defined objects</div>
+        <div class="definition-content">
+        A mathematical object is well defined, if there are no contradictions implied by the 
+            definition of the object. </br>
+        </div>
+        </div>
+        <br /> 
+        <div class="definition-box">
+        <div class="definition-title">well defined functions</div>
+        <div class="definition-content">
+        A function is called well defined, if it indeed fullfills the definition of a function. That is, every element
+        in the domain is mapped to exactly one element in the codomain. <br> <br>
+        Additionally the rule of assignment can be applied to 
+        any element in the domain and it maps every element in the domain into the codomain. </br>
+        </div>
+        </div>
+    </div>
+
+
+    <div class="page-content" data-page="27">
+        <div class="questioncontainer">
+            <div class=topline> <em>Question</em>      <span class="pointsandtimer"> <em>1 point </em>   </span> </div>
+            <div class="question">  Is the function \[f: \{ 1,2,3 \} \rightarrow \{ 1,2,3 \}, f(x) = x-1\] well defined? </div>
+            <div class="margindownAnswerbutton" onclick="checkAnswer(false, this)">Yes</div>
+            <div class="margindownAnswerbutton" onclick="checkAnswer(true, this)">No</div>
+            <div class="feedback"> The function \(f\) is not well defined, since \(f(1) = 0\) 
+                and \(0\) is not an element of the codomain.</div>
+        </div>
+    </div>
+
+    <div class="page-content" data-page="28">
+        <div class="questioncontainer">
+            <div class=topline> <em>Question</em>      <span class="pointsandtimer"> <em>1 point </em>   </span> </div>
+            <div class="question">  Is the function \[f: \mathbb{N} \rightarrow \mathbb{N}_0, f(x) = x-1\] well defined? </div>
+            <div class="margindownAnswerbutton" onclick="checkAnswer(true, this)">Yes</div>
+            <div class="margindownAnswerbutton" onclick="checkAnswer(false, this)">No</div>
+            <div class="feedback"> The function \(f\) is well defined, since every element in the domain is mapped to exactly one element in the codomain. 
+                Furthermore the rule of assignment can be applied to any element in the domain and maps it to an element in the codomain. </div>
+        </div>
+    </div> 
+
+    <div class="page-content" data-page="29">
+        <div class="questioncontainer">
+            <div class=topline> <em>Question</em>      <span class="pointsandtimer"> <em>1 point </em>   </span> </div>
+            <div class="question">  Is the function \[f: \mathbb{R} \rightarrow \mathbb{R}_-, f(x) = x\ \] well defined? </div>
+            <div class="margindownAnswerbutton" onclick="checkAnswer(false, this)">Yes</div>
+            <div class="margindownAnswerbutton" onclick="checkAnswer(true, this)">No</div>
+            <div class="feedback"> The function \(f\) is not well defined, since the codomain is the set of negative real numbers, 
+                but the function maps to the set of all real numbers. Thus \[f(x) = x \notin \mathbb{R}^- \ \ \ \text{for} \ \ \ x >0. \]</div> 
+        </div>
+    </div>
+    <div class="page-content" data-page="30">
+        <div class="questioncontainer">
+            <div class=topline> <em>Question</em>      <span class="pointsandtimer"> <em>1 point </em>   </span> </div>
+            <div class="question">  Is the function \[f: \mathbb{R} \rightarrow \mathbb{R}, f(x) = \sqrt{x} \] well defined? </div>
+            <div class="margindownAnswerbutton" onclick="checkAnswer(false, this)">Yes</div>
+            <div class="margindownAnswerbutton" onclick="checkAnswer(true, this)">No</div>
+            <div class="feedback"> The function \(f\) is not well defined, since roots of negative numbers are not defined. 
+                For example \( -1 \in \mathbb{R} \), but  \[f(-1) = \sqrt{-1} \notin \mathbb{R} .\] (Note: it is possible 
+                to define the square root of negative numbers, with complex numbers, but we will not do that here.)</div>
+        </div>
+    </div>
+    <div class="page-content" data-page="31">
+        <div class="questioncontainer">
+            <div class=topline> <em>Question</em>      <span class="pointsandtimer"> <em>2 points </em>   </span> </div>
+            <div class="question">  Which of the following functions are well defined? </div>
+            <div class="answers"> 
+            <div class="answerbutton" onclick="checkAnswer(true, this)">\(f: \mathbb{R} \rightarrow \mathbb{R}, f(x) = x^2 \)</div>
+            <div class="answerbutton" onclick="checkAnswer(false, this)">\(g: \mathbb{R} \rightarrow \mathbb{R}, g(x) = \sqrt{x} \)</div>
+            <div class="answerbutton" onclick="checkAnswer(false, this)">\(h: \mathbb{R} \rightarrow \mathbb{R}, h(x) = \frac{1}{x} \)</div>
+            <div class="answerbutton" onclick="checkAnswer(true, this)">\(i: \mathbb{R}_+ \rightarrow \mathbb{R}_+, i(x) = \frac{1}{x^2} \)</div> 
+        </div>
+            <div class="feedback"> \(f\) is well defined, since the square of any real number exists and is real and unique.
+                \(g\) is not well defined, since roots of negative numbers are not defined. 
+                \(h\) is not well defined since \(h(0) = \frac{1}{0} \) is not defined. \(i \) is well defined since \(0 \notin \mathbb{R}_+ \).
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script src="../../js/pagenavigation.js"></script>
+<script src="../../js/header.js"></script>
+<script src="../../js/gaptext.js"></script>
+<script src="../../js/QuizQuestion.js"></script>
+<script src="../../js/Eingabefeldfrage.js"></script>
+</body>
+</html>

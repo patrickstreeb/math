@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>math course</title>
+    <meta name="description" content="course description goes here">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <meta name="keywords" content="math, functions, sets">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+</head>
+<body>
+<div id="content-section">
+    <header id="toolbar" >
+        <div class="titleofsubsection"> sets  </div>  <div id="countup-timer"> 00:00</div>
+        <div id="progress">
+            <div id="progressbar"> </div> <div class="progressbar">  startTimer() </div>
+        </div>
+    </header>
+    <footer class="footer">
+        <button class="page-button backward-btn" id="backward-btn" onclick="navigatePage(-1)"> <span class="hidden">back</span> </button>
+        <span id="pageNumber"> </span>
+        <button class="page-button forward-btn" id="forward-btn" onclick="navigatePage(1)"> <span class="hidden">next</span></button>
+    </footer>
+<div class="content">
+ <div class="page-content backgroundimage" data-page="0">
+ <div class="coursestartheading"> Part 2 <br> sets  </div> 
+ <br> 
+ <div class="coursestartfont">this part contains the concepts of subsets, implicit and explicit form, powersets. <br> <br>
+ <button class="forward-btn" class="frame" onclick="navigatePage(1)">start </button>  </div>
+ </div>
+    <div class="page-content" data-page="1">
+       <div class="theoryheader"> <div class="theorynumber">1 </div> <div class="theorytitle">introduction</div></div> </br>
+        We will start introducing some basic notions for sets, which will turn out usefull for describing all kind of objects.
+        A set is a collection of objects \(a,b,c, \ldots \) of the form \(\{a,b,c, \ldots\} \). If this set is called \(A\), then we write \(A=\{a,b,c, \ldots\} \)
+        and  \(a \in A \) if \(a \) is an element of \(A\) and \(a \notin A\) if not. Let's start with some basic examples.  <br /> <br/>
+        <div class="definition-box">
+        <div class="definition-title">examples</div>
+        <div class="definition-content">
+            <ul class="liststyling">
+            <li> \( \{ 1,2,3,4, \ldots \} \) the set of the first four numbers. </li>  
+            <li> \( \{ 2, 4, 6, 8, 10 , \ldots \} \) the set of even numbers. </li>   
+            <li>\(\emptyset = \{  \} \) the empty set, it does not contain any elements.</li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    <div class="page-content" data-page="2">
+        <div class="questioncontainer">
+            <div class=topline> <em>Question</em>      <span class="pointsandtimer"> <em>1 point </em>   </span> </div>
+            <div class="question">  Is \(1 \in \{ 1,2,3 \}\)? </div>
+            <div class="answers">
+                <div class="answerbutton" onclick="checkAnswer(true, this,  this.parentNode.parentNode)">Yes</div>
+                <div class="answerbutton" onclick="checkAnswer(false, this,  this.parentNode.parentNode)">No</div>
+            </div>
+            <div class="feedback">\(1 \) is in fact an element of the set \( \{1,2,3\} \).</div>
+        </div>
+    </div>
+    <div class="page-content" data-page="3">
+        <div class="questioncontainer">
+            <div class=topline> <em>Question</em>      <span class="pointsandtimer"> <em>1 point </em>   </span> </div>
+            <div class="question"> Is \( \{1\} \in \{ 1,2,3 \}\)? </div>
+            <div class="answers">
+                <div class="answerbutton" onclick="checkAnswer(false, this,  this.parentNode.parentNode)">Yes</div>
+                <div class="answerbutton" onclick="checkAnswer(true, this,  this.parentNode.parentNode)">No</div>
+            </div>
+            <div class="feedback">  Since \(\{1\} \) is a set, but \(1\) is a number, it doesn't hold.</div>
+        </div>
+    </div>
+    <div class="page-content" data-page="4">
+        <div class="questioncontainer">
+            <div class=topline> <em>Question</em>      <span class="pointsandtimer"> <em>1 point </em>   </span> </div>
+            <div class="question">Is \(1 \in \{ \{1\},2,3 \}\)? </div>
+            <div class="answers">
+                <div class="answerbutton" onclick="checkAnswer(false, this,  this.parentNode.parentNode)">Yes</div>
+                <div class="answerbutton" onclick="checkAnswer(true, this,  this.parentNode.parentNode)">No</div>
+            </div>
+            <div class="feedback">The statement is wrong, it has to appear right in the set, not in a different set in it.</div>
+        </div>
+    </div>
+    <div class="page-content" data-page="5">
+        <div class="questioncontainer">
+            <div class=topline> <em>Question</em>      <span class="pointsandtimer"> <em>1 point </em>   </span> </div>
+            <div class="question">  Are  \(2 \notin \{ 1,3 \}\) and \(2 \notin \emptyset \) both true? </div>
+            <div class="answers">
+                <div class="answerbutton" onclick="checkAnswer(true, this,  this.parentNode.parentNode)">Yes</div>
+                <div class="answerbutton" onclick="checkAnswer(false, this,  this.parentNode.parentNode)">No</div>
+            </div>
+            <div class="feedback"> The empty set contains no elements, neither \(2\).</div>
+        </div>
+    </div>
+    <div class="page-content" data-page="6">
+        <div class="theoryheader"> <div class="theorynumber">2</div> <div class="theorytitle">subsets</div></div> </br>
+        In order to only describe parts of sets, we can take a certain amount of elements out and put it in a new set, which we
+        call a subset of the previous set. </br> </br>
+        <div class="definition-box">
+            <div class="definition-title">subsets</div>
+            <div class="definition-content">
+                Let \(A,B\) sets. 
+                <ul class="liststyling">
+                <li>  We call \(B\) a subset of \(A\), if all elements of \(B\) are contained in \(A\). <br> Notation: \(B \subseteq A\)</li> 
+                <li>  \(B\) is not a subset of \(A\), if there is an element in \(B\) which is not in \(A\). <br> Notation: \(B \nsubseteq A\)</li>  
+                <li> \(A\) and \(B\) are called <strong>equal</strong>, if \(A \subseteq B \) and \(B \subseteq A \) holds.</li>
+                </ul>
+            </div>
+            </div>
+    </div>
+    
+    <div class="page-content" data-page="7">
+        <div class="questioncontainer">
+            <div class=topline> <em>Exercise</em>     <span class="pointsandtimer"> <em>1 point </em>   </span> </div>
+            <div class="question">   Which of the following statements is correct?   </div>
+            <div class="answers">
+                <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> \(1 \notin \{ \{1\}, \{2\}\}\) </div>
+                <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> \( \emptyset \subseteq \{ \{0\}, \{2\}\} \) </div>
+                <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> \(\{ 1\} \subseteq \{ \{1\}, \{2\}\}\)   </div>
+                <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)"> \(\{1\} \in \{ \{1\}, \{2\}\}\)   </div>
+            </div>
+            <div class="feedback"> Elements of the set  \(\{\{1\}, \{2\}\}\) have the form  \( \{1\}, \{2\}\). and subsets would need another bracket, like
+                \( \{ \{1\}\}\). Thus answers 1,3 and 4 are wrong. </div>
+        </div>
+    </div>
+    <div class="page-content" data-page="8"> 
+        <div class="questioncontainer">
+            <div class=topline> <em>Exercise</em>   <span class="pointsandtimer"> <em>1 point </em>   </span> </div>
+            <div class="question">   How many subsets does the set \( \{red, green, blue \} \) have?    </div>
+            <div class="answers">
+                <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> 3 </div>
+                <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> 5 </div>
+                <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> 7 </div>
+                <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)"> 8 </div>
+            </div>
+            <div class="feedback"> All the subsets are \(\{red\}, \,\{green \},\{blue \},\{red, green \}
+                \{red, blue \},\{green, blue \},\{red, green, blue \} \) and the empty set \(\emptyset \).</div>
+        </div>
+    </div>
+    <div class="page-content" data-page="9">
+        <div class="questioncontainer">
+            <div class=topline> <em>Question</em>   <span class="pointsandtimer"> <em> 1 point </em>   </span> </div>
+            <div class="question">    If for the sets \(A,B\) and \(C\) holds 
+                \(A \subseteq B\) and \(B \subseteq C\), does also \(A \subseteq C\) hold? </div>
+                <div class="answers">
+                    <div class="answerbutton" onclick="checkAnswer(true, this,  this.parentNode.parentNode)">Yes</div>
+                    <div class="answerbutton" onclick="checkAnswer(false, this,  this.parentNode.parentNode)">No</div>
+                </div>
+            <div class="feedback">  The statement can be written as 
+                \[(A \subseteq B) \wedge (B \subseteq C)  \Rightarrow (A \subseteq C). \]
+                We can rewrite this as \[(a \in A \Rightarrow a \in B ) \wedge (a \in B 
+                \Rightarrow a \in C ) \Rightarrow (a \in A \Rightarrow a \in C). \]
+                Since the Implication is transitive, we have that the latter expression is true (remember the 
+                table of truth for implication), which means, that \(A \subseteq C\) indeed follows. </div>
+        </div> 
+    </div>
+    <div class="page-content" data-page="10">
+        <div class="questioncontainer">
+            <div class=topline> <em>Question</em>    <span class="pointsandtimer"> <em>1 point </em>   </span> </div>
+            <div class="question">    If for sets \(A,B\) and \(C\) holds 
+                \(A \nsubseteq B\) and \(B \nsubseteq C\), does also \(A \nsubseteq C\) hold? </div>
+                <div class="answers">
+                    <div class="answerbutton" onclick="checkAnswer(false, this,  this.parentNode.parentNode)">Yes</div>
+                    <div class="answerbutton" onclick="checkAnswer(true, this,  this.parentNode.parentNode)">No</div>
+                </div>
+            <div class="feedback"> A counterexample is given by \(A = \{1,2,3\} , B = \{1,2,4\} , C = \{1,2,3\}\).   </div>
+        </div> 
+    </div>
+    <div class="page-content" data-page="11">
+        <div class="theoryheader"> <div class="theorynumber">3 </div> <div class="theorytitle">numbersets</div></div> </br>
+        Sets are used to describe space in it's most elementary form. Any space, such as the threedimensional space, 
+    a time horizon or a 2D-plane can be described with appropriate sets. The following number sets are important building blocks. <br /> <br/>
+        <div class="definition-box">
+        <div class="definition-title">numbersets</div>
+        <div class="definition-content">
+            <ul class="liststyling">
+            <li>\(\emptyset = \{  \} \) the set which does not contain any elements.</li>  
+            <li>\(\mathbb{N} = \{ 1,2,3,4, \ldots \} \) the set of natural numbers. </li>  
+            <li>\(\mathbb{N}_0 = \{ 0,1,2,3,4, \ldots \} \) the set of natural numbers including zero.</li> 
+            <li>\(\mathbb{Z} = \{ \ldots , -2, -1, 0, 1, \ldots \} \) the set of natural numbers.</li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    <div class="page-content" data-page="12">
+        <br>
+        <div class="quiz-container">
+            <div class=topline> <em>Question</em>      <span class="pointsandtimer"> <em>1 point </em>   </span> </div>
+            <div class="quiz-content">
+                <!-- Edit the question and gaps here -->
+                The set <span class="gap" data-answer="\(\mathbb{N}\)">  </span> is called the set of natural numbers and contains only 
+                the numbers \(1,2,3,4, \ldots \), whereas the set <span class="gap" data-answer="\(\mathbb{Z}\)"> </span> also contains all 
+                negative numbers of this kind and \(0\).
+            </div>
+            <div class="answer-buttons">
+                <button class="button" data-answer="finite">\(\mathbb{R}\)</button>
+                <button class="button" data-answer="\(\mathbb{N}\)">\(\mathbb{N}\)</button>
+                <button class="button" data-answer="\(\mathbb{N}_0\)">\(\mathbb{N}_0\)</button>
+                <button class="button" data-answer="\(\mathbb{Z}\)">\(\mathbb{Z}\)</button>
+                <button class="button" data-answer="\(\mathbb{Q}\)">\(\mathbb{Q}\)</button>
+                <button class="button" data-answer="\(\mathbb{I}\)">\(\mathbb{I}\)</button>
+            </div>
+            <button class="check-answer">Check Answer</button>
+            <p class="feedback"></p>
+        </div>
+
+    </div>
+    <div class="page-content" data-page="13">
+        <div class="questioncontainer">
+            <div class=topline> <em>Exercise</em>      <span class="pointsandtimer"> <em>1 point </em>   </span> </div>
+            <div class="question">   What is true?   </div>
+            <div class="answers">
+                <div class="answerbutton" onclick="checkAnswer(false, this)"> \( \frac{2}{3} \in \mathbb{N} \)</div>
+                <div class="answerbutton" onclick="checkAnswer(false, this)">  \( \frac{2}{3} \in \mathbb{N}_0 \)</div>
+                <div class="answerbutton" onclick="checkAnswer(false, this)">  \( \frac{2}{3} \in \mathbb{Z} \)</div>
+                <div class="answerbutton" onclick="checkAnswer(true, this)">  \( \frac{2}{3} \in \mathbb{R} \) </div>
+            </div>
+            <div class="feedback">It holds \( \frac{2}{3} \in \mathbb{Q} \), but because \( \mathbb{Q} \subseteq \mathbb{R} \) 
+                it also holds \( \frac{2}{3} \in \mathbb{R} \).</div>
+        </div>
+    </div>
+    <div class="page-content" data-page="14">
+        <div class="questioncontainer">
+            <div class=topline> <em>Exercise</em>      <span class="pointsandtimer"> <em>1 point </em>   </span> </div>
+            <div class="question">     </b>What is true?   </div>
+            <div class="answers">
+                <div class="answerbutton" onclick="checkAnswer(false, this)"> \(\mathbb{R} \subseteq \mathbb{Q} \)</div>
+                <div class="answerbutton" onclick="checkAnswer(false, this)">\( \mathbb{N}_0 \subseteq \mathbb{N} \)</div>
+                <div class="answerbutton" onclick="checkAnswer(false, this)">\( \mathbb{Q} \subseteq \mathbb{Z} \)</div>
+                <div class="answerbutton" onclick="checkAnswer(true, this)"> \(\mathbb{N}_0 \subseteq \mathbb{R}\) </div>
+            </div>
+            <div class="feedback"> All the natural numbers are real numbers in particular. </div>
+        </div>
+    </div>
+    <div class="page-content" data-page="15">
+        <div class="questioncontainer">
+            <div class=topline> <em>Question</em>      <span class="pointsandtimer"> <em>4 point</em>   </span> </div>
+            <div class="question gaptext" id="quiz-content">
+                The set of all rational numbers, commonly known as fractions, is 
+            denoted by <span class="gap" data-answer="\(\mathbb{Q}\)"></span> . The largest of the introduced sets is <span class="gap" data-answer="\(\mathbb{R}\)"></span> 
+            which also contains all irrational numbers, such as \(\pi, \sqrt{2} \)  or the Euler number \(e\).
+            </div>
+            <div class="answers"  id="answer-buttons">
+                <button class="button" data-answer="\(\mathbb{N}\)">\(\mathbb{N}\)</button>
+                <button class="button" data-answer="\(\mathbb{N}_0\)">\(\mathbb{N}_0\)</button>
+                <button class="button" data-answer="\(\mathbb{Q}\)">\(\mathbb{Q}\)</button>
+                <button class="button" data-answer="\(\mathbb{R}\)">\(\mathbb{R}\)</button>
+                <button class="button" data-answer="\(\mathbb{Z}\)">\(\mathbb{Z}\)</button>
+                <button class="button" data-answer="\(\emptyset\)">\(\emptyset\)</button>
+            </div>
+            <button class="margindownAnswerbutton" id="check-answer">Check Answer</button>
+            <p  class="feedback"  id="feedback"> follows right away from the definition.
+        </div>
+    </div>
+    <div class="page-content" data-page="16">
+        <div class="theoryheader"> <div class="theorynumber">4 </div> <div class="theorytitle">implicit and explicit set notation</div></div> </br>
+    There are two fundamentally different ways to notate a set \(A\), either <strong>implicitly  </strong> or <strong>explicitly</strong>.
+    The first notation consists of a random symbol which stands for an element of the set for example \(a\), then a line \(\vert\) followed by
+    a description, such as "\(a\) is equal to \(1\)". The explicit notation simply lists up the elements.
+    </br> </br>
+    <div class="definition-box">
+        <div class="definition-title">examples</div>
+        <div class="definition-content">
+            <ul class="liststyling">
+            <li> the explicitly written set \( \{1\} \) can be written implicitly by \[A = \{ a \ \vert \ a=1 \ \}. \] </li>  
+            <li>  Sometimes we add a set to the left side, to indicate where the elements come from:
+                \[A = \{ a \in \mathbb{N} \ \vert \ a=1 \ \}. \] </li>  
+            </ul>
+        </div>
+        </div>
+
+    </div>
+    <div class="page-content" data-page="17">
+        <div class="questioncontainer">
+            <div class=topline> <em>Exercise</em>      <span class="pointsandtimer"> <em>1 point </em>   </span> </div>
+            <div class="question"> Give the explicit form of the set \[A = \{ a \in \mathbb{Z} \ \vert \ a>-2,  a \leq 3 \}. \]</div>
+            <input type="text" class="custom-input" id="answer3" placeholder="Enter your text here"> <br>
+            <button class="margindownAnswerbutton" onclick="checkGap('{-1,0,1,2,3}', 'answer3', 'feedback3')">Check Answer</button>
+            <div class="feedback" id="feedback3">listing up integers greater than \(-2\) up to 3 gives \({-1,0,1,2,3}\).  </div>
+          </div>
+    </div>
+    <div class="page-content" data-page="18">
+        <div class="questioncontainer">
+            <div class=topline> <em>Exercise</em>      <span class="pointsandtimer"> <em>1 point </em>   </span> </div>
+            <div class="question">  Give the explicit form of the set \[A = \{ a \in \mathbb{Z} \ \vert \ a^2 = 1,  a \leq 3 \}. \] </div>
+            <input type="text" class="custom-input" placeholder="Enter your text here"> <br>
+            <button class="margindownAnswerbutton" onclick="checkGap('no', 'answer3', 'feedback3')">Check Answer</button>
+            <div class="feedback" id="feedback3"> The first condition gives \(\{-1,1 \}\) and the second condition is redundand.
+               so we get\( \{-1,1\ }\).</div>
+          </div>
+    </div>
+    <div class="page-content" data-page="19">
+        <div class="questioncontainer">
+            <div class=topline> <em>Exercise</em>      <span class="pointsandtimer"> <em>1 point </em>   </span> </div>
+            <div class="question">  Which of the following descriptions delivers the elements of the set  
+                \[A = \{ -2,2,4,6,8 \}? \]  </div>
+            <div class="answers">
+                <div class="answerbutton" onclick="checkAnswer(true, this)">\( a^2 = 4 \hspace{0.2cm} \wedge  \hspace{0.2cm} (a-4)(a-6)(a-8)=0 \) </div>
+                <div class="answerbutton" onclick="checkAnswer(false, this)"> \( a^2 = 4  \hspace{0.2cm} \vee  \hspace{0.2cm} (a-4)(a-6)(a-8)=0  \) </div>
+                <div class="answerbutton" onclick="checkAnswer(false, this)"> \(  a^2 = 4  \hspace{0.2cm} \wedge  \hspace{0.2cm} (a+4)(a+6)(a+8)=0 \) </div>
+                <div class="answerbutton" onclick="checkAnswer(false, this)"> \(  a^2 = 4  \hspace{0.2cm} \vee  \hspace{0.2cm} (a+4)(a+6)(a+8)=0 \) </div>
+            </div>
+            <div class="feedback"> </div>
+        </div>
+    </div>
+    <div class="page-content" data-page="20">
+        <div class="questioncontainer">
+            <div class=topline> <em>Exercise</em>      <span class="pointsandtimer"> <em>1 point </em>   </span> </div>
+            <div class="question">  Which of the following descriptions delivers the elements of the set  
+                \[A = \left\{ \frac{1}{4},\frac{2}{4} ,\frac{3}{4}  \right\}? \]  </div>
+            <div class="answers">
+                <div class="answerbutton" onclick="checkAnswer(false, this)">\( a \in \mathbb{Q}  \hspace{0.2cm} \wedge  \hspace{0.2cm} (4a+1)(4a+2)(4a+3) =0 \)</div>
+                <div class="answerbutton" onclick="checkAnswer(false, this)"> \( a \in \mathbb{Q}   \hspace{0.2cm}\vee  \hspace{0.2cm} (4a-1)^2(4a-2)^2(4a-3)^2 =0   \) </div>
+                <div class="answerbutton" onclick="checkAnswer(true, this)"> \(  a \in \mathbb{Q}^+  \hspace{0.2cm} \wedge  \hspace{0.2cm} (4a-1)^2(4a-2)^2(4a-3)^2 =0  \) </div>
+                <div class="answerbutton" onclick="checkAnswer(false, this)"> \(  a \in \mathbb{Q}^+   \hspace{0.2cm} \vee  \hspace{0.2cm} (4a+1)^2(4a+2)^2(4a+3)^2 =0 \) </div>
+            </div>
+            <div class="feedback"> </div>
+        </div>
+    </div>
+    <div class="page-content" data-page="21">
+        <div class="theoryheader"> <div class="theorynumber">5 </div> <div class="theorytitle">numbersets II</div></div> </br>
+        We will introduce some further notations for numbersets \(A \subseteq \mathbb{R} \). A plus sign like \(A^+\) indicates,
+        that we remove all elements which are not positive including zero. The same holds
+        for a minus in the superscript, as \(A^-\). <br>
+        On the other side we can multiply all elements of \(A\) by another \(x \in \mathbb{R}\) and call this set \(x \cdot A\) or \(xA\). The same holds for adding
+        an element \(y \in \mathbb{R}\) to all elements of \(A\).
+    </br> </br>
+        <div class="definition-box">
+            <div class="definition-title"> set notations</div>
+            <div class="definition-content">
+                Let \(A \subseteq \mathbb{R} \) and \(x,y \in \mathbb{R} \). Then we define the following notations. 
+                <ul class="liststyling">
+                <li> \(A^+ = \{ a \in A \ \vert a > 0 \ \} \) </li>  
+                <li> \(A^- = \{ a \in A \ \vert  a < 0 \ \} \) </li>  
+                <li>  \(x \cdot A = \{ x \cdot a\ \vert \ a \in A \} \)   </li> 
+                <li> \(A + y = \{ a +y \ \vert \ a \in A \} \) </li>
+                </ul>
+            </div>
+            </div>
+    </div>
+    <div class="page-content" data-page="22">
+        <div class="questioncontainer">  
+            <div class=topline> <em>Exercise</em>      <span class="pointsandtimer"> <em>1 point </em>   </span> </div>
+            <div class="question">   Fill in the gaps in the following text. </div>
+            <div class="gaptext">
+                A plus as a superscript of a set marks, that all positive numbers are <span class="gap solution">  </span>, whereas a 
+                minus notes, that they are <span class="gap solution"> </span>. 
+            </div>
+            <div class="answers">
+                <button class="button" onclick="fillNextBlank('finite')">kept</button>
+                <button class="button" onclick="fillNextBlank('infinite')">thrown out</button>
+                <button class="button" onclick="fillNextBlank('finite')">multiplied</button>
+                <button class="button" onclick="fillNextBlank('infinite')">added</button>
+            </div>
+            <button class="margindownAnswerbutton" onclick="checkAnswersblanks()">Check Answers</button> 
+            <div  class="feedback"></div>
+        </div> 
+    </div>
+    <div class="page-content" data-page="23">
+        <div class="questioncontainer">
+            <div class=topline> <em>Exercise</em>      <span class="pointsandtimer"> <em>1 point </em>   </span> </div>
+            <div class="question">Find \(\frac{1}{2}A+2\) for \(A = \{ -4,-2,0.2.4\} \) </div>
+            <input type="text" class="custom-input" placeholder="Enter your text here"> <br>
+            <button class="margindownAnswerbutton" onclick="checkGap('{0,1,2,3,4}', 'answer3', 'feedback3')">Check Answer</button>
+            <div class="feedback" id="feedback3">The right answer is \( \{0,1,2,3,4\} \).</div>
+          </div>
+    </div>
+    <div class="page-content" data-page="24">
+        <div class="questioncontainer">
+            <div class=topline> <em>Exercise</em>      <span class="pointsandtimer"> <em>1 point </em>   </span> </div>
+            <div class="question">What are the first 5 numbers of the set \(2 \mathbb{N} - 3 \) written in a set?</div>
+            <input type="text" class="custom-input" placeholder="Enter your text here"> <br>
+            <button class="margindownAnswerbutton" onclick="checkGap('{-1,1,3,5,7}', 'answer3', 'feedback3')">Check Answer</button>
+            <div class="feedback" id="feedback3">The right answer is \( \{-1,1,3,5,7\} \).</div>
+          </div>
+    </div>
+    <div class="page-content" data-page="25">
+        <div class="questioncontainer">  
+            <div class=topline> <em>Question</em>      <span class="pointsandtimer"> <em>1 point </em>   </span> </div>
+            <div class="question">  For which set holds the following description?  </div>
+            <div class="gaptext">
+                1. \(2 A +1 = 3A \) for <span class="gap solution">  </span>. <br> <br>
+                2.  \( A^- = \emptyset  \) for<span class="gap solution">  </span>. <br> <br>
+                3.\( A^+= A^- \) for  <span class="gap solution"></span>. <br> <br>
+                4. \(A +1 = A-1 \) for <span class="gap solution" ></span>.  
+            </div>
+            <div class="answers">
+                <button class="button" onclick="fillNextBlank('finite')">\(A = \{1,2,3\}\)</button>
+                <button class="button" onclick="fillNextBlank('infinite')">\(A = \{-4,-6\}\)</button>
+                <button class="button" onclick="fillNextBlank('finite')">\(A = \{0\}\)</button>
+                <button class="button" onclick="fillNextBlank('infinite')">\(A = \{1\}\)</button>
+            </div>
+            <button class="margindownAnswerbutton" onclick="checkAnswersblanks()">Check Answers</button> 
+            <div  id="gaptext1results"></div>
+        </div> 
+    </div>
+    <div class="page-content" data-page="26">
+        <div class="theoryheader"> <div class="theorynumber">6 </div> <div class="theorytitle">the powerset</div></div> </br>
+        If we are looking at subsets \(A_1, A_2 , \ldots \) of a given set \(A\), it is common to 
+        summarize all of these in a new set \( \{A_1, A_2 , \ldots\} \), let's say, if we want to list up
+        all the information. This set is called the powerset of \(A\).
+    </br>    </br>
+        <div class="definition-box">
+            <div class="definition-title"> The power set \(\mathcal{P}(A)\)</div>
+            <div class="definition-content">
+             Let \(A \) be a set. Then \[\mathcal{P}(A) := \{ B\, \vert \, B \subseteq A \, \}\] is the set of all subsets of \(A \) 
+             and we call it the <b>powerset</b> of \(A\). 
+            </div>
+        </div>
+    </div>
+    <div class="page-content" data-page="27">
+        <div class="questioncontainer">
+            <div class=topline> <em>Question</em>      <span class="pointsandtimer"> <em>1 point </em>   </span> </div>
+            <div class="question"> Which of the following sets is the powerset of \(\{ 1 \}\)?   </div>
+        <div class="answers"> 
+            <div class="answerbutton" onclick="checkAnswer(true, this)"> \(\{ 1 \}\)</div>
+            <div class="answerbutton" onclick="checkAnswer(false, this)"> \(\emptyset\) </div>
+            <div class="answerbutton" onclick="checkAnswer(false, this)"> \( \{ 1, \emptyset \}\)</div>
+            <div class="answerbutton" onclick="checkAnswer(true, this)"> \( \{ \{1 \},  \emptyset \}\) </div>
+        </div>
+        <div class="feedback"> It holds \(\{1\} \subset A\) and \(\emptyset \subset A\) so both are elements of the 
+            powerset. But there are no more, so the last answer is correct.</div>
+        </div>
+    </div>
+    <div class="page-content" data-page="28">
+        <div class="questioncontainer">
+            <div class=topline> <em>Question</em>      <span class="pointsandtimer"> <em>1 point </em>   </span> </div>
+            <div class="question">  Which of the following sets is the powerset of \(\{a,b,c\}\)?   </div>
+        <div class="answers"> 
+            <div class="answerbutton" onclick="checkAnswer(false, this)"> \( \mathcal{P}(A)= \{\{a\},\{b\},\{c\}\}\)</div>
+            <div class="answerbutton" onclick="checkAnswer(false, this)"> \( \mathcal{P}(A)= \{\{a\},\{b\},\{c\}, \{a,b\}, \{a,c\}, \{b,c\}, \{a,b,c\}\}\)</div>
+            <div class="answerbutton" onclick="checkAnswer(true, this)">\( \mathcal{P}(A)= \{\{a\},\{b\},\{c\}, \{a,b\}, \{a,c\}, \{b,c\}, \{a,b,c\},\emptyset \}\)</div>
+            <div class="answerbutton" onclick="checkAnswer(false, this)">\( \mathcal{P}(A)= \{a,b,c,  \{a\},\{b\},\{c\}, \{a,b\}, \{a,c\}, \{b,c\}, \{a,b,c\}, \emptyset\}\)</div>
+        </div>
+        <div class="feedback">\(a,b,c\) are elements, no subsets so the last answer is wrong. All the listed sets in the third 
+            answer are indeed subsets of \(A\) and there are no more.</div>
+        </div>
+    </div>
+    <div class="page-content" data-page="29">
+        <div class="questioncontainer">
+            <div class=topline> <em>Question</em>      <span class="pointsandtimer"> <em>1 point </em>   </span> </div>
+            <div class="question">     Is any set \(A\) a subset of it's power set  \(\mathcal{P}(A)\),
+                 thus it holds \(A \subseteq \mathcal{P}(A)\)?  </div>
+            <div class="margindownAnswerbutton" onclick="checkAnswer(false, this)"> Yes </div>
+            <div class="margindownAnswerbutton" onclick="checkAnswer(true, this)"> No </div>
+            <div class="feedback"> Any set \(A\) is <b>an element</b> of it's power set  \(\mathcal{P}(A)\), \(A \in \mathcal{P}(A)\).</div>
+        </div>
+    </div>
+    <div class="page-content" data-page="30">
+        <div class="questioncontainer">
+            <div class=topline> <em>Question</em>      <span class="pointsandtimer"> <em>1 point </em>   </span> </div>
+            <div class="question">  Does the power set \(\mathcal{P}(A)\) of an arbitrary set \(A\) 
+                always contain \(\emptyset\) as an element?   </div>
+            <div class="margindownAnswerbutton" onclick="checkAnswer(true, this)"> Yes</div>
+            <div class="margindownAnswerbutton" onclick="checkAnswer(false, this)"> No </div>
+            <div class="feedback"> This is correct since the empty set \(\emptyset\) is a subset of any set,
+                 thus an element of the according power set. </div>
+        </div>
+    </div>
+    <div class="page-content" data-page="31">
+        <h2> final score</h2>
+        <div class="statistics"> 
+            <div class="chapterscompleted"> chapters completed: +1 </div>
+            <div class="pointsearned">  points earned: x/total points </div>
+            <div class="timestudied">    time studied: +32 min </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+    <script src="../../js/pagenavigation.js"></script>
+    <script src="../../js/header.js"></script>
+    <script src="../../js/gaptext.js"></script>
+    <script src="../../js/QuizQuestion.js"></script>
+    <script src="../../js/Eingabefeldfrage2.js"></script>
+    <script src="../../js/showContent.js" > </script>
+</body>
+</html>

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>math course</title>
+    <meta name="description" content="course description goes here">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <meta name="keywords" content="math, functions, sets">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+</head>
+<body>
+<div id="content-section">
+    <header id="toolbar" >
+        <div class="titleofsubsection"> recursion  </div>  <div id="countup-timer"> 00:00</div>
+        <div id="progress">
+            <div id="progressbar"> </div> <div class="progressbar">  startTimer() </div>
+        </div>
+    </header>
+    <footer class="footer">
+        <button class="page-button backward-btn" id="backward-btn" onclick="navigatePage(-1)"> <span class="hidden">back</span> </button>
+        <span id="pageNumber"> </span>
+        <button class="page-button forward-btn" id="forward-btn" onclick="navigatePage(1)"> <span class="hidden">next</span></button>
+    </footer>
+
+<div class="content">
+
+    <div class="page-content backgroundimage" data-page="0">
+        <div class="coursestartheading"> chapter 4 <br> recursion  </div> 
+        <br> 
+        <div class="coursestartfont"> we will deal with recursive type definitions of sequences and other mathematical objects in this part. <br> <br>
+       <button class="forward-btn" class="frame" onclick="navigatePage(1)">start </button>  </div>
+    </div>
+
+    <div class="page-content" data-page="1">
+       <div class="theoryheader"> <div class="theorynumber">1 </div> <div class="theorytitle"> recursive definitions</div></div> </br>
+        Let's have a look at the sequence \[(a_n)_{n \in \mathbb{N}} = (1, 2, 4, 8, 16, 32, 64, 128, 256, 512, ...).\] 
+        We notice, that we get the next element of the sequence by multiplying the previous element by \(2\). Thus we can rewrite
+        the sequence by \(a_1 = 1\) and \(a_{n+1} = 2 \cdot a_n\) for all \(n \in \mathbb{N} \). This is called a recursive definition of the sequence.
+        </br/> <br>
+        <div class="definition-box">
+            <div class="definition-title">recursive definition</div>
+            <div class="definition-content">
+            Let \((a_n)_{n \in \mathbb{N}}\) be a sequence and \(c \in \mathbb{R}\). Then \((a_n)_{n \in \mathbb{N}}\) is defined recursively if there is a function \(f: \mathbb{N} \rightarrow \mathbb{R}\) such that
+                \begin{align*}
+                    a_1 &= c \\
+                    a_{n+1} &= f(a_n)   \ \ \ \ \  \forall n \in \mathbb{N}
+                \end{align*}
+            </div>
+        </div>
+        <br> 
+        For our example the initial value is \(1\) and the law is the function \(f: \mathbb{N} \rightarrow \mathbb{R}\) 
+        , \(f(n) = 2 n\). 
+    </div>
+    
+
+    <div class="page-content" data-page="2">
+        <div class="questioncontainer">
+            <div class=topline> <em>Question</em>      <span class="pointsandtimer"> <em>4 point</em>   </span> </div>
+            <div class="question gaptext" id="quiz-content">
+                Given is the set \(A = \{1, 2, 3, 4, 5\}.\) The set \(B = \{1, 2, 3\}\) is <span class="gap" data-answer="a subset"></span> of \(A\), whereas the set \(C = \{1, 2, 3, 4, 5, 6\}\) is 
+                <span class="gap" data-answer="no subset"></span> of \(A\). \( 2\) is <span class="gap" data-answer="an element"></span> of \(A\), 
+                whereas \(6\) is <span class="gap" data-answer="no element"></span> of \(A\). 
+            </div>
+            <div class="answers"  id="answer-buttons">
+                <button class="button" data-answer="an element">an element</button>
+                <button class="button" data-answer="no element">no element</button>
+                <button class="button" data-answer="a subset">a subset</button>
+                <button class="button" data-answer="no subset">no subset</button>
+            </div>
+            <button class="gaptextanswerbutton" id="check-answer">Check Answer</button>
+            <p  class="feedback"  id="feedback"> follows right away from the definition.
+        </div>
+    </div>
+
+
+    <div class="page-content" data-page="3">
+        <div class="questioncontainer">
+            <div class=topline> <em>Question</em>      <span class="pointsandtimer"> <em>1 point</em>   </span> </div>
+            <div class="question">
+                Given is the recursion \[a_1 = -1, \ \ a_{n+1} = 3 \cdot a_n+1 \ \ \ \ \ \forall n \in \mathbb{N}.\] What is the value of \(a_5\)?
+            </div>
+            <div class="answers">
+                <input class="input-box" type="text" placeholder="...">
+                <button class="margindownAnswerbutton">Check Answer</button>
+            </div>
+            <div class="solution">-41</div>
+            <div class="feedback">
+                <p class="feedback-text"> We get \(a_2 = 3 \cdot a_1+1 = 3 \cdot (-1)+1 = -2\), \(a_3 = 3 \cdot a_2+1 = 3 \cdot (-2)+1 = 
+                    -5\), \(a_4 = 3 \cdot a_3+1 = 3 \cdot (-5)+1 = -14\), \(a_5 = 3 \cdot a_4+1 = 3 \cdot (-14)+1 = -41\).</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-content" data-page="4">
+        <div class="questioncontainer">
+            <div class=topline> <em>Question</em>      <span class="pointsandtimer"> <em>1 point</em>   </span> </div>
+            <div class="question">
+                Given is the recursion \[a_1 = 10, \ \ a_{n+1} = \frac{1}{2} \cdot a_n+2 \ \ \ \ \ \forall n \in \mathbb{N}.\] What is the value of \(a_4\)?
+            </div>
+            <div class="answers">
+                <input class="input-box" type="text" placeholder="...">
+                <button class="margindownAnswerbutton">Check Answer</button>
+            </div>
+            <div class="solution">6</div>
+            <div class="feedback">
+                <p class="feedback-text">  We get \(a_2 = \frac{1}{2} \cdot a_1+2 = \frac{1}{2} \cdot 10+2 = 7\), \(a_3 = \frac{1}{2} \cdot a_2+2 = \frac{1}{2} \cdot 
+                    7+2 = \frac{11}{2}\), \(a_4 = \frac{1}{2} \cdot a_3+2 = \frac{1}{2} \cdot \frac{11}{2}+2 = 6\).</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="page-content" data-page="5">
+        <div class="questioncontainer">
+            <div class=topline> <em>Question</em>      <span class="pointsandtimer"> <em>1 point</em>   </span> </div>
+            <div class="question"> Given is a recursion \[a_1 = c, \ \ a_{n+1} = f(a_n) \ \ \ \ \ \forall n \in \mathbb{N}\]
+                for some \(c \in \mathbb{R}\) and some function \(f: \mathbb{N} \rightarrow \mathbb{R}\). Does \(a_3 = f \big(f(c) \big)\) hold?
+            </div>
+            <div class="margindownAnswerbutton" onclick="checkAnswer(true, this)">Yes</div>
+            <div class="margindownAnswerbutton" onclick="checkAnswer(false, this)">No</div>
+            <div class="feedback"> Indeed we get \(a_2 = f(a_1) = f(c)\) and \(a_3 = f(a_2) = f \big(f(c) \big)\).
+            </div>
+        </div>
+    </div>
+
+    <div class="page-content" data-page="6">
+        <div class="theoryheader"> <div class="theorynumber">2 </div> <div class="theorytitle"> unsions</div></div> </br>
+        Now we will apply this concept to some set operators. We start with the union of \(n\) sets.
+         </br/> <br>
+         <div class="definition-box">
+             <div class="definition-title">recursive definition</div>
+             <div class="definition-content">
+                Let \(A_1, A_2, A_3, ...\) be a sequence of sets. Then we can define their union by
+                \begin{align*}
+                \bigcup_{i=1}^1 A_i &= A_1 \\
+                \bigcup_{i=1}^{n} A_i &= \bigcup_{i=1}^{n-1} A_i \cup A_{n} \ \ \ \ \ \forall n \in \mathbb{N}
+            \end{align*}
+             </div>
+         </div>
+         <br> 
+     </div>
+
+
+ 
+     <div class="page-content" data-page="7">
+        <div class="questioncontainer">
+            <div class=topline> <em>Question</em>      <span class="pointsandtimer"> <em>1 point</em>   </span> </div>
+            <div class="question">
+                Given is the sequence of sets \((A_n)_{n \in \mathbb{N}}\) defined by \(A_0= \emptyset\) and  \(A_n = \{ n, n+1 \}\) for all \(n \in \mathbb{N}\).
+                Find \[ \bigcup_{k=1}^{4} A_k .\]
+            </div>
+            <div class="answers">
+                <input class="input-box" type="text" placeholder="...">
+                <button class="margindownAnswerbutton">Check Answer</button>
+            </div>
+            <div class="solution">{1,2,3,4,5}</div>
+            <div class="feedback">
+                <p class="feedback-text"> We have that \(A_1 = \{1,2\}\), \(A_2 = \{2,3\}\), \(A_3 = \{3,4\}\) and \(A_4 = \{4,5\}\). Thus we get
+                    \[ \bigcup_{k=1}^{4} A_k = \{1,2\} \cup \{2,3\} \cup \{3,4\} \cup \{4,5\} = \{1,2,3,4,5\}.\]
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="page-content" data-page="8">
+        <div class="questioncontainer">
+            <div class=topline> <em>Question</em>      <span class="pointsandtimer"> <em>1 point</em>   </span> </div>
+            <div class="question">
+                Given is the sequence of sets \((A_n)_{n \in \mathbb{N}}\) defined by \(A_0= \emptyset\) and  \(A_n = \{ n, n+1 \}\) for all \(n \in \mathbb{N}\).
+                Find \[ \bigcup_{k=1}^{3} A_k \setminus A_{k-1} .\]
+            </div>
+            <div class="answers">
+                <input class="input-box" type="text" placeholder="...">
+                <button class="margindownAnswerbutton">Check Answer</button>
+            </div>
+            <div class="solution">{1,2,3,4}</div>
+            <div class="feedback">
+                <p class="feedback-text"> We have that \(A_1 \setminus A_0 = \{1,2\} \setminus \emptyset = \{1,2\}\), \(A_2 \setminus A_1 = \{2,3\} \setminus \{1,2\} = \{3\}\) and \(A_3 \setminus A_2 = \{3,4\} \setminus \{2,3\} = \{4\}\). Thus we get
+                    \[ \bigcup_{k=1}^{3} A_k \setminus A_{k-1} = \{1,2\} \cup \{3\} \cup \{4\} = \{1,2,3,4\}.\]
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+
+     
+    <div class="page-content" data-page="9">
+        <div class="questioncontainer">
+            <div class=topline> <em>Question</em>      <span class="pointsandtimer"> <em>1 point</em>   </span> </div>
+            <div class="question">
+                The sequence of sets \((A_n)_{n \in \mathbb{N}}\) is defined by \(A_0= \emptyset\) and  \(A_n = \{ n \}\) 
+                for all \(n \in \mathbb{N}\). Let \[ B_n= \bigcup_{k=1}^{n} A_n \setminus A_{n-1}.\] What is \(B_{52}\)?
+            </div>
+            <div class="answers">
+                <input class="input-box" type="text" placeholder="...">
+                <button class="margindownAnswerbutton">Check Answer</button>
+            </div>
+            <div class="solution">{52}</div>
+            <div class="feedback">
+                <p class="feedback-text"> We have that \(A_n \setminus A_{n-1} = \{n\} \setminus \{n-1\} = \{n\}\) for all \(n \in \mathbb{N} \setminus \{0\}\). Thus we get
+                    \[B_n = \bigcup_{k=1}^{n} A_k \setminus A_{k-1} = \bigcup_{k=1}^{n} \{k\} = \{1,2,3, \ldots , n\}.\] In particular we get 
+                    \[B_{52} = \{1,2,3 , \ldots , 52\} .\]
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+     <div class="page-content" data-page="10">
+        <div class="questioncontainer">
+            <div class=topline> <em>Question</em>      <span class="pointsandtimer"> <em>1 point</em>   </span> </div>
+            <div class="question"> Does \[\bigcup_{k=1}^{n} \{n\} = \{1,2,3, \ldots , n\}\] hold for \(n \in \mathbb{N}\)? 
+            </div>
+            <div class="margindownAnswerbutton" onclick="checkAnswer(false, this)">Yes</div>
+            <div class="margindownAnswerbutton" onclick="checkAnswer(true, this)">No</div>
+            <div class="feedback"> Indeed the running variable \(k\) is not used on the left side. Thus we get
+                \[ \bigcup_{k=1}^{n} \{n\} = \{n\} \neq \{1,2,3, \ldots , n\}.\]
+            </div>
+        </div>
+    </div>
+
+    
+
+
+     <div class="page-content" data-page="11">
+        <div class="theoryheader"> <div class="theorynumber">3 </div> <div class="theorytitle"> intersections</div></div> </br>
+        Similarly as before, we now define the intersection of \(n\) sets.
+         </br/> <br>
+         <div class="definition-box">
+             <div class="definition-title">recursive definition</div>
+             <div class="definition-content">
+                Let \(A_1, A_2, A_3, ...\) be a sequence of sets. Then we can define their union by
+                \begin{align*}
+                \bigcap_{i=1}^1 A_i &= A_1 \\
+                \bigcap_{i=1}^{n} A_i &= \bigcap_{i=1}^{n-1} A_i \cap A_{n} \ \ \ \ \ \forall n \in \mathbb{N}
+            \end{align*}
+             </div>
+         </div>
+         <br> 
+     </div>
+
+
+
+     <div class="page-content" data-page="12">
+        <div class="questioncontainer">
+            <div class=topline> <em>Question</em>      <span class="pointsandtimer"> <em>1 point</em>   </span> </div>
+            <div class="question"> 
+                Let \(A_1, A_2, \ldots , A_n\) be sets and \(A_1 \neq \emptyset \). Can \[\bigcap_{k=1}^{n} A_k\] be empty?
+            </div>
+            <div class="margindownAnswerbutton" onclick="checkAnswer(true, this)">Yes</div>
+            <div class="margindownAnswerbutton" onclick="checkAnswer(false, this)">No</div>
+            <div class="feedback"> It can be empty, for example if one of the sets is empty. It is sufficient, that there is no element they all share.
+            </div>
+        </div>
+    </div>
+
+    <div class="page-content" data-page="13">
+        <div class="questioncontainer">
+            <div class=topline> <em>Question</em>      <span class="pointsandtimer"> <em>1 point</em>   </span> </div>
+            <div class="question"> 
+                Let \(A_1, A_2, \ldots , A_n\) be sets. Does  \[\bigcup_{k=1}^{n} A_k \subseteq \bigcap_{k=1}^{n} A_k \] hold?
+            </div>
+            <div class="margindownAnswerbutton" onclick="checkAnswer(true, this)">Yes</div>
+            <div class="margindownAnswerbutton" onclick="checkAnswer(false, this)">No</div>
+            <div class="feedback"> Unions are bigger than intersections in general. The oposite holds: 
+                \[\bigcap_{k=1}^{n} A_k \subseteq \bigcup_{k=1}^{n} A_k\] for all \(n \in \mathbb{N}\) and sets \(A_1, A_2, \ldots , A_n\).
+            </div>
+        </div>
+    </div>
+
+       
+    <div class="page-content" data-page="13">
+        <div class="questioncontainer">
+            <div class=topline> <em>Question</em>      <span class="pointsandtimer"> <em>1 point</em>   </span> </div>
+            <div class="question">
+                The set \(A_1 = \{-1,0,1,2,3,4,5\}\) and \(A_2 = \{-1,0,1,3,4,5,6\}\) and \(A_3 = \{-1,0,1,2,3,4,5,6,7\}\), \(A_4 = \mathbb{N} \) are given.
+                What is \(\bigcap_{k=1}^{3} A_k\)?
+            </div>
+            <div class="answers">
+                <input class="input-box" type="text" placeholder="...">
+                <button class="margindownAnswerbutton">Check Answer</button>
+            </div>
+            <div class="solution">{1,2,3,5}</div>
+            <div class="feedback">
+                <p class="feedback-text"> We have that \(A_1 \cap A_2 = \{-1,0,1,3,4,5\}\), \(A_1 \cap A_2 \cap A_3 = \{-1,0,1,3,4,5\}\) and \(A_1 \cap A_2 \cap A_3 \cap A_4 = \{1,2,3,5\}\).
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <div class="page-content" data-page="14">
+        <div class="questioncontainer">
+            <div class=topline> <em>Question</em>      <span class="pointsandtimer"> <em>1 point</em>   </span> </div>
+            <div class="question">
+               Let \(A_n = \{-n,n \} \). What is \[\bigcap_{n=1}^{2} \bigcup_{k=1}^{n} A_k?\]
+            </div>
+            <div class="answers">
+                <input class="input-box" type="text" placeholder="...">
+                <button class="margindownAnswerbutton">Check Answer</button>
+            </div>
+            <div class="solution">
+                \(\{-1,1\}\)
+            </div>
+            <div class="feedback">
+                <p class="feedback-text"> We have that \[\bigcup_{k=1}^{n} A_k = \{-n, \ldots ,-1,1, \ldots , n\}\] for all \(n \in \mathbb{N}\). Thus we get
+                    \[\bigcap_{n=1}^{2} \{-n, \ldots ,-1,1, \ldots , n\}\] \[ = \{-1,1\} \cap \{-2,-1,1,2\} = \{-1,1\}  \].
+
+                </p>
+            </div>
+        </div>
+    </div>
+
+       
+    <div class="page-content" data-page="15">
+        <div class="questioncontainer">
+            <div class=topline> <em>Question</em>      <span class="pointsandtimer"> <em>1 point</em>   </span> </div>
+            <div class="question">
+                Given is the sequence of sets \((A_n)_{n \in \mathbb{N}}\) defined by \(A_0= \{2,4,6 \}\) and  \(A_n = - A_{n-1}+1\) for all \(n \in \mathbb{N}\). 
+                Find \(A_2 \).
+            </div>
+            <div class="answers">
+                <input class="input-box" type="text" placeholder="...">
+                <button class="margindownAnswerbutton">Check Answer</button>
+            </div>
+            <div class="solution">{1,3,5}</div>
+            <div class="feedback">
+                <p class="feedback-text"> We have that \(A_1 = - A_0+1 = \{-1,-3,-5 \}+1 = \{0,-2,-4 \}\) and \(A_2 = - A_1+1 = \{1,3,5 \}\).
+
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    
+ 
+
+     <div class="page-content" data-page="16">
+        <div class="theoryheader"> <div class="theorynumber">4 </div> <div class="theorytitle"> sums</div></div> </br>
+        Now we will apply this concept to sets.
+         </br/> <br>
+         <div class="definition-box">
+             <div class="definition-title">recursive definition</div>
+             <div class="definition-content">
+                Let \(a_1, a_2, a_3, ..., a_n \in \mathbb{R}\). Then we can define their sum by
+                \begin{align*}
+                \sum_{i=1}^1 a_i &= a_1 \\
+                \sum_{i=1}^{n} a_i &= \sum_{i=1}^{n-1} a_i + a_{n} \ \ \ \ \ \forall n \in \mathbb{N}
+            \end{align*}
+             </div>
+         </div>
+         <br> 
+     </div>
+
+
+     <div class="page-content" data-page="21">
+        <div class="theoryheader"> <div class="theorynumber">5 </div> <div class="theorytitle"> products</div></div> </br>
+        Now we define a similar operator for products.
+         </br/> <br>
+         <div class="definition-box">
+             <div class="definition-title">products</div>
+             <div class="definition-content">
+                Let \(a_1, a_2, a_3, ..., a_n \in \mathbb{R}\). Then we can define their product by
+                \begin{align*}
+                \prod_{i=1}^1 a_i &= a_1 \\
+                \prod_{i=1}^{n} a_i &= \prod_{i=1}^{n-1} a_i + a_{n} \ \ \ \ \ \forall n \in \mathbb{N}
+            \end{align*}
+             </div>
+         </div>
+         <br> 
+     </div>
+
+
+
+     <div class="page-content" data-page="26">
+        <div class="theoryheader"> <div class="theorynumber">6 </div> <div class="theorytitle"> changing the index</div></div> </br>
+        The index on the operators defined before can be used more flexible as we introduced them. 
+        For example we can start the sum at \(0\) instead of \(1\) as in
+        \begin{align*}
+            \sum_{i=0}^5 i+1 &= 1+2+3+4+5+6. \\
+        \end{align*}
+        We get the identity
+        \begin{align*}
+            \sum_{i=0}^5 i+1 &= \sum_{i=1}^6 i, \\
+        \end{align*}
+        which is called an <em>index shift</em>.
+        We can also describe the index implicitely as in
+        \begin{align*}
+            \sum_{0< i < 7}^5 i+1 &= 1+2+3+4+5+6. \\
+        \end{align*}
+
+
+     </div>
+
+      <!-- recursive definitions: sets
+        gaptext
+        value
+        value
+        value -->
+
+        <!-- recursive definitions: sums 1
+        gaptext
+        value
+        value
+        value -->
+
+
+             <!-- recursive definitions: products
+        gaptext
+        value
+        value
+        value -->
+
+             <!-- recursive definitions: a note on associativity
+        gaptext
+        yes no
+        gaptext
+        yes no -->
+
+</div>
+
+    <script src="../../js/pagenavigation.js"></script>
+    <script src="../../js/header.js"></script>
+    <script src="../../js/gaptext.js"></script>
+    <script src="../../js/QuizQuestion.js"></script>
+    <script src="../../js/Eingabefeldfrage.js"></script>
+    <script src="../../js/showContent.js" > </script>
+</body>
+</html>

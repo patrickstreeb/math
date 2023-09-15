@@ -1,0 +1,498 @@
+
+
+@media (max-width:920px){
+    #progress {
+        flex-grow: 1;
+        margin-left: 30px;
+    }
+}
+
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14pt;
+    line-height: 1.5;
+    max-width: 1000px;
+}
+.coursestartheading {
+    font-size: 34pt;
+    font-weight: lighter;
+    margin-top: 20px;
+    padding-left: 60px;
+}
+.coursestartfont {
+    font-size: 13pt;
+    font-weight: lighter;
+    margin-bottom: 20px;
+    padding-left: 60px;
+    padding-right: 210px;
+}
+.theorytitle {
+    font-size: 23pt;
+}
+.theorynumber {
+    font-size: 45pt;
+    font-weight: lighter;
+}
+/* Styles for the main content area */
+.page-content {
+    padding-left: 2%;
+    padding-right: 15%;
+    padding-top: 80px;
+    padding-bottom: 70px;
+    display: flex;
+    align-items: center;
+    overflow:hidden;
+}
+.backgroundimage {
+background-image: url('pictures/general/background.png');
+background-size: 100%;
+margin-left: -14pt;
+bottom: 0;
+top: 1%;
+margin-top: 37px;
+padding: 10px 0; 
+max-width: 800px;
+color: #fff;
+position: fixed;
+overflow:hidden;
+}
+/* styling for all QuizTypes */
+.margindownAnswerbutton {
+    cursor: pointer;
+    font-size: 14pt;
+    padding: 8px;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    display: inline-block;
+    min-width: 55px;
+    min-height: 25px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: transparent;
+    margin-right: 10px;
+}
+.margindownAnswerbutton.correct {
+    background-color: rgb(204, 239, 204);
+    color: rgb(0, 0, 0);
+}
+
+.margindownAnswerbutton.wrong {
+    background-color: rgb(247, 172, 172);
+    color: rgb(0, 0, 0);
+}
+.margindownAnswerbutton:hover {
+    background-color: #f1f1f1;
+}
+.margindownAnswerbutton::after {
+    background-color: #dfdede;
+}
+.check-answer {
+    cursor: pointer;
+    font-size: 19px;
+    padding: 10px;
+    margin-top: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    display: inline-block;
+    min-width: 55px;
+    min-height: 25px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: transparent;
+}
+.answerbutton {
+    cursor: pointer;
+    font-size: 19px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-left: 10px;
+    border: 1px solid #ccc;
+    display: inline-block;
+    min-width: 55px;
+    min-height: 25px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: transparent;
+    margin-right: 10px;
+}
+.answerbutton.correct {
+    background-color: rgb(204, 239, 204);
+    color: rgb(0, 0, 0);
+}
+
+.answerbutton.wrong {
+    background-color: rgb(247, 172, 172);
+    color: rgb(0, 0, 0);
+}
+.answerbutton:hover {
+    background-color: #f1f1f1;
+}
+.answerbutton::after {
+    background-color: #dfdede;
+}
+.quizOptionButton:hover {
+    background-color: #f1f1f1;
+}
+.button {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    font-size: 14pt;
+    background-color: #ebeaea;
+    color: #000000;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.button:hover {
+    background-color: #f1f1f1;
+}
+.correct-answer {
+    color: rgb(80, 144, 80);
+}
+.incorrect-answer {
+    color: rgb(194, 79, 79);
+}
+.gap {
+    border-bottom: 1px solid #000; 
+    display: inline-block;
+    padding: 10px; 
+    min-width: 80px; 
+    height: 30px;
+    margin-bottom: -3px;
+    margin-left: 4px;
+    margin-right: 8px;
+}
+.correct-gap {
+    color: green; /* Green */
+}
+
+.wrong-gap {
+    color: red; /* Red */
+}
+.gaptext {
+    margin-left: 20px;
+    margin-right: 20px;
+    line-height: 1.6;
+    font-size: 14pt;
+}
+.solution {
+    display: none;
+}
+.answer-buttons {
+    margin-left: 40px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.answers {
+    margin-left: 40px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.quiz-container {
+    border: solid 1px;
+    border-radius: 5px;
+    border-color: #c3c2c2;
+}
+.questioncontainer {
+    border: solid 1px;
+    border-radius: 5px;
+    border-color: #c3c2c2;
+}
+.topline {
+    font-size: 12pt;
+    margin-bottom: -10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.feedback {
+    margin: 10px;
+    margin-bottom: 20px;
+    display: none;
+    background-color: rgb(247, 247, 247);
+    padding: 20px;
+    border-radius: 5px;
+}
+.quiz-content {
+    margin-top: 40px;
+    padding-left: 40px;
+    padding-right: 20px;
+    font-size: 20px;
+    background-image: url('pictures/general/qarrow.png'); /* Set the image path */
+    background-repeat: no-repeat;
+    background-size: 5px; /* Adjust the image size */
+    background-position: 9px 7px;
+    background-size: 18px;
+}
+.question {
+    margin-top: 40px;
+    padding-left: 40px;
+    padding-right: 20px;
+    font-size: 20px;
+    background-image: url('pictures/general/qarrow.png'); /* Set the image path */
+    background-repeat: no-repeat;
+    background-size: 5px; /* Adjust the image size */
+    background-position: 9px 7px;
+    background-size: 18px;
+}
+
+
+
+
+  /* additional QuizQuestion.js Styling */
+.correct {
+    color: green;
+}
+
+.wrong {
+    color: red;
+}
+  /* Basic Input Styles */
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 30vh;
+    transition: border-color 0.3s;
+    margin-top: 3vh;
+    margin-bottom: 2vh;
+  }
+  
+  /* Input Focus Styles */
+  input[type="text"]:focus {
+    outline: none;
+    border-color: #007bff; /* Change the border color on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a subtle box shadow on focus */
+  }
+  
+  /* Placeholder Text Styling */
+  input[type="text"]::placeholder {
+    color: #aaa;
+  }
+/* footer styling, it's buttons and pagenumber */
+.footer {
+    position: fixed;
+    bottom: 0;
+    margin-left: -18px;
+    width: 74%;
+    height: 35px;
+    overflow: hidden;
+    text-align: center;
+    background-color:#333;
+    padding: 10px 0px 10px 00px; 
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px;
+    background-image: url('pictures/general/footer.png');
+    }
+header {
+    position: fixed;
+    margin-left: -18px;
+    top: 0;
+    width: 74%;
+    height: 25px;
+    overflow: hidden;
+    text-align: left;
+    background-color:#333;
+    padding: 10px 0; 
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px;
+    color: #fff;
+}
+/* headerelements*/
+.pointsandtimer {
+    float: right;
+    margin-left: 10px;
+}
+.titleofsubsection {
+    font-size: 20pt;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-left: 20px;
+    margin-right: 20px;
+    margin-top: -10px;
+    font-weight: lighter;
+}
+#progress {
+    flex-grow: 1;
+}
+#progressbar {
+    height: 20px;
+    background-color: #34b2fb;
+    width: 0%;
+    padding-bottom: 7px;
+    padding-left: 15px;
+    text-indent: -58px;
+    margin-top: -1px;
+    color:#fff;
+    font-weight: lighter;
+    margin-left: 40%;
+    border: solid 1px rgb(101, 102, 103);
+}
+.hidden {
+    display: none;
+}
+.liststyling {
+    list-style-type: disc;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+.page-button {
+    padding: 20px 10px;
+    font-size: 16px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.page-button:hover {
+    opacity: 0.7;
+}
+.studied {
+    color: #fff;
+    font-weight: lighter;
+    font-size: 12pt;
+    margin-left: 45%;
+    margin-top: 3px;
+    margin-right: -4px;
+}
+.frame {
+    border: solid 1px;
+    border-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+.hours {
+    color: #fff;
+    font-weight: lighter;
+    font-size: 12pt;
+    margin-left: 12px;
+    margin-top: 3px;
+    margin-right: 1px;
+}
+.minutes {
+    margin-left: 10px;
+}
+
+.backward-btn {
+    background-image: url('pictures/general/prev.png');
+    background-repeat: no-repeat;
+    background-size: 60% 100%;
+    min-height: 40px;
+    min-width: 40px;
+}
+.forward-btn {
+    background-image: url('pictures/general/next.png');
+    background-repeat: no-repeat;
+    background-size: 60% 100%;
+    background-color: transparent;
+    border: none;
+    min-height: 40px;
+    min-width: 40px;
+    margin-left: 36px;
+    text-indent: -80px;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 13pt;
+    font-weight: lighter;
+}
+#pageNumber {
+    font-size: 18px;
+    color: #fff;
+    font-weight: lighter;
+}
+
+
+
+
+
+/* menue _________________ */
+#sidebar {
+    width: 130px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0;
+    font-size: 12pt;
+  }
+  .sidebar-item {
+    margin-bottom: 15px;
+    cursor: pointer;
+  }
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+  iframe {
+    border: none;
+    margin-top: -8px;;
+    margin-left: -170px;
+    width: 150%;
+    height: 100vh;
+  }
+
+
+
+
+
+  .sub-toolbar {
+    display: none;
+    padding-left: 20px;
+    font-size: 9pt;
+    white-space: pre-line;
+  }
+  .sidebar-item.active .sub-toolbar {
+    display: block;
+  }
+  .sub-toolbar .sub-item:hover {
+    color: #f4efbee1; 
+  }
+
+
+
+
+
+/* boxes: definitionbox, theorembox */
+.definition-box {
+    border: 2px solid #0361e5;
+    padding: 10px;
+    margin: 0px;
+    border-radius: 5px;
+    max-width: 700px;
+  }
+  .definition-title {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #1259bc;
+  }
+  .definition-content {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  .theorem-box {
+    border: 2px solid #2936ad;
+    padding: 10px;
+    margin: 0px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(200, 200, 160, 0.1);
+    max-width: 700px;
+  }
+  .theorem-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #2936ad;
+  }
+  .theorem-content {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz with Scoring</title>
+</head>
+<body>
+    <h1>Quiz</h1>
+
+    <!-- Quiz questions and options go here -->
+    <div id="question1" class="question">
+        <p>Question 1: What is the capital of France?</p>
+        <input type="radio" name="q1" value="paris"> Paris<br>
+        <input type="radio" name="q1" value="london"> London<br>
+        <input type="radio" name="q1" value="berlin"> Berlin<br>
+    </div>
+
+    <div id="question2" class="question">
+        <p>Question 2: What is 2 + 2?</p>
+        <input type="radio" name="q2" value="3"> 3<br>
+        <input type="radio" name="q2" value="4"> 4<br>
+        <input type="radio" name="q2" value="5"> 5<br>
+    </div>
+
+    <div id="timer">Time Left: 1:00</div>
+
+    <div id="score">Score: 0</div>
+
+    <button id="startQuizButton" onclick="startQuiz()">Start Quiz</button>
+
+    <button id="nextButton" onclick="moveToNextQuestion()" style="display: none;">Next</button>
+
+    <div id="summary" style="display: none;">
+        <h2>Quiz Summary</h2>
+        <p>Total Score: <span id="totalScore">0</span></p>
+    </div>
+
+    <script>
+        let currentQuestion = 1;
+        let timeLeft = 60; // 60 seconds = 1 minute
+        let timerId;
+        let score = 0;
+
+        function startQuiz() {
+            document.getElementById('startQuizButton').style.display = 'none'; // Hide the start button
+            document.getElementById('question1').style.display = 'block'; // Show the first question
+            document.getElementById('nextButton').style.display = 'block'; // Show the next button
+            timerId = setInterval(updateTimer, 1000); // Update the timer every second
+        }
+
+        function updateTimer() {
+            const timerDisplay = document.getElementById('timer');
+
+            if (timeLeft <= 0) {
+                clearInterval(timerId); // Stop the timer when time is up
+                timerDisplay.textContent = 'Time\'s Up!';
+                disableOptions();
+            } else {
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                timerDisplay.textContent = `Time Left: ${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+                timeLeft--;
+            }
+        }
+
+        function disableOptions() {
+            const currentQuestionDiv = document.getElementById(`question${currentQuestion}`);
+            const options = currentQuestionDiv.querySelectorAll('input[type=radio]');
+            for (const option of options) {
+                option.disabled = true;
+            }
+        }
+
+        function moveToNextQuestion() {
+            disableOptions();
+
+            const currentQuestionDiv = document.getElementById(`question${currentQuestion}`);
+            currentQuestionDiv.style.display = 'none'; // Hide the current question
+
+            const selectedOption = document.querySelector(`input[name="q${currentQuestion}"]:checked`);
+            if (selectedOption) {
+                if (selectedOption.value === "paris" && currentQuestion === 1) {
+                    score++;
+                }
+                if (selectedOption.value === "4" && currentQuestion === 2) {
+                    score++;
+                }
+            }
+
+            document.getElementById('score').textContent = `Score: ${score}`;
+
+            currentQuestion++; // Move to the next question
+
+            if (currentQuestion <= 2) {
+                const nextQuestionDiv = document.getElementById(`question${currentQuestion}`);
+                nextQuestionDiv.style.display = 'block'; // Show the next question
+                document.getElementById('nextButton').style.display = 'block'; // Show the next button
+
+                // Reset the timer for the next question
+                timeLeft = 60;
+                timerId = setInterval(updateTimer, 1000);
+            } else {
+                // All questions are answered, show the summary
+                document.getElementById('nextButton').style.display = 'none'; // Hide the next button
+                document.getElementById('summary').style.display = 'block'; // Show the summary
+                document.getElementById('totalScore').textContent = score;
+            }
+        }
+    </script>
+</body>
+</html>

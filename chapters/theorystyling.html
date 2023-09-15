@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Read Text Element by Element</title>
+    <style>
+        /* Add CSS for the fade-in effect */
+        .fade-in {
+            opacity: 1;
+            animation: fadeIn 5s;
+        }
+    </style>
+</head>
+<body>
+    <div id="content-container">
+        <!-- Elements will be added here -->
+    </div>
+    <button id="next-element-button">Next Element</button>
+
+    <script>
+        // Array of elements to display
+        const elements = [
+            "<p>This is a paragraph.</p>",
+            "<div>This is a div element.</div>",
+            "<h2>This is an H2 heading.</h2>",
+            "<ul><li>Item 1</li><li>Item 2</li></ul>"
+        ];
+
+        // Initialize element index
+        let currentElementIndex = 0;
+
+        // Function to display the next element with a fade-in effect
+        function displayNextElement() {
+            if (currentElementIndex < elements.length) {
+                const contentContainer = document.getElementById("content-container");
+                const element = document.createElement("div");
+                element.innerHTML = elements[currentElementIndex];
+                contentContainer.appendChild(element);
+
+                // Trigger a reflow to apply the CSS transition
+                element.offsetHeight;
+
+                // Add the 'fade-in' class to start the transition
+                element.classList.add("fade-in");
+
+                currentElementIndex++;
+            }
+        }
+
+        // Add an event listener to the button
+        const nextElementButton = document.getElementById("next-element-button");
+        nextElementButton.addEventListener("click", displayNextElement);
+
+        // Display the first element initially
+        displayNextElement();
+    </script>
+</body>
+</html>
