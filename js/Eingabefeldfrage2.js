@@ -28,31 +28,35 @@
 //     </div>
 
 
-        
+let score=0;
         function checkAnswer2(button, questioncontainer) {
             // Get the feedback element for the specific question
             const feedbackElement = questioncontainer.querySelector(".feedback");
             const correctAnswer = questioncontainer.querySelector(".solution").innerHTML;
             const userAnswer = questioncontainer.querySelector(".input-box").value;
             const Answers = questioncontainer.querySelector(".answers");
-          
+            const point = questioncontainer.querySelector('.point').innerHTML;
+            
+        
             
         if (userAnswer === correctAnswer) {
             const correctImg = new Image()
-            correctImg.src = '/pictures/general/checkmark.png'; 
+            correctImg.src = '../../pictures/general/checkmark.png'; 
             correctImg.style.width = '30px';
             // Path to the correct feedback image
             feedbackElement.insertBefore(correctImg, feedbackElement.firstChild);
             feedbackElement.style.backgroundColor = "rgb(204, 239, 204)";
+            score = score + parseInt(point);
         } else {
             const wrongImg = new Image();
-            wrongImg.src = '/pictures/general/wrong-sign.png'; // Path to the wrong feedback image
+            wrongImg.src = '../../pictures/general/wrong-sign.png'; // Path to the wrong feedback image
             wrongImg.style.width = '30px';
             feedbackElement.insertBefore(wrongImg, feedbackElement.firstChild);
             feedbackElement.style.backgroundColor = "rgb(247, 172, 172)";
         }
 
             // Show the feedback
+            document.getElementById('totalScore').textContent = score;
             feedbackElement.style.display = "block";
             Answers.style.display = "none";
         }

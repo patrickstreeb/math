@@ -51,58 +51,79 @@
     // </div>
 
 
-    
+   
         const quizContainers = document.querySelectorAll('.quiz-container');
-
+let gapCount=0;
         quizContainers.forEach(container => {
             const gaps = container.querySelectorAll('.gap');
-            const answerButtons = container.querySelectorAll('.answer-buttons button');
+            const answerButtons = container.querySelectorAll('.answer-buttons .button');
             const checkAnswerButton = container.querySelector('.check-answer');
             const feedback = container.querySelector('.feedback');
-
+            const gapc = container.querySelector('.gapcount');
+            let point = container.querySelector('.point').innerHTML;
+           
+           
             checkAnswerButton.addEventListener('click', () => {
                 gaps.forEach(gap => {
-                    const userAnswer = gap.textContent.trim();
-                    const correctAnswer = gap.getAttribute('data-answer');
-                    const checkAnswerButton = container.querySelector('.check-answer');
+                    let userAnswer = gap.textContent.trim();
+                    let correctAnswer = gap.getAttribute('data-answer');
+                                      
                     if (userAnswer === correctAnswer) {
                         gap.classList.remove('wrong-gap');
                         gap.classList.add('correct-gap');
+                        score = score + parseInt(point);
+
                     } else {
                         gap.classList.remove('correct-gap');
                         gap.classList.add('wrong-gap');
                     }
                     checkAnswerButton.style.display = "none";
+                    gapCount = gapCount + parseInt(point);
+                 
                 });
-
+                gapc.textContent=gapCount + 'Points';
                 const allCorrect = Array.from(gaps).every(gap => gap.classList.contains('correct-gap'));
 
                 
                 if (allCorrect) {
-                    feedback.textContent = 'All answers are correct! ' + feedback.innerHTML;
+                   
+                    feedback.textContent = 'All answers are correct! ' + feedback.textContent;
                     feedback.style.backgroundColor = "rgb(204, 239, 204)";
                     feedback.style.color = "darkgreen";
+                    
+
                 } else {
-                    feedback.textContent = 'Some answers are incorrect. ' + feedback.innerHTML;
+                  
+                    feedback.textContent = 'Some answers are incorrect. ' + feedback.textContent;
                     feedback.style.backgroundColor= "rgb(247, 172, 172)";
                     feedback.style.color = "darkred";
                 }
-                
+                document.getElementById('totalScore').textContent = score;
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub, feedback]);
                 feedback.style.display = "block";
-                const answerButtons = questioncontainer.querySelectorAll(".answerbutton");
+                
                 answerButtons.forEach(answerButton => {
                     answerButton.style.display = "none";
+                    
                 });
             });
 
             
             answerButtons.forEach(button => {
                 button.addEventListener('click', () => {
+                    const gaps = container.querySelectorAll('.gap');
                     const selectedAnswer = button.getAttribute('data-answer');
                     const selectedGap = Array.from(gaps).find(gap => gap.textContent.trim() === '');
                     if (selectedGap) {
                         selectedGap.textContent = selectedAnswer;
+                        MathJax.Hub.Queue(["Typeset", MathJax.Hub,selectedGap]);
+                        
+                        selectedGap.style.padding = "0px";
+                       
                     }
                 });
+
             });
+            
+            
         });

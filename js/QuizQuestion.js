@@ -113,22 +113,26 @@
             <div class="feedback">  No  </div>
         </div> */
 
-
+        
         function checkAnswer(userAnswer, button, questioncontainer) {
             // Get the feedback element for the specific question
+            const point = questioncontainer.querySelector('.point').innerHTML;;
             const feedbackElement = questioncontainer.querySelector(".feedback");
+            
+            
                 if (userAnswer) {
                     // If the user's answer is correct
                     const correctImg = new Image()
-            correctImg.src = '../pictures/general/checkmark.png'; 
+            correctImg.src = '../../pictures/general/checkmark.png'; 
             correctImg.style.width = '30px';
             // Path to the correct feedback image
             feedbackElement.insertBefore(correctImg, feedbackElement.firstChild);
             feedbackElement.style.backgroundColor = "rgb(204, 239, 204)";
+            score= score + parseInt(point);
                 } else {
                     // If the user's answer is wrong
                     const wrongImg = new Image();
-            wrongImg.src = '../pictures/general/wrong-sign.png'; // Path to the wrong feedback image
+            wrongImg.src = '../../pictures/general/wrong-sign.png'; // Path to the wrong feedback image
             wrongImg.style.width = '30px';
             feedbackElement.insertBefore(wrongImg, feedbackElement.firstChild);
             feedbackElement.style.backgroundColor = "rgb(247, 172, 172)";
@@ -136,6 +140,7 @@
                 // Show the feedback
                 feedbackElement.style.display = "block";
                 // Disable the answer buttons after checking
+                document.getElementById('totalScore').textContent = score;
                 const answerButtons = questioncontainer.querySelectorAll(".answerbutton");
                 answerButtons.forEach(answerButton => {
                     answerButton.style.display = "none";
