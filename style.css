@@ -11,7 +11,7 @@ body {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 14pt;
     line-height: 1.5;
-    max-width: 1000px;
+    max-width: 1100px;
 }
 .coursestartheading {
     font-size: 34pt;
@@ -42,6 +42,9 @@ body {
     display: flex;
     align-items: center;
     overflow:hidden;
+}
+.noborder {
+    border: none;
 }
 .backgroundimage {
 background-image: url('pictures/general/background.png');
@@ -187,7 +190,7 @@ overflow:hidden;
 }
 .answers {
     margin-left: 40px;
-    margin-top: 30px;
+    margin-top: 0px;
     margin-bottom: 20px;
 }
 .quiz-container {
