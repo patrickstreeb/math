@@ -39,14 +39,14 @@
             
         if (userAnswer === correctAnswer) {
             const correctImg = new Image()
-            correctImg.src = '../pictures/general/checkmark.png'; 
+            correctImg.src = '/pictures/general/checkmark.png'; 
             correctImg.style.width = '30px';
             // Path to the correct feedback image
             feedbackElement.insertBefore(correctImg, feedbackElement.firstChild);
             feedbackElement.style.backgroundColor = "rgb(204, 239, 204)";
         } else {
             const wrongImg = new Image();
-            wrongImg.src = '../pictures/general/wrong-sign.png'; // Path to the wrong feedback image
+            wrongImg.src = '/pictures/general/wrong-sign.png'; // Path to the wrong feedback image
             wrongImg.style.width = '30px';
             feedbackElement.insertBefore(wrongImg, feedbackElement.firstChild);
             feedbackElement.style.backgroundColor = "rgb(247, 172, 172)";
