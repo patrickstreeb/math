@@ -199,6 +199,11 @@ overflow:hidden;
     border-radius: 5px;
     border-color: #abaaaa;
 }
+.exercise2 {
+    border: solid 1px;
+    border-radius: 5px;
+    border-color: #abaaaa;
+}
 .topline {
     font-size: 12pt;
     margin-bottom: -10px;
@@ -319,22 +324,26 @@ header {
     margin-top: -10px;
     font-weight: lighter;
 }
-#progress {
-    flex-grow: 1;
+.progress-container {
+    width: 100%;
+    background-color: #ccc;
+    height: 30px;
+    position: relative;
 }
-#progressbar {
-    height: 20px;
-    background-color: #34b2fb;
-    width: 0%;
-    padding-bottom: 7px;
-    padding-left: 15px;
-    text-indent: -58px;
-    margin-top: -1px;
-    color:#fff;
-    font-weight: lighter;
-    margin-left: 40%;
-    border: solid 1px rgb(101, 102, 103);
+
+.progress-bar {
+    height: 100%;
+    width: 0;
+    background-color: #4CAF50;
+    position: absolute;
 }
+.progress-label {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .hidden {
     display: none;
 }
