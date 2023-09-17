@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+</head>
+<body>
+
+<div id="content">
+  This is some text with a gap: 
+  <br> <br>
+  \(A\) <span class="gap" data-answer="\( \in \)"></span> \(B\)
+</div>
+<br><br>
+<button class="button" data="\( \in \)" onclick="insertMath()">\( \in \)</button>
+
+<script>
+function insertMath() {
+  var gapElement = document.querySelector(".gap");
+  var button = document.querySelector(".button");
+  const answer = button.getAttribute("data");
+  if (gapElement) {
+    gapElement.innerHTML = answer;
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, gapElement]); // Typeset the MathJax code
+  }
+}
+</script>
+
+</body>
+</html>
