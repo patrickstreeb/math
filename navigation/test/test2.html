@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,14 +10,30 @@
     <meta name="keywords" content="math, functions, sets">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+        }
+    });
+</script>
+
     <link rel="stylesheet" type="text/css" href="../../style.css">
 </head>
+
 <body>
     <h2> Aufgaben zu Lage- und Streumaßen</h2>
     <h3>Aufgabe 1</h3>
     <div class="questioncontainer">
-        <div class=topline> <em>Aufgabe</em>      <span class="pointsandtimer"> <em>5 Punkte</em>   </span> </div>
-        <div class="question"> Gegeben ist die folgende Stichprobe \[X = (1, -2, 3, -4, 5, -6, 7, -8, 9, -5).\] Bestimme das arithmetische Mittel.</div>
+        <div class=topline> <em>Question</em> <span class="pointsandtimer"> <span class="gapcount"></span><em class="point">1</em> point</span> </div>
+        <div class="question"> 
+            Gegeben ist die folgende Stichprobe \[X = (1, -2, 3, -4, 5, -6, 7, -8, 9, -5).\] 
+            Bestimme das arithmetische Mittel.
+        </div>
         <div class="answers">
             <input class="input-box" type="text" placeholder="...">
             <div class="answerbutton" onclick="checkAnswer2(this, this.parentNode.parentNode)">Check Answer</div>
@@ -33,14 +50,13 @@
             </p>
         </div>
     </div>
-</div>
 
 <br> <br> 
     <h3 style="margin-left: 10px;">Aufgabe 2</h3>
     <div class="questioncontainer">
-    <p style="margin-left: 10px; font-size: 15pt;"> Betrachte die folgende Abbildung.
+    <p style="margin-left: 10px; font-size: 15pt;"> Betrachte die folgenden Abbildungen.
     </p>
-    <img src="\chapters\Statistics\statisticimages\article-mean-mode-median-ger.jpg" style="width: 100%">
+    <img title="Lagemaße und Verteilungen" src="../../chapters/Statistics/statisticimages/article-mean-mode-median-ger.png" style="width: 130%; margin-left: -15%">
     <div class="questioncontainer" style="border: none">
         <div class="question" > Die Abbildungen zeigen bimodale Verteilungen.
                 </div>
@@ -94,72 +110,11 @@
             \(x_i\) wird hingegen immer um \(1\) im Index vergrößert und läuft durch alle Elemente in der Stichprobe.
         </div>
     </div>
-    <div class="questioncontainer" style="border: none">
-        <div class="question"> Wie lautet das geometrische Mittel? 
-                </div>
-        <div class="answers">
-            <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> 
-                \[X_{geom} = \sqrt{x_1 \cdot \ldots \cdot x_n} \]</div>
-            <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)"> 
-                \[X_{geom} = \sqrt[n]{x_1 + \ldots + x_n} \] </div>
-            <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">  
-                \[X_{geom} = \sqrt[n]{x_1 \cdot \ldots \cdot x_n} \]</div>
-            <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> 
-                \[X_{geom} = \sqrt[n]{x_1 \cdot \ldots \cdot x_n} \] </div>
-        </div>
-        <div class="feedback"> Das geometrische Mittel ist definiert als die \(n\)te Wurzel des Produkts aller Elemente in der Stichprobe. 
-            \[X_{geom} = \sqrt[n]{x_1 \cdot \ldots \cdot x_n} \]
-        </div>
-    </div>
-    <div class="questioncontainer" style="border: none">
-        <div class="question"> 
-            Wie lautet der Median wenn \(n\) gerade ist?   
-        </div>
-        <div class="answers">
-            <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> 
-                \[\frac{1}{2} \cdot (x_{\frac{n}{2}} + x_{\frac{n+1}{2}})\]
-            </div>
-            <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)">  
-                \[\frac{1}{2} \cdot (x_{\frac{n}{2}} + x_{\frac{n}{2}+1})\]
-                </div>
-            <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">  
-                \[\frac{1}{2} \cdot (x_{\frac{n-1}{2}} + x_{\frac{n}{2}})\]
-            </div>
-            <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> 
-                \[\frac{1}{2} \cdot (x_{\frac{n-1}{2}} + x_{\frac{n+1}{2}})\] 
-            </div>
-        </div>
-        <div class="feedback"> 
-            Der Median ist definiert als der Mittelwert der beiden mittleren Elemente, wenn \(n\) gerade ist. 
-            \[\tilde{X} = \frac{1}{2} \cdot (x_{\frac{n}{2}} + x_{\frac{n}{2}+1})\]
-        </div>
-    </div>
-    <div class="questioncontainer" style="border: none">
-        <div class="question"> Wie lautet der Median wenn \(n\) ungerade ist?   </div>
-        <div class="answers">
-            <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> 
-                \[x_{\frac{n}{2}}\]
-            </div>
-            <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> 
-                \[x_{\frac{n-1}{2}}\] 
-            </div>
-            <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)"> 
-                \[x_{\frac{n+1}{2}}\]
-            </div>
-            <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> 
-                \[x_{\frac{n}{2}+1}\] 
-            </div>
-        </div>
-        <div class="feedback"> 
-            Der Median einer ungeraden Stichprobe ist definiert als das mittlere Element. \[\tilde{X} = x_{\frac{n}{2}}\]
-        </div>
-    </div>
 </div>
-</div
 
+<script src="../../js/gaptext.js"></script>
+<script src="../../js/Eingabefeldfrage2.js"></script>
+<script src="../../js/QuizQuestion.js"></script>
+</body>
 
-        <script src="../../js/gaptext.js"></script>
-        <script src="../../js/Eingabefeldfrage2.js"></script>
-        <script src="../../js/QuizQuestion.js"></script>
-    </body>
 </html>

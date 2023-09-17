@@ -128,6 +128,7 @@
             // Path to the correct feedback image
             feedbackElement.insertBefore(correctImg, feedbackElement.firstChild);
             feedbackElement.style.backgroundColor = "rgb(204, 239, 204)";
+            feedbackElement.style.border = "1px solid darkgreen";
             score= score + parseInt(point);
                 } else {
                     // If the user's answer is wrong
@@ -136,6 +137,7 @@
             wrongImg.style.width = '30px';
             feedbackElement.insertBefore(wrongImg, feedbackElement.firstChild);
             feedbackElement.style.backgroundColor = "rgb(247, 172, 172)";
+            feedbackElement.style.border = "1px solid darkred";
                 }
                 // Show the feedback
                 feedbackElement.style.display = "block";

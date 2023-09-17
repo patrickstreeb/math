@@ -89,14 +89,14 @@ let gapCount=0;
                    
                     feedback.textContent = 'All answers are correct! ' + feedback.textContent;
                     feedback.style.backgroundColor = "rgb(204, 239, 204)";
-                    feedback.style.color = "darkgreen";
+                    feedbackElement.style.border = "1px solid darkgreen";
                     
 
                 } else {
                   
                     feedback.textContent = 'Some answers are incorrect. ' + feedback.textContent;
                     feedback.style.backgroundColor= "rgb(247, 172, 172)";
-                    feedback.style.color = "darkred";
+                    feedbackElement.style.border = "1px solid darkred";
                 }
                 document.getElementById('totalScore').textContent = score;
                 MathJax.Hub.Queue(["Typeset", MathJax.Hub, feedback]);

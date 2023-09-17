@@ -11,7 +11,7 @@ body {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 14pt;
     line-height: 1.5;
-    max-width: 1100px;
+    max-width: 1000px;
 }
 .coursestartheading {
     font-size: 34pt;
@@ -43,11 +43,8 @@ body {
     align-items: center;
     overflow:hidden;
 }
-.noborder {
-    border: none;
-}
 .backgroundimage {
-background-image: url('/pictures/general/background.png');
+background-image: url('pictures/general/background.png');
 background-size: 100%;
 margin-left: -14pt;
 bottom: 0;
@@ -159,10 +156,9 @@ overflow:hidden;
 }
 .gap {
     border-bottom: 1px solid #000; 
-    display: inline-block;
-    padding: 10px; 
+    padding-right: 75px;
     min-width: 80px; 
-    height: 30px;
+    /* height: 30px; */
     margin-bottom: -3px;
     margin-left: 4px;
     margin-right: 8px;
@@ -187,10 +183,10 @@ overflow:hidden;
     margin-left: 40px;
     margin-top: 30px;
     margin-bottom: 20px;
+    line-height: 60px;
 }
 .answers {
     margin-left: 40px;
-    margin-top: 0px;
     margin-bottom: 20px;
 }
 .quiz-container {
@@ -201,13 +197,15 @@ overflow:hidden;
 .questioncontainer {
     border: solid 1px;
     border-radius: 5px;
-    border-color: #c3c2c2;
+    border-color: #abaaaa;
 }
 .topline {
     font-size: 12pt;
     margin-bottom: -10px;
     padding-left: 10px;
     padding-right: 10px;
+    line-height: 20px;
+    background-color: #f8f5f5;
 }
 .feedback {
     margin: 10px;
@@ -222,18 +220,20 @@ overflow:hidden;
     padding-left: 40px;
     padding-right: 20px;
     font-size: 20px;
-    background-image: url('/pictures/general/qarrow.png'); /* Set the image path */
+    background-image: url('pictures/general/qarrow.png'); /* Set the image path */
     background-repeat: no-repeat;
     background-size: 5px; /* Adjust the image size */
-    background-position: 9px 7px;
+    background-position: 9px 17px;
     background-size: 18px;
+    line-height: 50px;
+    max-width: 88%;
 }
 .question {
     margin-top: 40px;
     padding-left: 40px;
     padding-right: 20px;
     font-size: 20px;
-    background-image: url('/pictures/general/qarrow.png'); /* Set the image path */
+    background-image: url('pictures/general/qarrow.png'); /* Set the image path */
     background-repeat: no-repeat;
     background-size: 5px; /* Adjust the image size */
     background-position: 9px 7px;
@@ -309,6 +309,7 @@ header {
 .pointsandtimer {
     float: right;
     margin-left: 10px;
+    font-size: smaller;
 }
 .titleofsubsection {
     font-size: 20pt;
@@ -381,14 +382,14 @@ header {
 }
 
 .backward-btn {
-    background-image: url('/pictures/general/prev.png');
+    background-image: url('pictures/general/prev.png');
     background-repeat: no-repeat;
     background-size: 60% 100%;
     min-height: 40px;
     min-width: 40px;
 }
 .forward-btn {
-    background-image: url('/pictures/general/next.png');
+    background-image: url('pictures/general/next.png');
     background-repeat: no-repeat;
     background-size: 60% 100%;
     background-color: transparent;
