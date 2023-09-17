@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>math course</title>
     <meta name="description" content="course description goes here">
-    <link rel="shortcut icon" href="../pictures/general/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../../pictures/general/logo.png" type="image/x-icon">
     <meta name="keywords" content="math, functions, sets">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -22,12 +22,15 @@
     });
 </script>
 
+
     <link rel="stylesheet" type="text/css" href="../../style.css">
 </head>
 
 <body>
     
-    <h2>Exercise 4</h2>
+    
+    <div class="exercise2">
+    <h2 style=" text-align: center;font-size: 35px;">Exercise 4</h2>
     <p style="margin-left: 10px; font-size: 15pt;"> Given is the real valued matrix \(A = (a_{ij})_{1 \leq i,j \leq 3}
         \) given via \[A = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{pmatrix}.\]
         Find the following entries.
@@ -65,6 +68,7 @@
         </div>
         <div class="feedback"> The entry in the second row and third column is \(a_{23} = 6\). </div>
     </div>
+</div>
     <div class="questioncontainer">
         <div class=topline> <em>Question</em><span class="pointsandtimer"> <em class="point">1</em> point</span> </div>
         <div class="question">
@@ -83,7 +87,7 @@
 
     <br>
     <div class="questioncontainer">
-        <div class=topline> <em>Question</em> <span class="pointsandtimer"> <span class="gapcount"></span><em class="point">1</em> point</span> </div>
+        <div class=topline> <em>Question</em> <span class="pointsandtimer"> <em class="point">1</em> point</span><span class="gapcount"></span> </div>
         <div class="question">
             Given is the matrix \[A = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{pmatrix}.\] What is the
             value of \(a_{23}\)?
@@ -122,28 +126,28 @@
 
     <br>
     <div class="quiz-container">
-        <div class=topline> <em>Question</em><span class="pointsandtimer"><em class="point">1</em> point</span></div>
+        <div class=topline> <em>Question</em><span class="pointsandtimer"><span class="gapcount"></span>/ <em class="point">1</em> point</span></div>
         <div class="quiz-content">
             <!-- Edit the question and gaps here -->
             Let \(A, B\) be sets. \(A \subset B \) is equivalent to
             <br>
             <br>
-            \(x\) <span class="gap" style="min-width: 30px;" data-answer="\(\in\)"> </span>
-            <span class="gap" style="min-width: 30px;" data-answer="\(A\)"> </span>
+            \(x\) <span class="gap" style="min-width: 30px;" data-answer="in"></span>
+            <span class="gap" style="min-width: 30px;" data-answer="A"> </span>
             \(\Rightarrow x\)
-            <span class="gap" style="min-width: 30px;" data-answer="\(\in\)"> </span>
-            <span class="gap" style="min-width: 30px;" data-answer="\(B\)"> </span>
-            \(\ \ \ \forall x \in\) <span class="gap" data-answer="\(A\)"> </span>
+            <span class="gap" style="min-width: 30px;" data-answer="in"> </span>
+            <span class="gap" style="min-width: 30px;" data-answer="B"></span>
+            \(\ \ \ \forall x \in\) <span class="gap" data-answer="A"> </span>
         </div>
         <div class="answer-buttons">
             <!-- Edit the answer buttons here -->
-            <button class="button" data-answer="\(\in\)"> \(\in\) </button>
-            <button class="button" data-answer="\(\subset\)"> \(\subset\) </button>
-            <button class="button" data-answer="\(A\)"> \(A\) </button>
-            <button class="button" data-answer="\(B\)"> \(B\) </button>
+            <button class="button" data-answer="in">\(\in\)</button>
+            <button class="button" data-answer="\\subset">\(\subset\)</button>
+            <button class="button" data-answer="A">\(A\)</button>
+            <button class="button" data-answer="B">\(B\)</button>
         </div>
         <button class="check-answer">Check Answer</button>
-        <span class="feedback">Any element of \(A\) is also contained in \(B\).</span>
+        <span class="feedback">Any element of A is also contained in B.</span>
     </div>
 
     <!-- _______________________________________Multiple Choice_____________________________________ -->
@@ -179,9 +183,9 @@
     </div>
 
     <br>
-    <div class="questioncontainer1">
+    <div class="exercise2">
         
-        <h3 style="margin-left:10px;"> Exercise 2</h3>
+        <h3 style="margin-left:10px;text-align: center;font-size: 35px;"> Exercise 2</h3>
         <p style="margin-left: 10px; font-size: 15pt;"> Given is the real valued matrix \(A = (a_{ij})_{1 \leq i,j \leq
             3} \) given via \[A = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{pmatrix}.\]
         </p>
@@ -193,7 +197,7 @@
                 <button type="button" class="answerbutton" onclick="checkAnswer2(this, this.parentNode.parentNode)">Check Answer</button>
             </div>
             <div class="solution">1</div>
-            <div class="feedback"> The entry in the second row and third column is \(a_{23} = 6\).</div>
+            <div class="feedback"> The value of \(a_{11} = 1\).</div>
         </div>
         <div class="questioncontainer" style="border: none">
             <div class=topline> <em>Question</em> <span class="pointsandtimer"><em class="point">1</em> point</span> </div>
@@ -203,7 +207,7 @@
                 <div class="answerbutton" onclick="checkAnswer2(this, this.parentNode.parentNode)">Check Answer</div>
             </div>
             <div class="solution">3</div>
-            <div class="feedback"> The entry in the second row and third column is \(a_{23} = 6\).</div>
+            <div class="feedback"> The sum of  \(a_{11} + a_{12}=3\) .</div>
         </div>
         <div class="questioncontainer" style="border: none">
             <div class=topline> <em>Question</em> <span class="pointsandtimer"><em class="point">1</em> point</span> </div>
@@ -213,7 +217,7 @@
                 <div class="answerbutton" onclick="checkAnswer2(this, this.parentNode.parentNode)">Check Answer</div>
             </div>
             <div class="solution">8</div>
-            <div class="feedback"> The entry in the second row and third column is \(a_{23} = 6\).</div>
+            <div class="feedback"> The entry in the second row and third column is \(a_{32} = 8\).</div>
         </div>
     </div>
     <br>
@@ -259,6 +263,11 @@
     <div id="summary">
         <h2>Quiz Summary</h2>
         <p>Total Score: <span id="totalScore">0</span></p>
+        <p>Total Time: <span id="totalTime">0h 0m 0s</span></p>
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+            <div class="progress-label" id="progressLabel">0%</div>
+        </div>
     </div>
     
 

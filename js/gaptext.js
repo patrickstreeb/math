@@ -1,129 +1,146 @@
-// <!DOCTYPE html>
-// <html lang="en">
-// <head>
-//     <meta charset="UTF-8">
-//     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-//     <title>Gap Text Quiz</title>
-//     <style>
-//         /* Your styles here */
-//     </style>
-// </head>
-// <body>
-//     <div class="quiz-container">
-//         <div class="quiz-content">
-//             <!-- Edit the question and gaps here -->
-//             <p>Fill in the blanks:</p>
-//             <p>The capital of France is <span class="gap" data-answer="Paris"></span>.</p>
-//             <p>The largest planet in our solar system is <span class="gap" data-answer="Jupiter"></span>.</p>
-//         </div>
-//         <div class="answer-buttons">
-//             <!-- Edit the answer buttons here -->
-//             <button data-answer="Paris">Paris</button>
-//             <button data-answer="London">London</button>
-//             <button data-answer="Rome">Rome</button>
-//             <button data-answer="Jupiter">Jupiter</button>
-//             <button data-answer="Mars">Mars</button>
-//             <button data-answer="Venus">Venus</button>
-//         </div>
-//         <button class="check-answer">Check Answer</button>
-//         <p class="feedback"></p>
-//     </div>
-
-   
-    // <div class="quiz-container">
-    //     <div class="quiz-content">
-    //         <!-- Edit the question and gaps here -->
-    //         <p>Fill in the blanks:</p>
-    //         <p>The capital of France is <span class="gap" data-answer="Paris"></span>.</p>
-    //         <p>The largest planet in our solar system is <span class="gap" data-answer="Jupiter"></span>.</p>
-    //     </div>
-    //     <div class="answer-buttons">
-    //         <!-- Edit the answer buttons here -->
-    //         <button data-answer="Paris">Paris</button>
-    //         <button data-answer="London">London</button>
-    //         <button data-answer="Rome">Rome</button>
-    //         <button data-answer="Jupiter">Jupiter</button>
-    //         <button data-answer="Mars">Mars</button>
-    //         <button data-answer="Venus">Venus</button>
-    //     </div>
-    //     <button class="check-answer">Check Answer</button>
-    //     <p class="feedback"></p>
-    // </div>
+const timeLimitSeconds = 120 * 60;
+let totalTimeElapsed = 0;
 
 
-   
-        const quizContainers = document.querySelectorAll('.quiz-container');
-let gapCount=0;
-        quizContainers.forEach(container => {
-            const gaps = container.querySelectorAll('.gap');
-            const answerButtons = container.querySelectorAll('.answer-buttons .button');
-            const checkAnswerButton = container.querySelector('.check-answer');
-            const feedback = container.querySelector('.feedback');
-            const gapc = container.querySelector('.gapcount');
-            let point = container.querySelector('.point').innerHTML;
-           
-           
-            checkAnswerButton.addEventListener('click', () => {
-                gaps.forEach(gap => {
-                    let userAnswer = gap.textContent.trim();
-                    let correctAnswer = gap.getAttribute('data-answer');
-                                      
-                    if (userAnswer === correctAnswer) {
-                        gap.classList.remove('wrong-gap');
-                        gap.classList.add('correct-gap');
-                        score = score + parseInt(point);
 
-                    } else {
-                        gap.classList.remove('correct-gap');
-                        gap.classList.add('wrong-gap');
-                    }
-                    checkAnswerButton.style.display = "none";
-                    gapCount = gapCount + parseInt(point);
-                 
-                });
-                gapc.textContent=gapCount + 'Points';
-                const allCorrect = Array.from(gaps).every(gap => gap.classList.contains('correct-gap'));
+// Start a timer to update time elapsed
+const timerInterval = setInterval(() => {
+    totalTimeElapsed += 1;
+    updateTimeElapsed();
 
-                
-                if (allCorrect) {
-                   
-                    feedback.textContent = 'All answers are correct! ' + feedback.textContent;
-                    feedback.style.backgroundColor = "rgb(204, 239, 204)";
-                    feedbackElement.style.border = "1px solid darkgreen";
-                    
+    // Check if the time limit has been reached
+    if (totalTimeElapsed >= timeLimitSeconds) {
+        clearInterval(timerInterval);
+
+        // Disable all question elements
+        document.querySelectorAll('.quiz-container .answer-button').forEach(button => {
+            button.disabled = true;
+        });
+    }
+}, 1000);
+
+function updateTimeElapsed() {
+    const hours = Math.floor(totalTimeElapsed / 3600);
+    const minutes = Math.floor((totalTimeElapsed % 3600) / 60);
+    const seconds = totalTimeElapsed % 60;
+    const timeElapsedDisplay = `${hours}h ${minutes}m ${seconds}s`;
+    document.getElementById('totalTime').textContent = timeElapsedDisplay;
+}
+const totalQuestions = 20;
+// Function to convert LaTeX to plain text
+function convertToPlainText(latexString) {
+    // Replace LaTeX symbols with their plain text equivalents
+    const replacements = {
+        '\\(': '',  // Remove \( and \)
+        '\\)': '',
+        '\\[': '',
+        '\\]': '',
+        '\\in': '∈',
+        '\\subset': '⊆',
+        '\\cup': '∪',
+        '\\cap': '∩',
+        '\\subset': '\\(\\subset\\)', // Replace \subset with \(\subset\)
+       'A': 'A',   // Replace 'A' with 'A' in LaTeX
+    'B': 'B'    // Replace 'B' with 'B' in LaTeX
+    };
+
+    // Use regular expressions to replace LaTeX symbols
+    for (const [latexSymbol, plainText] of Object.entries(replacements)) {
+        const regex = new RegExp(latexSymbol, 'g');
+        latexString = latexString.replace(regex, plainText);
+    }
+
+    return latexString;
+}
+document.addEventListener("DOMContentLoaded", function () {
+    const quizContainers = document.querySelectorAll('.quiz-container');
+    let gapCount = 0;
+    quizContainers.forEach(container => {
+        const gaps = container.querySelectorAll('.gap');
+        const answerButtons = container.querySelectorAll('.answer-buttons .button');
+        const checkAnswerButton = container.querySelector('.check-answer');
+        const feedback = container.querySelector('.feedback');
+        const gapc = container.querySelector('.gapcount');
+        let point = container.querySelector('.point').innerHTML;
+        const progressBar = document.getElementById('progressBar');
+        const progressLabel = document.getElementById('progressLabel');
+
+        checkAnswerButton.addEventListener('click', () => {
+            gaps.forEach(gap => {
+
+                let userAnswer = convertToPlainText(gap.textContent.trim());
+                let correctAnswer = convertToPlainText(gap.getAttribute('data-answer'));
+
+                console.log("Correct Answer:", correctAnswer);
+                console.log("User Answer:", userAnswer);
+
+                if (userAnswer === correctAnswer) {
+                    gap.classList.remove('wrong-gap');
+                    gap.classList.add('correct-gap');
+                    score = score + parseInt(point);
+                    const percentage = (score / totalQuestions) * 100;
+                    progressBar.style.width = percentage + '%';
+                    progressLabel.textContent = "Progress" + percentage.toFixed(2) + '%';
 
                 } else {
-                  
-                    feedback.textContent = 'Some answers are incorrect. ' + feedback.textContent;
-                    feedback.style.backgroundColor= "rgb(247, 172, 172)";
-                    feedbackElement.style.border = "1px solid darkred";
+                    gap.classList.remove('correct-gap');
+                    gap.classList.add('wrong-gap');
                 }
-                document.getElementById('totalScore').textContent = score;
-                MathJax.Hub.Queue(["Typeset", MathJax.Hub, feedback]);
-                feedback.style.display = "block";
-                
-                answerButtons.forEach(answerButton => {
-                    answerButton.style.display = "none";
-                    
-                });
-            });
-
-            
-            answerButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const gaps = container.querySelectorAll('.gap');
-                    const selectedAnswer = button.getAttribute('data-answer');
-                    const selectedGap = Array.from(gaps).find(gap => gap.textContent.trim() === '');
-                    if (selectedGap) {
-                        selectedGap.textContent = selectedAnswer;
-                        MathJax.Hub.Queue(["Typeset", MathJax.Hub,selectedGap]);
-                        
-                        selectedGap.style.padding = "0px";
-                       
-                    }
-                });
+                checkAnswerButton.style.display = "none";
+                gapCount = gapCount + parseInt(point);
 
             });
-            
-            
+            gapc.textContent = gapCount + 'Points';
+            const allCorrect = Array.from(gaps).every(gap => gap.classList.contains('correct-gap'));
+            feedback.style.display = "block";
+            MathJax.Hub.Queue(["Typeset", MathJax.Hub, feedback]);
+            answerButtons.forEach(answerButton => {
+                answerButton.style.display = "none";
+
+            });
+            document.getElementById('totalScore').textContent = score;
+            if (allCorrect) {
+
+                feedback.textContent = 'All answers are correct! ' + feedback.textContent;
+                feedback.style.backgroundColor = "rgb(204, 239, 204)";
+                feedback.style.border = "1px solid green";
+
+
+            } else {
+
+                feedback.textContent = 'Some answers are incorrect. ' + feedback.textContent;
+                feedback.style.backgroundColor = "rgb(247, 172, 172)";
+                feedback.style.border = "1px solid red";
+            }
+
+
         });
+
+
+        answerButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const gaps = container.querySelectorAll('.gap');
+                const selectedAnswer = convertToPlainText(button.getAttribute('data-answer'));
+                console.log("button answer:", selectedAnswer);
+                const selectedGap = Array.from(gaps).find(gap => gap.textContent.trim() === '');
+                if (selectedGap) {
+                    selectedGap.textContent = selectedAnswer;
+                    MathJax.Hub.Queue(["Typeset", MathJax.Hub, selectedGap]);
+
+                    selectedGap.style.padding = "0px";
+
+                }
+            });
+
+        });
+
+
+    });
+});
+
+
+
+
+
+
+
