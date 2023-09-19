@@ -21,10 +21,10 @@ function insertMath() {
   var gapElement = document.querySelector(".gap");
   var button = document.querySelector(".button");
   const answer = button.getAttribute("data");
-  if (gapElement) {
+ 
     gapElement.innerHTML = answer;
     MathJax.Hub.Queue(["Typeset", MathJax.Hub, gapElement]); // Typeset the MathJax code
-  }
+ 
 }
 </script>
 

@@ -1,221 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>math course</title>
-    <meta name="description" content="course description goes here">
-    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
-    <meta name="keywords" content="math, functions, sets">
+    <meta name="description" content="course description goes here" />
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
+    <meta name="keywords" content="math, functions, sets" />
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <link rel="stylesheet" type="text/css" href="../../style.css">
-</head>
-<body>
-<div id="content-section">
-    <header id="toolbar" >
-        <div class="titleofsubsection"> TITLE  </div>  <div id="countup-timer"> 00:00</div>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+    <link rel="stylesheet" type="text/css" href="../../style.css" />
+  </head>
+  <body>
+    <div id="content-section">
+      <header id="toolbar">
+        <div class="titleofsubsection">TITLE</div>
+        <div id="countup-timer">00:00</div>
         <div id="progress">
-            <div id="progressbar"> </div> <div class="progressbar">  startTimer() </div>
+          <div id="progressbar"></div>
+          <div class="progressbar">startTimer()</div>
         </div>
-    </header>
-    <footer class="footer">
-        <button class="page-button backward-btn" id="backward-btn" onclick="navigatePage(-1)"> <span class="hidden">back</span> </button>
+      </header>
+      <footer class="footer">
+        <button
+          class="page-button backward-btn"
+          id="backward-btn"
+          onclick="navigatePage(-1)"
+        >
+          <span class="hidden">back</span>
+        </button>
         <span id="pageNumber"> </span>
-        <button class="page-button forward-btn" id="forward-btn" onclick="navigatePage(1)"> <span class="hidden">next</span></button>
-    </footer>
-    <div class="content">
+        <button
+          class="page-button forward-btn"
+          id="forward-btn"
+          onclick="navigatePage(1)"
+        >
+          <span class="hidden">next</span>
+        </button>
+      </footer>
+      <div class="content">
         <div class="page-content backgroundimage" data-page="0">
-            <div class="coursestartheading"> Chapter XX PART YY <br> SUBTITLE  </div> 
-            <br> 
-            <div class="coursestartfont"> DESCRIPTION <br> <br>
-            <button class="forward-btn" class="frame" onclick="navigatePage(1)">start </button>  </div>
+          <div class="coursestartheading">
+            Chapter XX PART YY <br>
+            SUBTITLE
+          </div>
+          <br>
+          <div class="coursestartfont">
+            DESCRIPTION <br>
+            <br>
+            <button class="forward-btn" class="frame" onclick="navigatePage(1)">
+              start
+            </button>
+          </div>
         </div>
         <div class="page-content" data-page="1">
-            <div class="theoryheader"> 
-                <div class="theorynumber">1 </div> 
-                <div class="theorytitle"> THEORY 1</div>
-            </div> </br>
-            TEXT  <br /> <br/>
-            <div class="definition-box">
-                <div class="definition-title">TITLE</div>
-                <div class="definition-content">
-                <ul class="liststyling">
-                    <li></li>   
-                    <li></li>
-                </ul>
+          <div class="theoryheader">
+            <div class="theorynumber">1</div>
+            <div class="theorytitle">THEORY 1</div>
+          </div>
+          <br>
+          TEXT <br>
+          <br>
+          <div class="definition-box">
+            <div class="definition-title">TITLE</div>
+            <div class="definition-content">
+              <ul class="liststyling">
+                <li></li>
+                <li></li>
+              </ul>
             </div>
+          </div>
         </div>
-        <div class="page-content" data-page="2">
-            
-        </div>
-        <div class="page-content" data-page="3">
-            
-        </div>
-        <div class="page-content" data-page="4">
-            
-        </div>
-        <div class="page-content" data-page="5">
-            
-        </div>
+        <div class="page-content" data-page="2"></div>
+        <div class="page-content" data-page="3"></div>
+        <div class="page-content" data-page="4"></div>
+        <div class="page-content" data-page="5"></div>
 
         <div class="page-content" data-page="6">
-            <div class="theoryheader"> 
-                <div class="theorynumber">2 </div> 
-                <div class="theorytitle"> THEORY 2</div>
-            </div> </br>
-            TEXT  <br /> <br/>
-            <div class="definition-box">
-                <div class="definition-title">TITLE</div>
-                <div class="definition-content">
-                <ul class="liststyling">
-                    <li></li>   
-                    <li></li>
-                </ul>
+          <div class="theoryheader">
+            <div class="theorynumber">2</div>
+            <div class="theorytitle">THEORY 2</div>
+          </div>
+          <br>
+          TEXT <br>
+          <br>
+          <div class="definition-box">
+            <div class="definition-title">TITLE</div>
+            <div class="definition-content">
+              <ul class="liststyling">
+                <li></li>
+                <li></li>
+              </ul>
             </div>
+          </div>
         </div>
-        <div class="page-content" data-page="7">
-            
-        </div>
-        <div class="page-content" data-page="8">
-            
-        </div>
-        <div class="page-content" data-page="9">
-            
-        </div>
-        <div class="page-content" data-page="10">
-            
-        </div>
+        <div class="page-content" data-page="7"></div>
+        <div class="page-content" data-page="8"></div>
+        <div class="page-content" data-page="9"></div>
+        <div class="page-content" data-page="10"></div>
 
         <div class="page-content" data-page="11">
-            <div class="theoryheader"> 
-                <div class="theorynumber">3 </div> 
-                <div class="theorytitle"> THEORY 3</div>
-            </div> </br>
-            TEXT  <br /> <br/>
-            <div class="definition-box">
-                <div class="definition-title">TITLE</div>
-                <div class="definition-content">
-                <ul class="liststyling">
-                    <li></li>   
-                    <li></li>
-                </ul>
+          <div class="theoryheader">
+            <div class="theorynumber">3</div>
+            <div class="theorytitle">THEORY 3</div>
+          </div>
+          <br>
+          TEXT <br>
+          <br>
+          <div class="definition-box">
+            <div class="definition-title">TITLE</div>
+            <div class="definition-content">
+              <ul class="liststyling">
+                <li></li>
+                <li></li>
+              </ul>
             </div>
+          </div>
         </div>
-        <div class="page-content" data-page="12">
-            
-        </div>
-        <div class="page-content" data-page="13">
-            
-        </div>
-        <div class="page-content" data-page="14">
-            
-        </div>
-        <div class="page-content" data-page="15">
-            
-        </div>
+        <div class="page-content" data-page="12"></div>
+        <div class="page-content" data-page="13"></div>
+        <div class="page-content" data-page="14"></div>
+        <div class="page-content" data-page="15"></div>
 
         <div class="page-content" data-page="16">
-            <div class="theoryheader"> 
-                <div class="theorynumber">4 </div> 
-                <div class="theorytitle"> THEORY 4</div>
-            </div> </br>
-            TEXT  <br /> <br/>
-            <div class="definition-box">
-                <div class="definition-title">TITLE</div>
-                <div class="definition-content">
-                <ul class="liststyling">
-                    <li></li>   
-                    <li></li>
-                </ul>
+          <div class="theoryheader">
+            <div class="theorynumber">4</div>
+            <div class="theorytitle">THEORY 4</div>
+          </div>
+          <br>
+          TEXT <br>
+          <br>
+          <div class="definition-box">
+            <div class="definition-title">TITLE</div>
+            <div class="definition-content">
+              <ul class="liststyling">
+                <li></li>
+                <li></li>
+              </ul>
             </div>
+          </div>
         </div>
-        <div class="page-content" data-page="17">
-            
-        </div>
-        <div class="page-content" data-page="18">
-            
-        </div>
-        <div class="page-content" data-page="19">
-            
-        </div>
-        <div class="page-content" data-page="20">
-            
-        </div>
+
+        <div class="page-content" data-page="17"></div>
+        <div class="page-content" data-page="18"></div>
+        <div class="page-content" data-page="19"></div>
+        <div class="page-content" data-page="20"></div>
 
         <div class="page-content" data-page="21">
-            <div class="theoryheader"> 
-                <div class="theorynumber">5 </div> 
-                <div class="theorytitle"> THEORY 5</div>
-            </div> </br>
-            TEXT  <br /> <br/>
-            <div class="definition-box">
-                <div class="definition-title">TITLE</div>
-                <div class="definition-content">
-                <ul class="liststyling">
-                    <li></li>   
-                    <li></li>
-                </ul>
+          <div class="theoryheader">
+            <div class="theorynumber">5</div>
+            <div class="theorytitle">THEORY 5</div>
+          </div>
+          <br>
+          TEXT <br>
+          <br>
+          <div class="definition-box">
+            <div class="definition-title">TITLE</div>
+            <div class="definition-content">
+              <ul class="liststyling">
+                <li></li>
+                <li></li>
+              </ul>
             </div>
+          </div>
         </div>
-        <div class="page-content" data-page="22">
-            
-        </div>
-        <div class="page-content" data-page="23">
-            
-        </div>
-        <div class="page-content" data-page="24">
-            
-        </div>
-        <div class="page-content" data-page="25">
-            
-        </div>
+
+        <div class="page-content" data-page="22"></div>
+        <div class="page-content" data-page="23"></div>
+        <div class="page-content" data-page="24"></div>
+        <div class="page-content" data-page="25"></div>
 
         <div class="page-content" data-page="26">
-            <div class="theoryheader"> 
-                <div class="theorynumber">6 </div> 
-                <div class="theorytitle"> THEORY 6</div>
-            </div> </br>
-            TEXT  <br /> <br/>
-            <div class="definition-box">
-                <div class="definition-title">TITLE</div>
-                <div class="definition-content">
-                <ul class="liststyling">
-                    <li></li>   
-                    <li></li>
-                </ul>
+          <div class="theoryheader">
+            <div class="theorynumber">6</div>
+            <div class="theorytitle">THEORY 6</div>
+          </div>
+          <br>
+          TEXT <br>
+          <br>
+          <div class="definition-box">
+            <div class="definition-title">TITLE</div>
+            <div class="definition-content">
+              <ul class="liststyling">
+                <li></li>
+                <li></li>
+              </ul>
             </div>
+          </div>
         </div>
-        <div class="page-content" data-page="27">
-            
-        </div>
-        <div class="page-content" data-page="28">
-            
-        </div>
-        <div class="page-content" data-page="29">
-            
-        </div>
-        <div class="page-content" data-page="30">
-            
-        </div>
+        <div class="page-content" data-page="27"></div>
+        <div class="page-content" data-page="28"></div>
+        <div class="page-content" data-page="29"></div>
+        <div class="page-content" data-page="30"></div>
 
-
-    <div class="page-content" data-page="31">
-        <h2> final score</h2>
-        <div class="statistics"> 
-            <div class="chapterscompleted"> chapters completed: +1 </div>
-            <div class="pointsearned">  points earned: x/total points </div>
-            <div class="timestudied">    time studied: +32 min </div>
+        <div class="page-content" data-page="31">
+          <h2>final score</h2>
+          <div class="statistics">
+            <div class="chapterscompleted">chapters completed: +1</div>
+            <div class="pointsearned">points earned: x/total points</div>
+            <div class="timestudied">time studied: +32 min</div>
+          </div>
         </div>
+      </div>
     </div>
-    </div>
-</div>
 
     <script src="../../js/pagenavigation.js"></script>
     <script src="../../js/header.js"></script>
     <script src="../../js/gaptext.js"></script>
     <script src="../../js/QuizQuestion.js"></script>
     <script src="../../js/Eingabefeldfrage.js"></script>
-    <script src="../../js/showContent.js" > </script>
-</body>
+    <script src="../../js/showContent.js"></script>
+  </body>
 </html>
