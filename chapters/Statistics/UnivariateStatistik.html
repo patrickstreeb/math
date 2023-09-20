@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>math course</title>
+    <meta name="description" content="course description goes here" />
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
+    <meta name="keywords" content="math, functions, sets" />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+    <link rel="stylesheet" type="text/css" href="../../style.css" />
+  </head>
+  <body>
+<div id="content-section">
+    <header id="toolbar">
+    <div class="titleofsubsection">Univariate Statistik</div>
+    <div id="countup-timer">00:00</div>
+    <div id="progress">
+        <div id="progressbar"></div>
+        <div class="progressbar"></div>
+    </div>
+    </header>
+    <footer class="footer">
+    <button
+        class="page-button backward-btn"
+        id="backward-btn"
+        onclick="navigatePage(-1)"
+    >
+        <span class="hidden">back</span>
+    </button>
+    <span id="pageNumber"> </span>
+    <button
+        class="page-button forward-btn"
+        id="forward-btn"
+        onclick="navigatePage(1)"
+    >
+        <span class="hidden">next</span>
+    </button>
+    </footer>
+    <div class="content">
+        <div class="page-content backgroundimage" data-page="0">
+            <div class="coursestartheading">
+            Univariate Statistik <br>
+            Lage- und Streumaße
+            </div>
+            <br>
+            <div class="coursestartfont">
+            arithemtisches Mittel, geometrisches Mittel, Median, Modus, Varianz, Standardabweichung, Spannweite. <br>
+            <br>
+            <button class="forward-btn" class="frame" onclick="navigatePage(1)">
+                start
+            </button>
+            </div>
+        </div>
+        <div class="page-content" data-page="1">
+            <div class="theoryheader">
+            <div class="theorynumber">1</div>
+            <div class="theorytitle"> Arithemtisches Mittel
+
+            </div>
+            </div>
+            <br>
+            Das arithmetische Mittel ist ein Lagemaß, das den Mittelwert einer Stichprobe angibt. Er gehört zu den wichtigsten Kennzahlen der deskriptiven Statistik. <br>
+            <br>
+            <div class="definition-box">
+            <div class="definition-title"> Definition
+
+            </div>
+            <div class="definition-content">
+                Das arithmetische Mittel ist definiert als \[\overline{X} = \frac{1}{n} \sum_{i=1}^n x_i.\]
+            </div>
+            </div>
+            <br>
+            <b>Beispiel.</b> \(X = (1, 0,2,-3,0).\)
+            \[\overline{X} = \frac{1}{5} \sum_{i=1}^{5} x_i = \frac{1}{5} \cdot (1 + 0 + 2 - 3 + 0) = 0.\]
+        </div>
+        <div class="page-content" data-page="2">
+            <div class="questioncontainer">
+                <div class=topline> <em>Lagemaße</em> <span class="pointsandtimer"> <span class="gapcount"></span><em class="point">2</em> Punkte</span> </div>
+                <div class="question"> 
+                    Gegeben ist die folgende Stichprobe \[X = (1, -2, 3, -4, 5, -6, 7, -8, 9, -5).\] Bestimme das arithmetische Mittel.
+                </div>
+                <div class="answers">
+                    <input class="input-box" type="text" placeholder="...">
+                    <div class="answerbutton" onclick="checkAnswer2(this, this.parentNode.parentNode)">Check Answer</div>
+                </div>
+                <div class="solution">0</div>
+                <div class="feedback feedback-text">
+                        Für die gegebene Stichprobe ergibt sich
+                        \begin{array}{lll} \overline{X} & = & \displaystyle 
+                        \frac{1}{10} \sum_{i=1}^{10} x_i \\ & = & \displaystyle 
+                        \frac{1}{10} \cdot (1 - 2 + 3 - 4 + 5 - 6 + 7 - 8 + 9 
+                        - 5) \\ & = & 0 \end{array} 
+                </div>
+            </div>
+        </div>
+        <div class="page-content" data-page="3">
+                <div class="questioncontainer">
+                    <div class=topline> Grundwissen <span class="pointsandtimer"><span class="gapcount"></span> / <em class="point">1</em> Punkt</span></div>
+                    <div class="question" > Gegeben ist die allgemeine Stichprobe \[X = (x_1, x_2, \dots, x_n).\] Wie lautet das arithmetische Mittel? </div>
+                    <div class="answers">
+                        <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">\[\overline{X} =  \sum_{i=1}^n x_i\] </div>
+                        <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">\[\overline{X} = \frac{1}{n+1} \sum_{i=1}^n x_i\] </div>
+                        <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)">\[\overline{X} = \frac{1}{n} \sum_{i=1}^n x_i\] </div>
+                        <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">\[\overline{X} = \frac{1}{n} \sum_{i=1}^n x_n\] </div>
+                    </div>
+                    <div class="feedback"> Das arithmetische Mittel ist definiert als \[\overline{X} = \frac{1}{n} \sum_{i=1}^n x_i.\] 
+                        Die letzte Antwort ist falsch, da jedesmal \(x_n\) summert wird. Dies ergibt:
+                        \[\overline{X} = \frac{1}{n} \cdot (x_n + x_n + \ldots + x_n) = \frac{n}{n} \cdot x_n = x_n.\]
+                        \(x_i\) wird hingegen immer um \(1\) im Index vergrößert und läuft durch alle Elemente in der Stichprobe.
+                    </div>
+                </div>
+        </div>
+        <div class="page-content" data-page="4">
+            <div class="questioncontainer">
+                <div class=topline> <em>Streumaße</em> <span class="pointsandtimer"> <em class="point">1</em> Punkt</span> </div>
+                <div class="question"> Wie lautet \(Q_{0.25}\) für die folgende Stichprobe? \[X = (1, -2, 3, 9, -5).\] </div>
+                <div class="answers">
+                    <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)">-2 </div>
+                    <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> 3 </div>
+                    <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> 1</div>
+                    <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> 9 </div>
+                </div>
+                <div class="feedback"> Die geordnete Stichprobe lautet \((-5, -2, 1, 3, 9)\). 
+                    Das untere Quartil ergibt sich aus \[ n \cdot p = 5 \cdot 0.25 = 1.25 .\] Da \(1.25\) keine
+                    natürliche Zahl ist, wird auf \(2\) gerundet: \[Q_{0.25} = x_2 = -2.\]
+        
+                </div>
+            </div>
+        
+        </div>
+        <div class="page-content" data-page="5">
+            <div class="questioncontainer">
+                <div class=topline> Arithmetisches Mittel <span class="pointsandtimer"><em class="point">1</em> Punkt</span> </div>
+                <div class="question"> Ist das arithmetische Mittel gegenüber Ausreißern robust? </div>
+                <div class="answers">
+                    <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">Ja</div>
+                    <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)">Nein</div>
+                </div>
+                <div class="feedback"> Dies ist nicht der Fall. Betrachte die Stichprobe 
+                    \[X = (1, 2, 3, 4, 5, 6, 7, 8, 9, 100).\] 
+                    Das arithmetische Mittel ist \(\overline{X} = 15.5\). 
+                    Wird nun der Ausreißer \(100\) durch \(10\) ersetzt, ergibt sich \(\overline{X} = 5.5\). 
+                    Der vorige Mittelwert wäre dann selbst ein Ausreißer. 
+                </div>
+                </div>
+        </div>
+        <div class="page-content" data-page="6">
+            <div class="theoryheader">
+            <div class="theorynumber">2</div>
+            <div class="theorytitle">Geometrisches Mittel</div>
+            </div>
+            <br>
+            Das geometrische Mittel ist ein Lagemaß, das den Mittelwert einer Stichprobe angibt.
+            Es wird typischerweise bestimmt, um die mittlere Veränderungsrate einer Größe zu berechnen.
+            Angaben sind dann in der Regel in Prozent. <br>
+
+            <br>
+            <div class="definition-box">
+            <div class="definition-title">Defintion</div>
+            <div class="definition-content">
+                Das geometrische Mittel ist definiert als \[X_{geom} = \sqrt[n]{x_1 \cdot \ldots \cdot x_n}.\]
+            </div>
+            </div>
+            <br>
+            Beispielsweise ist das geometrische Mittel der Stichprobe \((1, 2, 3, 4, 5)\) gegeben durch
+            \[X_{geom} = \sqrt[5]{1 \cdot 2 \cdot 3 \cdot 4 \cdot 5} = \sqrt[5]{120}.\]
+        </div>
+        <div class="page-content" data-page="7">
+            <div class="questioncontainer">
+                <div class=topline> Geometrisches Mittel <span class="pointsandtimer"><em class="point">1</em> Punkt</span> </div>
+                <div class="question"> Gegeben ist die allgemeine Stichprobe \[X = (x_1, x_2, \dots, x_n).\] Wie lautet das geometrische Mittel? 
+                        </div>
+                <div class="answers">
+                    <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> 
+                        \[X_{geom} = \sqrt{x_1 \cdot \ldots \cdot x_n} \]</div>
+                    <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)"> 
+                        \[X_{geom} = \sqrt[n]{x_1 + \ldots + x_n} \] </div>
+                    <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">  
+                        \[X_{geom} = \sqrt[n]{x_1 \cdot \ldots \cdot x_n} \]</div>
+                    <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> 
+                        \[X_{geom} = \sqrt[n]{x_1 \cdot \ldots \cdot x_n} \] </div>
+                </div>
+                <div class="feedback"> Das geometrische Mittel ist definiert als die \(n\)te Wurzel des Produkts aller Elemente in der Stichprobe. 
+                    \[X_{geom} = \sqrt[n]{x_1 \cdot \ldots \cdot x_n} \]
+                </div>
+            </div>
+        </div>
+        <div class="page-content" data-page="8">
+            <div class="questioncontainer">
+                <div class=topline> Grundwissen <span class="pointsandtimer"><span class="gapcount"></span> / <em class="point">1</em> Punkt</span></div>
+                <div class="question"> Gegeben is die folgende Tabelle, die die Inflationsrate aus 5 Jahren angibt.
+                    \begin{array}{|c|c|c|c|c|} \hline Jahr & 2015 & 2016 & 2017 & 2018 & 2019 \\ \hline Inflationsrate & 0.3 & 0.5 & 0.8 & 1.1 & 1.4 \\ \hline \end{array}
+                    Welcher Mittelwert eignet sich hier?
+                        </div>
+                <div class="answers">
+                    <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> 
+                        arithmetisches Mittel </div>
+                    <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)"> 
+                        geometrisches Mittel </div>
+                </div>
+                <div class="feedback"> Das geometrische Mittel eignet sich hier, da die Inflationsrate in Prozent angegeben ist. 
+                    \[X_{geom} = \sqrt[5]{0.3 \cdot 0.5 \cdot 0.8 \cdot 1.1 \cdot 1.4} = 0.8\]
+                </div>
+            </div>
+        </div>
+        <div class="page-content" data-page="9">
+            <div class="quiz-container">
+                <div class=topline> Grundwissen <span class="pointsandtimer"><span class="gapcount"></span> / <em class="point">1</em> Punkt</span></div>
+                <div class="quiz-content">
+                    Eine <span class="gap" data-answer="Stichprobe"></span>
+                    ist nicht unbedingt representativ für die <span class="gap" data-answer="Grundgesamtheit"></span>.
+                    Mit zunehmender <span class="gap" data-answer="Stichprobengröße"> </span> wird die Stichprobe bei zufälliger Auswahl
+                    jedoch immer <span class="gap" data-answer="repräsentativer"> </span>.
+                </div>
+                <div class="answer-buttons">
+                    <button class="button" data-answer="Grundgesamtheit">Grundgesamtheit</button>
+                    <button class="button" data-answer="repräsentativer">repräsentativer</button>
+                    <button class="button" data-answer="Stichprobe">Stichprobe</button>
+                    <button class="button" data-answer="Stichprobengröße">Stichprobengröße</button>
+                </div>
+                <button class="check-answer">Check Answer</button>
+                <span class="feedback">hello</span>
+            </div>
+        </div>
+        <div class="page-content" data-page="10">
+            <div class="questioncontainer">
+                <div class=topline> Streumaße <span class="pointsandtimer"> <span class="gapcount"></span><em class="point">1</em> Punkt</span> </div>
+                <div class="question">
+                    Bestimme die Standardabweichung der Stichprobe \[X = (-1,1,-1,1,-1,1,-1,3,-2).\]
+                </div>
+                <div class="answers">
+                    <input class="input-box" type="text" placeholder="...">
+                    <div class="answerbutton" onclick="checkAnswer2(this, this.parentNode.parentNode)">Check Answer</div>
+                </div>
+                <div class="solution">2</div>
+                <div class="feedback">
+                    <span class="feedback-text"> 
+                        Die Standardabweichung ist definiert als \[s_x = \sqrt{\frac{1}{n} \sum_{i=1}^n (x_i - \overline{x})^2}.\] 
+                        Für die gegebene Stichprobe ergibt sich
+                        \begin{array}{lll} s_x & = & \displaystyle 7 \cdot (1-0)^2 + (3 - 0)^2 + (-2 - 0)^2 \\ & = & \sqrt{\frac{20}{5}} \\ & = & 2
+                        \end{array}
+                        <br> <em>Hinweis: \((-1)^2 = 1^2\)</em>
+                        </em>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="page-content" data-page="11">
+            <div class="theoryheader">
+            <div class="theorynumber">3</div>
+            <div class="theorytitle">Der Modus</div>
+            </div>
+            <br>
+            Der Modus ist ein Lagemaß, das den Wert angibt, der am häufigsten in einer Stichprobe vorkommt. 
+            Er muss jedoch nicht eindeutig sein. In der folgenden Auflistung von Personenzahlen mit verschiedenem Alter ist der 
+            Modus \(X_{mod} = 20\) und \(X_{mod} = 24\).
+            <br>
+            <br>
+            <table>
+                <tr>
+                    <th>Alter</th>
+                    <td>20</td>
+                    <td>21</td>
+                    <td>22</td>
+                    <td>23</td>
+                    <td>24</td>
+                    <td>25</td>
+                    <td>26</td>
+                    <td>27</td>
+                    <td>28</td>
+                </tr>
+                <tr>
+                    <th>Anzahl</th>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            </table>
+            <br>
+            <div class="definition-box">
+                <div class="definition-title">Definition</div>
+                <div class="definition-content">
+                    Der Modus \(X_{mod}\) ist der Wert, der am häufigsten in einer Stichprobe vorkommt.
+                </div>
+            </div>
+        </div>
+        <div class="page-content" data-page="12">
+            <div class="questioncontainer">
+                <div class=topline> Der Median <span class="pointsandtimer"><span class="gapcount"></span> / <em class="point">1</em> Punkt</span></div>
+                <div class="question"> 
+                    Gegeben ist die allgemeine Stichprobe \[X = (x_1, x_2, \dots, x_n).\] Wie lautet der Median wenn \(n\) gerade ist?   
+                </div>
+                <div class="answers">
+                    <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> 
+                        \[\frac{1}{2} \cdot (x_{\frac{n}{2}} + x_{\frac{n+1}{2}})\]
+                    </div>
+                    <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)">  
+                        \[\frac{1}{2} \cdot (x_{\frac{n}{2}} + x_{\frac{n}{2}+1})\]
+                        </div>
+                    <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">  
+                        \[\frac{1}{2} \cdot (x_{\frac{n-1}{2}} + x_{\frac{n}{2}})\]
+                    </div>
+                    <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> 
+                        \[\frac{1}{2} \cdot (x_{\frac{n-1}{2}} + x_{\frac{n+1}{2}})\] 
+                    </div>
+                </div>
+                <div class="feedback"> 
+                    Der Median ist definiert als der Mittelwert der beiden mittleren Elemente, wenn \(n\) gerade ist. 
+                    \[\tilde{X} = \frac{1}{2} \cdot (x_{\frac{n}{2}} + x_{\frac{n}{2}+1})\]
+                </div>
+            </div>
+        </div>
+        <div class="page-content" data-page="13">
+            <div class="questioncontainer">
+                <div class="question"> Gegeben ist die allgemeine Stichprobe \[X = (x_1, x_2, \dots, x_n).\] 
+                    Wie lautet der Median wenn \(n\) ungerade ist?   </div>
+                <div class="answers">
+                    <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> 
+                        \[x_{\frac{n}{2}}\]
+                    </div>
+                    <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> 
+                        \[x_{\frac{n-1}{2}}\] 
+                    </div>
+                    <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)"> 
+                        \[x_{\frac{n+1}{2}}\]
+                    </div>
+                    <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> 
+                        \[x_{\frac{n}{2}+1}\] 
+                    </div>
+                </div>
+                <div class="feedback"> 
+                    Der Median einer ungeraden Stichprobe ist definiert als das mittlere Element. \[\tilde{X} = x_{\frac{n}{2}}\]
+                </div>
+            </div>
+        </div>
+        <div class="page-content" data-page="14">
+            <h3 style="margin-left: 10px;">Aufgabe 2</h3>
+            <div class="questioncontainer">
+                <div class=topline> Lagemaße und Verteilungen <span class="pointsandtimer"> <span class="gapcount"></span><em class="point">4</em> Punkte</span> </div>
+                <img title="Lagemaße und Verteilungen" src="../../chapters/Statistics/statisticimages/article-mean-mode-median-ger.png" style="width: 115%; margin-left: -8%">
+                <div class="questioncontainer" style="border: none">
+                    <div class=topline> <span class="pointsandtimer"><em class="point">1</em> Punkt</span> </div>
+                    <div class="question" > Die Abbildungen zeigen bimodale Verteilungen.
+                    </div>
+                    <div class="answers">
+                        <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">richtig</div>
+                        <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)">falsch</div>
+                    </div>
+                    <div class="feedback"> Die Aussage ist falsch, es handelt sich um unimodale Verteilungen. </div>
+                </div>
+                <div class="questioncontainer" style="border: none">
+                    <div class=topline> <span class="pointsandtimer"><em class="point">1</em> Punkt</span> </div>
+                    <div class="question">
+                        Die linke Abbildung zeigt eine linksschiefe Verteilung. 
+                        Für diese gilt \[\overline{X} \le \tilde{X} \le \overline{X}_M.\]
+                    </div>
+                    <div class="answers">
+                        <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)">richtig</div>
+                        <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">falsch</div>
+                    </div>
+                    <div class="feedback"> 
+                        Die Aussage ist richtig, bei einer linksschiefen unimodalen Verteilung ist der Modalwert, 
+                        also das Maximum, nach rechts verschoben.
+                    </div>
+                </div>
+                <div class="questioncontainer" style="border: none">
+                    <div class=topline> <span class="pointsandtimer"><em class="point">1</em> Punkt</span> </div>
+                    <div class="question"> Die rechte Abbildung zeigt eine rechtssteile Verteilung.
+                            </div>
+                    <div class="answers">
+                        <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">richtig</div>
+                        <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)">falsch</div>
+                    </div>
+                    <div class="feedback"> 
+                        Die Aussage ist falsch, rechtssteil ist synonym zu linksschief und damit dass Gegenteil zur vorherigen Aussage.
+                    </div>
+                </div>
+            </div>
+        </div>  
+        <div class="page-content" data-page="15">
+            <div class="questioncontainer">
+                <div class=topline> <em>Streumaße</em> <span class="pointsandtimer"> <span class="gapcount"></span><em class="point">4</em> Punkte</span> </div>
+                <p style="margin-left: 10px; font-size: 15pt;"> Wie werden die folgenden Streumaße abgekürzt?
+                </p>
+                <div class="questioncontainer" style="border: none">
+                    <div class=topline>  <span class="pointsandtimer"><em class="point">1</em> Punkt</span> </div>
+                    <div class="question">
+                        Stichprobenabstand
+                    </div>
+                    <div class="answers">
+                        <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">\(s_x\)</div>
+                        <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">\(IQR\)</div>
+                        <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">\(s_x^2\)</div>
+                        <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)">\(R\)</div>
+                    </div>
+                    <div class="feedback">
+                        Der Stichprobenabstand wird mit \(R\), für range, abgekürzt.
+                    </div>
+                </div>
+                <div class="questioncontainer" style="border: none">
+                    <div class=topline>  <span class="pointsandtimer"><em class="point">1</em> Punkt</span> </div>
+                    <div class="question">
+                        Interquartilabstand
+                    </div>
+                    <div class="answers">
+                        <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">\(s_x\)</div>
+                        <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)">\(IQR\)</div>
+                        <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">\(s_x^2\)</div>
+                        <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">\(R\)</div>
+                    </div>
+                    <div class="feedback">
+                        Der Interquartilabstand wird mit \(IQR\) abgekürzt, für interquartile range.
+                    </div>
+                </div>
+                <div class="questioncontainer" style="border: none">
+                    <div class=topline>  <span class="pointsandtimer"><em class="point">1</em> Punkt</span> </div>
+                    <div class="question">
+                        Varianz
+                    </div>
+                    <div class="answers">
+                        <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">\(s_x\)</div>
+                        <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">\(IQR\)</div>
+                        <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)">\(s_x^2\)</div>
+                        <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">\(R\)</div>
+                    </div>
+                    <div class="feedback">
+                        Die Varianz wird mit \(s_x^2\) abgekürzt.
+                    </div>
+                </div>
+                <div class="questioncontainer" style="border: none">
+                    <div class=topline>  <span class="pointsandtimer"><em class="point">1</em> Punkt</span> </div>
+                    <div class="question">
+                        Standardabweichung
+                    </div>
+                    <div class="answers">
+                        <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)">\(s_x\)</div>
+                        <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">\(IQR\)</div>
+                        <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">\(s_x^2\)</div>
+                        <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">\(R\)</div>
+                    </div>
+                    <div class="feedback">
+                        Die Standardabweichung wird mit \(s_x\) abgekürzt und ist die Wurzel der Varianz.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-content" data-page="16">
+            <div class="theoryheader">
+                <div class="theorynumber">4</div>
+                <div class="theorytitle">Der Median</div>
+            </div>
+            <br>
+            Der Median ist ein Lagemaß, das den Wert angibt, der in einer geordneten Stichprobe in der Mitte liegt. Für eine ungerade Stichprobe ist der Median das mittlere Element. 
+            Für eine gerade Stichprobe ist der Median der Mittelwert aus den beiden mittleren Elemente.
+            <br>
+            <br>
+            <div class="definition-box">
+            <div class="definition-title">Definition</div>
+            \(X = (x_1, x_2, \dots, x_n)\) sei eine geordnete Stichprobe.
+            \[\tilde{X} = \begin{cases} x_{\frac{n+1}{2}} & \text{falls } n \text{ ungerade} \\ \frac{1}{2} \cdot (x_{\frac{n}{2}} + x_{\frac{n}{2}+1}) & \text{falls } n \text{ gerade} \end{cases}\]
+            </div>
+            <br>
+            Beispielsweise ist der Median der Stichprobe \((5, 6, 7, 8, 9)\) gegeben durch
+            \[\tilde{X} = x_{\frac{5+1}{2}} = x_{3} = 7.\]
+            Für die Stichprobe \((5, 6, 7, 8, 9, 10)\) ergibt sich da \(n = 6\) gerade ist, dass
+            \[\tilde{X} = \frac{1}{2} \cdot (x_{\frac{6}{2}} + x_{\frac{6}{2}+1}) = \frac{1}{2} \cdot (x_3 + x_4) = \frac{1}{2} \cdot (7 + 8) = 7.5.\]
+        </div>
+        <div class="page-content" data-page="17">
+            <div class="questioncontainer">
+                <div class=topline> <em>Streumaße</em> <span class="pointsandtimer"> <span class="gapcount"></span><em class="point">1</em> Punkt</span> </div>
+                <div class="question">
+                    Gegeben ist die folgende Stichprobe \[X = (1, -2, 3, -4, 5, -6, 7, -8, 9, -5).\] Bestimme den Stichprobenabstand.
+                </div>
+                <div class="answers">
+                    <input class="input-box" type="text" placeholder="...">
+                    <div class="answerbutton" onclick="checkAnswer2(this, this.parentNode.parentNode)">Check Answer</div>
+                </div>
+                <div class="solution">17</div>
+                <div class="feedback">
+                    <span class="feedback-text"> 
+                        Der Stichprobenabstand ist definiert als \[R = x_{max} - x_{min}.\] 
+                        Für die gegebene Stichprobe ergibt sich
+                        \begin{array}{lll} R & = & \displaystyle 
+                        x_{max} - x_{min} \\ & = & \displaystyle 
+                        9 - (-8) \\ & = & 17 \end{array}
+
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="page-content" data-page="18"></div>
+        <div class="page-content" data-page="19"></div>
+        <div class="page-content" data-page="20"></div>
+        <div class="page-content" data-page="21">
+            <div class="theoryheader">
+            <div class="theorynumber">5</div>
+            <div class="theorytitle">Quartile</div>
+            </div>
+            <br>
+            TEXT <br>
+            <br>
+            <div class="definition-box">
+            <div class="definition-title">TITLE</div>
+            <div class="definition-content">
+                <ul class="liststyling">
+                <li></li>
+                <li></li>
+                </ul>
+            </div>
+            </div>
+        </div>
+        <div class="page-content" data-page="22"></div>
+        <div class="page-content" data-page="23"></div>
+        <div class="page-content" data-page="24"></div>
+        <div class="page-content" data-page="25"></div>
+        <div class="page-content" data-page="26">
+            <div class="theoryheader">
+                <div class="theorynumber">6</div>
+                <div class="theorytitle">Boxplots und Interquartilabstand</div>
+            </div>
+            <br>
+            Ein Boxplot ist ein Diagramm, das die Verteilung einer Stichprobe grafisch darstellt. Er besteht aus einer Box, 
+            die die mittleren 50% der Stichprobe umfasst und sogenannten Whiskern, also Linien, die von der Box ausgehen und bis
+             zum Minimum bzw. Maximum der Stichprobe reichen. Ausreißer werden durch Punkte dargestellt, die außerhalb der
+            Whisker liegen. <br> <br>     
+
+
+            <div class="definition-box">
+            <div class="definition-title">Boxplot</div>
+            Die grafische Darstellung der Lagemaße \[x_{min}, Q_{0.25}, \tilde{X}, Q_{0.75}, x_{max}\] wird als Boxplot bezeichnet.
+            </div>
+
+            <br> Betrachtet beispielsweise einen großen Datensatz:
+            <br>
+            <br>
+            <table>
+                <tr>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>...</th>
+                    <th>96</th>
+                    <th>97</th>
+                    <th>98</th>
+                    <th>99</th>
+                    <th>100</th>
+                </tr>
+                <tr>
+                    <td>0.471435</td>
+                    <td>-0.720589</td>
+                    <td>0.015696</td>
+                    <td>0.953324</td>
+                    <td>0.405453</td>
+                    <td>...</td>
+                    <td>1.572743</td>
+                    <td>0.193464</td>
+                    <td>-0.755862</td>
+                    <td>0.332507</td>
+                    <td>0.061988</td>
+                </tr>
+            </table>
+            <br> <br>
+            Mithlife einer Statistiksoftware lassen sich die Lagemaße berechnen womit der Boxplot erstellt werden kann. 
+            Jeder der Querstriche kennzeichnet eines der fünf Lagemaße.
+            
+
+            <br> <br>
+            <div style="display: flex;">
+                <div style="flex: 1;">
+                    <table>
+                        <tr>
+                            <th>Minimum</th>
+                            <td>-2.220589</td>
+                        </tr>
+                        <tr>
+                            <th>Q1</th>
+                            <td>-0.504707</td>
+                        </tr>
+                        <tr>
+                            <th>Median</th>
+                            <td>0.291976</td>
+                        </tr>
+                        <tr>
+                            <th>Q3</th>
+                            <td>0.596714</td>
+                        </tr>
+                        <tr>
+                            <th>Maximum</th>
+                            <td>2.492454</td>
+                        </tr>
+                    </table>
+                </div>
+                <div style="flex: 1;">
+                    <img src="statisticimages/boxplot.png" alt="boxplot" title="Darstellung eines Boxplot" width="100%">
+                </div>
+            </div>
+        </div>
+        <div class="page-content" data-page="2">
+            Im Folgenden beweisen wir den Verschiebungssatz aus der deskriptiven Statistik.
+
+            <br> <br>
+            <div class="theorem-box">
+                <div class="theorem-title">Verschiebungssatz</div>
+                <div class="theorem-content">
+                Für eine Stichprobe \(X = (x_1, x_2, \dots, x_n)\) und eine Konstante \(c \in \mathbb{R}\) gilt
+                \[SQ_x = \sum_{x=1}^n x_i -n \cdot \overline{x} .\]
+                A proof is given in the following: <br>
+                </div>
+            </div>
+            
+                \[SQ_x = \sum_{i=1}^n (x_i - \overline{x})^2 = \sum_{i=1}^n (x_i^2 - 2 \cdot x_i \cdot \overline{x} + \overline{x}^2) 
+                = \sum_{i=1}^n x_i^2 - 2 \cdot \overline{x} \cdot \sum_{i=1}^n x_i + \sum_{i=1}^n \overline{x}^2\]
+
+                One can write this with aligned equal signs:
+                \begin{align*}
+                    SQ_x & = \sum_{i=1}^n (x_i - \overline{x})^2 \\
+                    & = \sum_{i=1}^n (x_i^2 - 2 \cdot x_i \cdot \overline{x} + \overline{x}^2) \\
+                    & = \sum_{i=1}^n x_i^2 - 2 \cdot \overline{x} \cdot \sum_{i=1}^n x_i + \sum_{i=1}^n \overline{x}^2
+                \end{align*}
+
+        </div>
+        <div class="page-content" data-page="28"></div>
+        <div class="page-content" data-page="29"></div>
+        <div class="page-content" data-page="30"></div>
+        <div class="page-content" data-page="31">
+            <h2>final score</h2>
+            <div class="statistics">
+                <div class="chapterscompleted">chapters completed: +1</div>
+                <div class="pointsearned">points earned: x/total points</div>
+                <div class="timestudied">time studied: +32 min</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../../js/pagenavigation.js"></script>
+<script src="../../js/header.js"></script>
+<script src="../../js/gaptext.js"></script>
+<script src="../../js/QuizQuestion.js"></script>
+<script src="../../js/Eingabefeldfrage2.js"></script>
+<script src="../../js/showContent.js"></script>
+  </body>
+</html>

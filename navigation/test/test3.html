@@ -13,221 +13,39 @@
     <script type="text/javascript" async
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
         </script>
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-            processEscapes: true
-        }
-    });
-</script>
-
     <link rel="stylesheet" type="text/css" href="../../style.css">
 </head>
 
 <body>
-    <h2> Aufgaben zu Lage- und Streumaßen</h2>
-    <h3>Aufgabe 1</h3>
-    <div class="questioncontainer">
-        <div class=topline> <em>Lagemaße</em> <span class="pointsandtimer"> <span class="gapcount"></span><em class="point">2</em> Punkte</span> </div>
-        <div class="question"> 
-            Gegeben ist die folgende Stichprobe \[X = (1, -2, 3, -4, 5, -6, 7, -8, 9, -5).\] Bestimme das arithmetische Mittel.
-        </div>
-        <div class="answers">
-            <input class="input-box" type="text" placeholder="...">
-            <div class="answerbutton" onclick="checkAnswer2(this, this.parentNode.parentNode)">Check Answer</div>
-        </div>
-        <div class="solution">0</div>
-        <div class="feedback feedback-text">
-                Für die gegebene Stichprobe ergibt sich
-                \begin{array}{lll} \overline{X} & = & \displaystyle 
-                \frac{1}{10} \sum_{i=1}^{10} x_i \\ & = & \displaystyle 
-                \frac{1}{10} \cdot (1 - 2 + 3 - 4 + 5 - 6 + 7 - 8 + 9 
-                - 5) \\ & = & 0 \end{array} 
-        </div>
-    </div>
+   
 
 
 
-    <br> <br> 
-    <h3 style="margin-left: 10px;">Aufgabe 2</h3>
-    <div class="questioncontainer">
-    <div class=topline> <em>Lagemaße und Verteilungen</em> <span class="pointsandtimer"> <span class="gapcount"></span><em class="point">4</em> Punkte</span> </div>
-    <p style="margin-left: 10px; font-size: 15pt;"> Betrachte die folgenden Abbildungen.
-    </p>
-    <img title="Lagemaße und Verteilungen" src="../../chapters/Statistics/statisticimages/article-mean-mode-median-ger.png" style="width: 130%; margin-left: -15%">
-    <div class="questioncontainer" style="border: none">
-        <div class=topline> <span class="pointsandtimer"><em class="point">1</em> Punkt</span> </div>
-        <div class="question" > Die Abbildungen zeigen bimodale Verteilungen.
-                </div>
-        <div class="answers">
-            <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">richtig</div>
-            <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)">falsch</div>
-        </div>
-        <div class="feedback"> Die Aussage ist falsch, es handelt sich um unimodale Verteilungen. </div>
-    </div>
-    <div class="questioncontainer" style="border: none">
-        <div class=topline> <span class="pointsandtimer"><em class="point">1</em> Punkt</span> </div>
-        <div class="question">
-            Die linke Abbildung zeigt eine linksschiefe Verteilung. 
-        Für diese gilt \[\overline{X} < \tilde{X} < \overline{X}_M.\]
-        </div>
-        <div class="answers">
-            <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)">richtig</div>
-            <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">falsch</div>
-        </div>
-    <div class="feedback"> Die Aussage ist richtig, bei einer linksschiefen unimodalen Verteilung ist der Modalwert, 
-        also das Maximum, nach rechts verschoben.
-            </div>
-    </div>
-    <div class="questioncontainer" style="border: none">
-        <div class=topline> <span class="pointsandtimer"><em class="point">1</em> Punkt</span> </div>
-        <div class="question"> Die rechte Abbildung zeigt eine rechtssteile Verteilung.
-                </div>
-        <div class="answers">
-            <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">richtig</div>
-            <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)">falsch</div>
-        </div>
-        <div class="feedback"> 
-            Die Aussage ist falsch, rechtssteil ist synonym zu linksschief und damit dass Gegenteil zur vorherigen Aussage.
-                </div>
-    </div>
-</div>
 
 
-<br> <br>
-    <h3>Aufgabe 3</h3>
-    <div class="questioncontainer">
-        <div class=topline> <em>Streumaße</em> <span class="pointsandtimer"> <span class="gapcount"></span><em class="point">4</em> Punkte</span> </div>
-    <p style="margin-left: 10px; font-size: 15pt;"> Wie werden die folgenden Streumaße abgekürzt?
-    </p>
-    <div class="questioncontainer" style="border: none">
-        <div class=topline>  <span class="pointsandtimer"><em class="point">1</em> Punkt</span> </div>
-        <div class="question">
-            Stichprobenabstand
-        </div>
-        <div class="answers">
-            <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">\(s_x\)</div>
-            <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">\(IQR\)</div>
-            <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">\(s_x^2\)</div>
-            <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)">\(R\)</div>
-        </div>
-        <div class="feedback">
-            Der Stichprobenabstand wird mit \(R\), für range, abgekürzt.
-        </div>
-    </div>
-    <div class="questioncontainer" style="border: none">
-        <div class=topline>  <span class="pointsandtimer"><em class="point">1</em> Punkt</span> </div>
-        <div class="question">
-            Interquartilabstand
-        </div>
-        <div class="answers">
-            <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">\(s_x\)</div>
-            <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)">\(IQR\)</div>
-            <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">\(s_x^2\)</div>
-            <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">\(R\)</div>
-        </div>
-        <div class="feedback">
-            Der Interquartilabstand wird mit \(IQR\) abgekürzt, für interquartile range.
-        </div>
-    </div>
-    <div class="questioncontainer" style="border: none">
-        <div class=topline>  <span class="pointsandtimer"><em class="point">1</em> Punkt</span> </div>
-        <div class="question">
-            Varianz
-        </div>
-        <div class="answers">
-            <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">\(s_x\)</div>
-            <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">\(IQR\)</div>
-            <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)">\(s_x^2\)</div>
-            <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">\(R\)</div>
-        </div>
-        <div class="feedback">
-            Die Varianz wird mit \(s_x^2\) abgekürzt.
-        </div>
-    </div>
-    <div class="questioncontainer" style="border: none">
-        <div class=topline>  <span class="pointsandtimer"><em class="point">1</em> Punkt</span> </div>
-        <div class="question">
-            Standardabweichung
-        </div>
-        <div class="answers">
-            <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)">\(s_x\)</div>
-            <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">\(IQR\)</div>
-            <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">\(s_x^2\)</div>
-            <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">\(R\)</div>
-        </div>
-        <div class="feedback">
-            Die Standardabweichung wird mit \(s_x\) abgekürzt und ist die Wurzel der Varianz.
-        </div>
-    </div>
-</div>
-
-<br><br>
-    <div class="questioncontainer">
-        <div class=topline> <em>Streumaße</em> <span class="pointsandtimer"> <span class="gapcount"></span><em class="point">1</em> Punkt</span> </div>
-        <div class="question">
-            Gegeben ist die folgende Stichprobe \[X = (1, -2, 3, -4, 5, -6, 7, -8, 9, -5).\] Bestimme den Stichprobenabstand.
-        </div>
-        <div class="answers">
-            <input class="input-box" type="text" placeholder="...">
-            <div class="answerbutton" onclick="checkAnswer2(this, this.parentNode.parentNode)">Check Answer</div>
-        </div>
-        <div class="solution">17</div>
-        <div class="feedback">
-            <span class="feedback-text"> 
-                Der Stichprobenabstand ist definiert als \[R = x_{max} - x_{min}.\] 
-                Für die gegebene Stichprobe ergibt sich
-                \begin{array}{lll} R & = & \displaystyle 
-                x_{max} - x_{min} \\ & = & \displaystyle 
-                9 - (-8) \\ & = & 17 \end{array}
-
-            </span>
-        </div>
-    </div>
-
-    <br>
-    <div class="questioncontainer">
-        <div class=topline> <em>Streumaße</em> <span class="pointsandtimer"> <span class="gapcount"></span><em class="point">1</em> Punkt</span> </div>
-        <div class="question">
-            Bestimme die Standardabweichung der Stichprobe \[X = (-1,1,-1,1,-1,1,-1,3,-2).\]
-        </div>
-        <div class="answers">
-            <input class="input-box" type="text" placeholder="...">
-            <div class="answerbutton" onclick="checkAnswer2(this, this.parentNode.parentNode)">Check Answer</div>
-        </div>
-        <div class="solution">2</div>
-        <div class="feedback">
-            <span class="feedback-text"> 
-                Die Standardabweichung ist definiert als \[s_x = \sqrt{\frac{1}{n} \sum_{i=1}^n (x_i - \overline{x})^2}.\] 
-                Für die gegebene Stichprobe ergibt sich
-                \begin{array}{lll} s_x & = & \displaystyle 7 \cdot (1-0)^2 + (3 - 0)^2 + (-2 - 0)^2 \\ & = & \sqrt{\frac{20}{5}} \\ & = & 2
-                \end{array}
-                <br> <em>Hinweis: \((-1)^2 = 1^2\)</em>
-                </em>
-            </span>
-        </div>
-    </div>
-
-    <br>
     <div class="quiz-container">
-        <div class=topline> <em>Grundwissen</em> <span class="pointsandtimer"><span class="gapcount"></span>/ <em class="point">1</em> Punkt</span> </div>
+        <div class=topline> Question <span class="pointsandtimer"><span class="gapcount"></span> / <em class="point">1</em> Punkt</span></div>
         <div class="quiz-content">
-           Eine <span class="gap" data-answer="Stichprobe"></span>
-            ist nicht unbedingt representativ für die <span class="gap" data-answer="Grundgesamtheit"> </span>.
-            Mit zunehmender <span class="gap" data-answer="Stichprobengröße"> </span> wird die Stichprobe bei zufälliger Auswahl
-            jedoch immer <span class="gap" data-answer="repräsentativer"> </span>.
+            <!-- Edit the question and gaps here -->
+            Let \(A, B\) be sets. \(A \subset B \) is equivalent to
+            <br>
+            \(x\) <span class="gap" data-answer="∈∈\in"></span>
+            <span class="gap" data-answer="AAA"> </span>
+            \(\Rightarrow x\)
+            <span class="gap" data-answer="∈∈\in">  </span>
+            <span class="gap" data-answer="BBB"></span>
+            \(\ \ \ \forall x \in\) <span class="gap" data-answer="AAA"> </span>
         </div>
         <div class="answer-buttons">
-            <button class="button" data-answer="Grundgesamtheit">Grundgesamtheit</button>
-            <button class="button" data-answer="repräsentativer">repräsentativer</button>
-            <button class="button" data-answer="Stichprobe">Stichprobe</button>
-            <button class="button" data-answer="Stichprobengröße">Stichprobengröße</button>
+            <!-- Edit the answer buttons here -->
+            <button class="button" data-answer="\(\in\)">\(\in\)</button>
+            <button class="button" data-answer="\(\subset\)">\(\subset\)</button>
+            <button class="button" data-answer="\(A\)">\(A\)</button>
+            <button class="button" data-answer="\(B\)">\(B\)</button>
         </div>
         <button class="check-answer">Check Answer</button>
-        <span class="feedback"></span>
+        <span class="feedback">Any element of A is also contained in B.</span>
     </div>
-
 
     <!-- _______________________________________Multiple Choice_____________________________________ -->
 

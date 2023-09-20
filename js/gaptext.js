@@ -27,33 +27,7 @@ function updateTimeElapsed() {
   document.getElementById("totalTime").textContent = timeElapsedDisplay;
 }
 const totalQuestions = 20;
-// Function to convert LaTeX to plain text
-function convertToPlainText(latexString) {
-  if (/\$/.test(latexString)) {
-    // Replace LaTeX symbols with their plain text equivalents
-    const replacements = {
-      "\\(": "", // Remove \( and \)
-      "\\)": "",
-      "\\[": "",
-      "\\]": "",
-      "\\in": "∈",
-      "\\subset": "⊆",
-      "\\cup": "∪",
-      "\\cap": "∩",
 
-      A: "A", // Replace 'A' with 'A' in LaTeX
-      B: "B", // Replace 'B' with 'B' in LaTeX
-    };
-
-    // Use regular expressions to replace LaTeX symbols
-    for (const [latexSymbol, plainText] of Object.entries(replacements)) {
-      const regex = new RegExp(latexSymbol, "g");
-      latexString = latexString.replace(regex, plainText);
-    }
-  }
-
-  return latexString;
-}
 document.addEventListener("DOMContentLoaded", function () {
   const quizContainers = document.querySelectorAll(".quiz-container");
   let gapCount = 0;

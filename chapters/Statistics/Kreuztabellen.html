@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>math course</title>
+    <meta name="description" content="course description goes here">
+    <link rel="shortcut icon" href="../../pictures/general/logo.png" type="image/x-icon">
+    <meta name="keywords" content="math, functions, sets">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css">
+
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+</head>
+
+  <body>
+    <div id="content-section">
+      <header id="toolbar">
+        <div class="titleofsubsection">Kreuztabellen</div>
+        <div style="font-weight: lighter; margin-right: 4px; margin-left: 20px">
+          Lernzeit:
+        </div>
+        <div id="countup-timer">00:00</div>
+        <div id="progress">
+          <div id="progressbar"></div>
+          <div class="progressbar"></div>
+        </div>
+      </header>
+      <footer class="footer">
+        <button
+          class="page-button backward-btn"
+          id="backward-btn"
+          onclick="navigatePage(-1)"
+        >
+          <span class="hidden">back</span>
+        </button>
+        <span id="pageNumber"> </span>
+        <button
+          class="page-button forward-btn"
+          id="forward-btn"
+          onclick="navigatePage(1)"
+        >
+          <span class="hidden">next</span>
+        </button>
+      </footer>
+      <div class="content">
+        <div class="page-content backgroundimage" data-page="0">
+          <div class="coursestartheading">
+            Bivariate Statistik <br />
+            Kreuztabellen
+          </div>
+          <br />
+          <div class="coursestartfont">
+            Kreuztabellen in absoluten und relativen Zahlen, Odds, Odds Ratio,
+            dichotome Merkmale <br />
+            <br />
+            <button class="forward-btn" class="frame" onclick="navigatePage(1)">
+              start
+            </button>
+          </div>
+        </div>
+        <!-- <div class="page-content" data-page="1">
+          <div class="theoryheader">
+            <div class="theorynumber">1</div>
+            <div class="theorytitle">Aufbau der Kreuztabelle</div>
+          </div>
+          <br />
+          Eine Kreuztabelle ist in der Statistik eine Tabelle, die die
+          Häufigkeiten von zwei Merkmalen gleichzeitig darstellt. Ein Beispiel
+          ist die folgende Tabelle. Sie zeigt die Anzahl der Personen, die in
+          einer bestimmten Stadt wohnen und die Anzahl der Personen, die in
+          dieser Stadt ein Auto besitzen. 
+          
+<table>
+    <tr>
+      <th>Company</th>
+      <th>Contact</th>
+      <th>Country</th>
+    </tr>
+    <tr>
+      <td>Alfreds Futterkiste</td>
+      <td>Maria Anders</td>
+      <td>Germany</td>
+    </tr>
+    <tr>
+      <td>Centro comercial Moctezuma</td>
+      <td>Francisco Chang</td>
+      <td>Mexico</td>
+    </tr>
+    <tr>
+      <td>Ernst Handel</td>
+      <td>Roland Mendel</td>
+      <td>Austria</td>
+    </tr>
+    <tr>
+      <td>Island Trading</td>
+      <td>Helen Bennett</td>
+      <td>UK</td>
+    </tr>
+    <tr>
+      <td>Laughing Bacchus Winecellars</td>
+      <td>Yoshi Tannamuri</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <td>Magazzini Alimentari Riuniti</td>
+      <td>Giovanni Rovelli</td>
+      <td>Italy</td>
+    </tr>
+  </table>
+
+          <br />
+          <div class="definition-box">
+            <div class="definition-title">TITLE</div>
+            <div class="definition-content">
+              <ul class="liststyling">
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="page-content" data-page="2"></div>
+        <div class="page-content" data-page="3"></div>
+        <div class="page-content" data-page="4"></div>
+        <div class="page-content" data-page="5"></div>
+
+        <div class="page-content" data-page="6">
+          <div class="theoryheader">
+            <div class="theorynumber">2</div>
+            <div class="theorytitle">THEORY 2</div>
+          </div>
+          <br />
+          TEXT <br />
+          <br />
+          <div class="definition-box">
+            <div class="definition-title">TITLE</div>
+            <div class="definition-content">
+              <ul class="liststyling">
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="page-content" data-page="7"></div>
+        <div class="page-content" data-page="8"></div>
+        <div class="page-content" data-page="9"></div>
+        <div class="page-content" data-page="10"></div>
+
+        <div class="page-content" data-page="11">
+          <div class="theoryheader">
+            <div class="theorynumber">3</div>
+            <div class="theorytitle">THEORY 3</div>
+          </div>
+          <br />
+          TEXT <br />
+          <br />
+          <div class="definition-box">
+            <div class="definition-title">TITLE</div>
+            <div class="definition-content">
+              <ul class="liststyling">
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+          </div>
+        </div> -->
+
+        <div class="page-content" data-page="1">
+            <div class="questioncontainer">
+                <div class=topline> Question <span class="pointsandtimer"> <em class="point">1</em> point</span> </div>
+                <div class="question">
+                    Gegeben ist die folgende Kreuztabelle. 
+                    <br>
+                    <br>
+                    <table class="kreuztabelle">
+                        <tr>
+                            <th></th>
+                            <th>Auto</th>
+                            <th>kein Auto</th>
+                            <th>Gesamt</th>
+                        </tr>
+                        <tr>
+                            <th>Stadt</th>
+                            <td>100</td>
+                            <td>200</td>
+                            <td>300</td>
+                        </tr>
+                        <tr>
+                            <th>Land</th>
+                            <td>300</td>
+                            <td>400</td>
+                            <td>700</td>
+                        </tr>
+                        <tr>
+                            <th>Gesamt</th>
+                            </th>
+                            <td>400</td>
+                            <td>600</td>
+                            <td>1000</td>
+                        </tr>
+                    </table>
+                    <br>
+                    <br>
+                    Wie sind die Merkmale skaliert?
+                </div>
+                <br>
+                <div class="answers">
+                    <input class="input-box" type="text" placeholder="...">
+                    <div class="answerbutton" onclick="checkAnswer2(this, this.parentNode.parentNode)">Check Answer</div>
+                </div>
+                <div class="solution">dichotom</div>
+                <div class="feedback">
+                    <span class="feedback-text">
+                        Die Merkmale sind dichotom skaliert, da sie nur zwei Ausprägungen annehmen können.
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-content" data-page="2">
+                <h2 style=" text-align: center;font-size: 35px;">Exercise 4</h2>
+
+                        Gegeben ist die folgende Kreuztabelle. 
+                        <br>
+                        <br>
+                        <table class="kreuztabelle">
+                            <tr>
+                                <th></th>
+                                <th>Auto</th>
+                                <th>kein Auto</th>
+                                <th>Gesamt</th>
+                            </tr>
+                            <tr>
+                                <th>Stadt</th>
+                                <td>100</td>
+                                <td>200</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <th>Land</th>
+                                <td>300</td>
+                                <td>400</td>
+                                <td>700</td>
+                            </tr>
+                            <tr>
+                                <th>Gesamt</th>
+                                </th>
+                                <td>400</td>
+                                <td>600</td>
+                                <td>1000</td>
+                            </tr>
+                        </table>
+                    <br>
+                <div class="questioncontainer" style="border: none">
+                    <div class=topline>  <span class="pointsandtimer"><em class="point">1</em> point</span> </div>
+                    <div class="question"> Wie sind die Merkmale skaliert?
+                         </div>
+                    <div class="answers">
+                        <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">nominal
+                        </div>
+                        <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">dichotom
+                        </div>
+                        <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)">metrisch
+                        </div>
+                        <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">ordinal
+                        </div>
+                    </div>
+                    <div class="feedback"> 
+                        Die Merkmale sind dichotom skaliert, da sie nur zwei Ausprägungen annehmen können.
+                    </div>
+                </div>
+        </div>
+
+
+
+
+        <div class="page-content" data-page="14"></div>
+        <div class="page-content" data-page="15"></div>
+
+        <div class="page-content" data-page="16">
+          <div class="theoryheader">
+            <div class="theorynumber">4</div>
+            <div class="theorytitle">THEORY 4</div>
+          </div>
+          <br />
+          TEXT <br />
+          <br />
+          <div class="definition-box">
+            <div class="definition-title">TITLE</div>
+            <div class="definition-content">
+              <ul class="liststyling">
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="page-content" data-page="17">
+            
+        </div>
+        <div class="page-content" data-page="18"></div>
+        <div class="page-content" data-page="19"></div>
+        <div class="page-content" data-page="20"></div>
+
+        <div class="page-content" data-page="21">
+          <div class="theoryheader">
+            <div class="theorynumber">5</div>
+            <div class="theorytitle">THEORY 5</div>
+          </div>
+          <br />
+          TEXT <br />
+          <br />
+          <div class="definition-box">
+            <div class="definition-title">TITLE</div>
+            <div class="definition-content">
+              <ul class="liststyling">
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="page-content" data-page="22"></div>
+        <div class="page-content" data-page="23"></div>
+        <div class="page-content" data-page="24"></div>
+        <div class="page-content" data-page="25"></div>
+
+        <div class="page-content" data-page="26">
+          <div class="theoryheader">
+            <div class="theorynumber">6</div>
+            <div class="theorytitle">THEORY 6</div>
+          </div>
+          <br />
+          TEXT <br />
+          <br />
+          <div class="definition-box">
+            <div class="definition-title">TITLE</div>
+            <div class="definition-content">
+              <ul class="liststyling">
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="page-content" data-page="27"></div>
+        <div class="page-content" data-page="28"></div>
+        <div class="page-content" data-page="29"></div>
+        <div class="page-content" data-page="30"></div>
+
+        <div class="page-content" data-page="31">
+          <h2>final score</h2>
+          <div class="statistics">
+            <div class="chapterscompleted">chapters completed: +1</div>
+            <div class="pointsearned">points earned: x/total points</div>
+            <div class="timestudied">time studied: +32 min</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    
+    <script src="../../js/pagenavigation.js"></script>
+    <script src="../../js/header.js"></script>
+    <script src="../../js/gaptext.js"></script>
+    <script src="../../js/QuizQuestion.js"></script>
+    <script src="../../js/Eingabefeldfrage2.js"></script>
+    <script src="../../js/showContent.js"></script>
+  </body>
+</html>

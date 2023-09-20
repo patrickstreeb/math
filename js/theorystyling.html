@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>math course</title>
+    <meta name="description" content="course description goes here" />
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
+    <meta name="keywords" content="math, functions, sets" />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+    <link rel="stylesheet" type="text/css" href="../../style.css" />
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: left;
+            background-color: #f0f0f0;
+        }
+
+        .animation-container {
+            position: relative;
+            display: none;
+            animation: appearAnimation 2s ease-in-out forwards;
+            margin: 20px;
+        }
+
+        .animated-div {
+            width: 200px;
+            height: 100px;
+            border: 2px solid #000;
+            padding: 10px;
+            background-color: #fff;
+            margin: 20px 0;
+        }
+        @keyframes appearAnimation {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .initialtext {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+
+    </style>
+    <title>Element Animation</title>
+</head>
+<body>
+    <h1 style="font-weight: lighter; margin-left: 20px;">Der Median</h1>
+    <div class="initialtext"> 
+        Der Median ist ein Lagemaß, das den Wert angibt, der in einer geordneten Stichprobe in der Mitte liegt. Für eine ungerade Stichprobe ist der Median das mittlere Element. 
+        Für eine gerade Stichprobe ist der Median der Mittelwert aus den beiden mittleren Elemente.
+    </div>
+    <div class="animation-container">
+        <div class="definition-box">
+            <div class="definition-title">Definition</div>
+            \(X = (x_1, x_2, \dots, x_n)\) sei eine geordnete Stichprobe.
+            \[\tilde{X} = \begin{cases} x_{\frac{n+1}{2}} & \text{falls } n \text{ ungerade} \\ \frac{1}{2} \cdot (x_{\frac{n}{2}} + x_{\frac{n}{2}+1}) & \text{falls } n \text{ gerade} \end{cases}\]
+        </div>
+    </div>
+    <div class="animation-container">
+        Beispielsweise ist der Median der Stichprobe \((5, 6, 7, 8, 9)\) gegeben durch
+        \[\tilde{X} = x_{\frac{5+1}{2}} = x_{3} = 7.\]
+    </div>
+    <div class="animation-container">
+        Für die Stichprobe \((5, 6, 7, 8, 9, 10)\) ergibt sich da \(n = 6\) gerade ist, dass
+        \[\tilde{X} = \frac{1}{2} \cdot (x_{\frac{6}{2}} + x_{\frac{6}{2}+1}) = \frac{1}{2} \cdot (x_3 + x_4) = \frac{1}{2} \cdot (7 + 8) = 7.5.\]
+    </div>
+    <button  class="margindownAnswerbutton" style="max-width: 150px; margin: 20px; border: 1px solid; border-color: #a3a1a1;" onclick="showNextAnimationContainer()" id="addButton">
+    weiter </button>
+    <script>
+        let currentContainerIndex = 0;
+        const containers = document.querySelectorAll('.animation-container');
+
+        function showNextAnimationContainer() {
+            if (currentContainerIndex < containers.length) {
+                containers[currentContainerIndex].style.display = 'block';
+                currentContainerIndex++;
+
+                if (currentContainerIndex === containers.length) {
+                    document.getElementById('addButton').style.display = none;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
