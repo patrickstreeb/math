@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <!-- GENERAL -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>math course</title>
     <meta name="description" content="course description goes here">
-    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../../pictures/general/logo.png" type="image/x-icon">
     <meta name="keywords" content="math, functions, sets">
+    <!-- MATHJAX -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- STYLE IMPORTS -->
     <link rel="stylesheet" type="text/css" href="../../style.css">
 </head>
 <body>
@@ -19,7 +32,7 @@
             <div id="progressbar"> </div> <div class="progressbar">  startTimer() </div>
         </div>
     </header>
-    <footer class="footer">
+    <footer class="footer" style="margin-top: 60px;">
         <button class="page-button backward-btn" id="backward-btn" onclick="navigatePage(-1)"> <span class="hidden">back</span> </button>
         <span id="pageNumber"> </span>
         <button class="page-button forward-btn" id="forward-btn" onclick="navigatePage(1)"> <span class="hidden">next</span></button>
@@ -41,25 +54,144 @@
             given by \[ |x| = \begin{cases} x, & \text{if } x \geq 0 \\ -x, & \text{if } x < 0 \end{cases} \]
             so for example \(|3| = 3\) and \(|-3| = -(-3) = 3\). <br /> 
             We will use this now to define what the distance between two real numbers is. <br /> <br/>
-                <div class="definition-box">
+            <div class="definition-box">
                 <div class="definition-title">distance of two real numbers \(x\) and \(y \)</div>
                 <div class="definition-content">
                 Let \(x,y \in \mathbb{R}\). The distance of two real numbers \(x\) 
                 and \(y \) is defined as \[ |x-y| \]
+                </div>
             </div>
         </div>
-        </div>
         <div class="page-content" data-page="2">
-            
+            <div class="exercise2">
+                <div class=topline> Calculate the following expressions. <span class="pointsandtimer"> <span class="point"></span>/<span class="gapcount"> </span></span></div>
+                <p style="margin-left: 10px; font-size: 15pt;"> 
+                </p>
+                <div class="questioncontainer" style="border: none">
+                    <div class=topline>   <span class="pointsandtimer"><span class="point">1</span> </span> </div>
+                    <div class="question"> 
+                         \( \vert 2-5 \vert\).
+                    </div>
+                    <div class="answers">
+                        <input class="input-box" type="text" placeholder="...">
+                        <button type="button" class="answerbutton" onclick="checkAnswer2(this, this.parentNode.parentNode)">Check Answer</button>
+                    </div>
+                    <div class="solution">3</div>
+                    <div class="feedback"> 
+                        \(\vert 2-5 \vert = \vert -3 \vert = 3\).
+                    </div>
+                </div>
+                <div class="questioncontainer" style="border: none">
+                    <div class=topline>   <span class="pointsandtimer"><span class="point">1</span> </span> </div>
+                    <div class="question"> 
+                         \( \vert -2 - (-5) \vert\).
+                    </div>
+                    <div class="answers">
+                        <input class="input-box" type="text" placeholder="...">
+                        <button type="button" class="answerbutton" onclick="checkAnswer2(this, this.parentNode.parentNode)">Check Answer</button>
+                    </div>
+                    <div class="solution">3</div>
+                    <div class="feedback"> 
+                        \( \vert -2 - (-5) \vert = \vert -2 + 5 \vert = \vert 3 \vert = 3\).
+                    </div>
+                </div>
+                <div class="questioncontainer" style="border: none">
+                    <div class=topline>   <span class="pointsandtimer"><span class="point">1</span> </span> </div>
+                    <div class="question"> 
+                         \(  \vert -10 - 12 \vert\).
+                    </div>
+                    <div class="answers">
+                        <input class="input-box" type="text" placeholder="...">
+                        <button type="button" class="answerbutton" onclick="checkAnswer2(this, this.parentNode.parentNode)">Check Answer</button>
+                    </div>
+                    <div class="solution">22</div>
+                    <div class="feedback"> 
+                        \( \vert -10 - 12 \vert = \vert -22 \vert = 22\).
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="page-content" data-page="3">
-            
+            Complete the following proof which is given as a gaptext about prooving, that the distance is symmetric using the
+            following code structure
+            <div class="quiz-container">
+                <div class=topline> Question <span class="pointsandtimer"> <span class="point"></span>/<span class="gapcount"> </span></span></div>
+                <div class="quiz-content">
+                    <!-- Edit the question and gaps here -->
+                    Let \(x,y \in \mathbb{R}\). Then it holds
+                    <br>
+                    \( |x-y| = |--(x-y) \vert  
+                             = |-(-  \) <span class="gap" style="width: 1%;" data-answer="xxx" data-points="1"></span> 
+                </div>
+                <div class="answer-buttons">
+                    <button class="button" data-answer="\(\in\)">\(\in\)</button>
+                    <button class="button" data-answer="\(\subset\)">\(\subset\)</button>
+                    <button class="button" data-answer="xxx">\(x\)</button>
+                    <button class="button" data-answer="yyy">\(y\)</button>
+                </div>
+                <button class="check-answer">Check Answer</button>
+                <span class="feedback">Any element of A is also contained in B.</span>
+            </div> 
+            <div class="quiz-container">
+                <div class=topline> Question <span class="pointsandtimer"> <span class="point"></span>/<span class="gapcount"> </span></span></div>
+                <div class="quiz-content">
+                    <!-- Edit the question and gaps here -->
+                    Let \(A, B\) be sets. \(A \subset B \) is equivalent to
+                    <br>
+                    \(x\) <span class="gap" style="width: 1%;" data-answer="∈∈\in" data-points="1"></span>
+                    <span class="gap" style="width: 10px;" data-answer="AAA" data-points="1"> </span>
+                    \(\Rightarrow x\)
+                    <span class="gap" style="width: 20px;" data-answer="∈∈\in" data-points="1">  </span>
+                    <span class="gap" style="width: 20px;" data-answer="BBB" data-points="1"></span>
+                    \(\ \ \ \forall x \in\) <span class="gap" style="width: 20px;" data-answer="AAA" data-points="1"> </span>
+                </div>
+                <div class="answer-buttons">
+                    <!-- Edit the answer buttons here -->
+                    <button class="button" data-answer="\(\in\)">\(\in\)</button>
+                    <button class="button" data-answer="\(\subset\)">\(\subset\)</button>
+                    <button class="button" data-answer="\(A\)">\(A\)</button>
+                    <button class="button" data-answer="\(B\)">\(B\)</button>
+                </div>
+                <button class="check-answer">Check Answer</button>
+                <span class="feedback">Any element of A is also contained in B.</span>
+            </div>
+        </div>
+
+
+
         </div>
         <div class="page-content" data-page="4">
-            
+            <div class="questioncontainer">
+                <div class=topline>Question<span class="pointsandtimer"><span class="point">1</span> point</span> </div>
+                <div class="question"> Is there a number \(x \in \mathbb{R}\), which has a unique number with distance 
+                    \(y >0\) to it?
+                     </div>
+                <div class="answers">
+                    <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">Yes</div>
+                    <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)">No</div>
+                </div>
+                <div class="feedback"> 
+                    No, both the elements \(x-y\) and \(x+y\) have distance \(y\) to \(x\):
+                    \[ |x-(x-y)| = |y| = y \]
+                    \[ |x-(x+y)| = |-y| = y \]
+
+                </div>
+            </div>
         </div>
         <div class="page-content" data-page="5">
-            
+            <div class="questioncontainer">
+                <div class=topline> Exercise <span class="pointsandtimer"> <span class="point">1</span> point</span> </div>
+                <div class="question"> Find \[ \big\vert \vert 2-5 \vert - 7 \big\vert.\]
+                     </div>
+                <div class="answers">
+                    <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">3 </div>
+                    <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)"> 4 </div>
+                    <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> 5</div>
+                    <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> 6 </div>
+                </div>
+                <div class="feedback"> it is 4, since \[ \big\vert \vert 2-5 \vert - 7 \big\vert = \big\vert \vert -3 \vert - 7 \big\vert = \big\vert 3 - 7 \big\vert = \big\vert -4 \big\vert = 4 .\]
+                     </div>
+            </div>
         </div>
 
         <div class="page-content" data-page="6">
@@ -84,18 +216,105 @@
                 </div>
             </div>
         </div>
+
+
         <div class="page-content" data-page="7">
-            
+            <div class="questioncontainer">
+                <div class=topline> Exercise <span class="pointsandtimer"> <span class="point">1</span> point</span> </div>
+                <div class="question"> Select the described property. <br> <br>
+                    <em> Two numbers having distance zero means they are equal. </em>
+                     </div>
+                     <div class="answers">
+                        <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> 
+                            \(d(x,y) \geq 0 \ \ \ \forall x,y \in \mathbb{R}\) 
+                        </div>
+                        <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)"> 
+                            \(d(x,y) = 0 \iff x=y \ \ \ \forall x,y \in \mathbb{R}\) 
+                         </div>
+                        <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> 
+                            \(d(x,y) = d(y,x) \ \ \ \forall x,y \in \mathbb{R} \)
+                        </div>
+                        <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> 
+                            \(d(x,z) \leq d(x,y) + d(y,z) \ \ \ \forall x,y,z \in \mathbb{R} \) 
+                        </div>
+                    </div>
+                <div class="feedback"> \(d(x,y) = 0 \iff x=y \ \ \ \forall x,y \in \mathbb{R}\) 
+                     </div>
+            </div>
         </div>
         <div class="page-content" data-page="8">
-            
+            <div class="questioncontainer">
+                <div class=topline> Exercise <span class="pointsandtimer"> <span class="point">1</span> point</span> </div>
+                <div class="question"> Select the described property. <br> <br>
+                    <em> The metric distance in between two real numbers cannot be negative. </em>
+                     </div>
+                     <div class="answers">
+                        <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)"> 
+                            \(d(x,y) \geq 0 \ \ \ \forall x,y \in \mathbb{R}\) 
+                        </div>
+                        <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> 
+                            \(d(x,y) = 0 \iff x=y \ \ \ \forall x,y \in \mathbb{R}\) 
+                         </div>
+                        <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> 
+                            \(d(x,y) = d(y,x) \ \ \ \forall x,y \in \mathbb{R} \)
+                        </div>
+                        <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> 
+                            \(d(x,z) \leq d(x,y) + d(y,z) \ \ \ \forall x,y,z \in \mathbb{R} \) 
+                        </div>
+                    </div>
+                <div class="feedback"> \(d(x,y) \geq 0 \ \ \ \forall x,y \in \mathbb{R}\) 
+                     </div>
+            </div>
         </div>
         <div class="page-content" data-page="9">
-            
+            <div class="questioncontainer">
+                <div class=topline> Exercise <span class="pointsandtimer"> <span class="point">1</span> point</span> </div>
+                <div class="question"> Select the described property. <br> <br>
+                    <em>  Going from \(x\) to \(y\) is as far as from \(y\) to \(x\). </em>
+                     </div>
+                     <div class="answers">
+                        <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> 
+                            \(d(x,y) \geq 0 \ \ \ \forall x,y \in \mathbb{R}\) 
+                        </div>
+                        <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> 
+                            \(d(x,y) = 0 \iff x=y \ \ \ \forall x,y \in \mathbb{R}\) 
+                         </div>
+                        <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)"> 
+                            \(d(x,y) = d(y,x) \ \ \ \forall x,y \in \mathbb{R} \)
+                        </div>
+                        <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> 
+                            \(d(x,z) \leq d(x,y) + d(y,z) \ \ \ \forall x,y,z \in \mathbb{R} \) 
+                        </div>
+                    </div>
+                <div class="feedback"> \(d(x,y) = d(y,x) \ \ \ \forall x,y \in \mathbb{R} \)
+            </div>
         </div>
         <div class="page-content" data-page="10">
-            
-        </div>
+            <div class="questioncontainer">
+                <div class=topline> Exercise <span class="pointsandtimer"> <span class="point">1</span> point</span> </div>
+                <div class="question"> Select the described property. <br> <br>
+                    <em>  The direct distance is smaller than going via a another number. </em>
+                     </div>
+                     <div class="answers">
+                        <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> 
+                            \(d(x,y) \geq 0 \ \ \ \forall x,y \in \mathbb{R}\) 
+                        </div>
+                        <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> 
+                            \(d(x,y) = 0 \iff x=y \ \ \ \forall x,y \in \mathbb{R}\) 
+                         </div>
+                        <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> 
+                            \(d(x,y) = d(y,x) \ \ \ \forall x,y \in \mathbb{R} \)
+                        </div>
+                        <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)"> 
+                            \(d(x,z) \leq d(x,y) + d(y,z) \ \ \ \forall x,y,z \in \mathbb{R} \) 
+                        </div>
+                    </div>
+                <div class="feedback"> \(d(x,z) \leq d(x,y) + d(y,z) \ \ \ \forall x,y,z \in \mathbb{R} \) 
+                     </div>
+            </div>
+        </div> 
+    
+
 
         <div class="page-content" data-page="11">
             <div class="theoryheader"> 
@@ -118,6 +337,8 @@
                 <li> Let \(x=0\). Then \(|x| = 0 < \varepsilon\). </li>   
                 <li> Let \(|x| < \varepsilon\). Then \(x < \varepsilon\) and \(x > - \varepsilon\). Because it holds for all \(\varepsilon\) that means \(x \geq 0\) and \(x \leq 0\), so \(x=0\). </li>
             </ul>
+            </div>
+        </div>
 
 
         <div class="page-content" data-page="12">
@@ -185,6 +406,7 @@
                 </ul>
             </div>
         </div>
+        </div>
         <div class="page-content" data-page="22">
             
         </div>
@@ -213,6 +435,7 @@
                 </ul>
             </div>
         </div>
+        </div>
         <div class="page-content" data-page="27">
             
         </div>
@@ -223,26 +446,21 @@
             
         </div>
         <div class="page-content" data-page="30">
-            
+        <div id="summary">
+            <h2>Quiz Summary</h2>
+            <p>Total Score: <span id="totalScore">0</span></p>
+            <p>Total Time: <span id="totalTime">0h 0m 0s</span></p>
+        </div>
         </div>
 
 
-    <div class="page-content" data-page="31">
-        <h2> final score</h2>
-        <div class="statistics"> 
-            <div class="chapterscompleted"> chapters completed: +1 </div>
-            <div class="pointsearned">  points earned: x/total points </div>
-            <div class="timestudied">    time studied: +32 min </div>
-        </div>
     </div>
-    </div>
-</div>
 
     <script src="../../js/pagenavigation.js"></script>
     <script src="../../js/header.js"></script>
     <script src="../../js/gaptext.js"></script>
     <script src="../../js/QuizQuestion.js"></script>
-    <script src="../../js/Eingabefeldfrage.js"></script>
+    <script src="../../js/Eingabefeldfrage2.js"></script>
     <script src="../../js/showContent.js" > </script>
 </body>
 </html>

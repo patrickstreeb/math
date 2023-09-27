@@ -20,8 +20,10 @@
 </head>
 
 <body>
-    
-    
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+        <div class="progress-label" id="progressLabel"></div>
+    </div>
     <div class="exercise2">
     <h2 style=" text-align: center;font-size: 35px;">Exercise 4</h2>
     <p style="margin-left: 10px; font-size: 15pt;"> Given is the real valued matrix \(A = (a_{ij})_{1 \leq i,j \leq 3}
@@ -29,7 +31,7 @@
         Find the following entries.
     </p>
     <div class="questioncontainer" style="border: none">
-        <div class=topline> Question <span class="pointsandtimer"><em class="point">1</em> point</span> </div>
+        <div class=topline>  <span class="pointsandtimer"><span class="point">1</span> point</span> </div>
         <div class="question"> What is the value of \(a_{23}\)? </div>
         <div class="answers">
             <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">2 </div>
@@ -40,7 +42,7 @@
         <div class="feedback"> The entry in the second row and third column is \(a_{23} = 6\). </div>
     </div>
     <div class="questioncontainer" style="border: none">
-        <div class=topline> Question <span class="pointsandtimer"><em style="width: 50px; height: 50px" class="point">1</em> point</span> </div>
+        <div class=topline>  <span class="pointsandtimer"><span class="point">1</em> point</span> </div>
         <div class="question"> What is the value of \(a_{23}\)? </div>
         <div class="answers">
             <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">2 </div>
@@ -51,7 +53,7 @@
         <div class="feedback"> The entry in the second row and third column is \(a_{23} = 6\). </div>
     </div>
     <div class="questioncontainer" style="border: none">
-        <div class=topline> Question <span class="pointsandtimer"><em class="point">1</em> point</span> </div>
+        <div class=topline>  <span class="pointsandtimer"><span class="point">1</span> point</span> </div>
         <div class="question"> What is the value of \(a_{23}\)? </div>
         <div class="answers">
             <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">2 </div>
@@ -63,7 +65,7 @@
     </div>
 </div>
     <div class="questioncontainer">
-        <div class=topline> Question <span class="pointsandtimer"> <em class="point">1</em> point</span> </div>
+        <div class=topline> Question <span class="pointsandtimer"> <span class="point">1</span> point</span> </div>
         <div class="question">
             Given is the matrix \[A = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{pmatrix}.\] What is the
             value of \(a_{23}\)?
@@ -81,7 +83,7 @@
 
     <br>
     <div class="questioncontainer">
-        <div class=topline> Question <span class="pointsandtimer"> <em class="point">1</em> point</span><span class="gapcount"></span> </div>
+        <div class=topline> Question <span class="pointsandtimer"> <span class="point">1</span> point</span><span class="gapcount"></span> </div>
         <div class="question">
             Given is the matrix \[A = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{pmatrix}.\] What is the
             value of \(a_{23}\)?
@@ -99,14 +101,14 @@
 
     <br>
     <div class="quiz-container">
-        <div class=topline> Question <span class="pointsandtimer"><span class="gapcount"></span>/ <em class="point">1</em> point</span> </div>
+        <div class=topline> Question <span class="pointsandtimer"> <span class="point"></span>/<span class="gapcount"> </span></span> </div>
         <div class="quiz-content">
             <!-- Edit the question and gaps here -->
-            The set \(\mathbb{N}\) is called the set of <span class="gap" data-answer="natural numbers"> </span>.
-            The set \(\mathbb{Z}\) is defined as <span class="gap" data-answer="integers"> </span>.
-            The set \(\mathbb{Q}\) is defined as <span class="gap" data-answer="fractions"> </span>
+            The set \(\mathbb{N}\) is called the set of <span class="gap" data-answer="natural numbers" data-points="1"> </span>.
+            The set \(\mathbb{Z}\) is defined as <span class="gap" data-answer="integers" data-points="1"> </span>.
+            The set \(\mathbb{Q}\) is defined as <span class="gap" data-answer="fractions" data-points="1"> </span>
             and the set \(\mathbb{R}\)
-            is defined as the set of all <span class="gap" data-answer="real numbers"> </span>.
+            is defined as the set of all <span class="gap" data-answer="real numbers" data-points="1"> </span>.
         </div>
         <div class="answer-buttons">
             <!-- Edit the answer buttons here -->
@@ -116,22 +118,24 @@
             <button class="button" data-answer="integers"> integers</button>
         </div>
         <button class="check-answer">Check Answer</button>
+        <button id="delete">Delete</button>
+
         <span class="feedback">As written on the theory page.</span>
     </div>
 
     <br>
     <div class="quiz-container">
-        <div class=topline> Question <span class="pointsandtimer"><span class="gapcount"></span>/ <em class="point">1</em> point</span></div>
+        <div class=topline> Question <span class="pointsandtimer"> <span class="point"></span>/<span class="gapcount"> </span></span></div>
         <div class="quiz-content">
             <!-- Edit the question and gaps here -->
             Let \(A, B\) be sets. \(A \subset B \) is equivalent to
             <br>
-            \(x\) <span class="gap" data-answer="∈∈\in"></span>
-            <span class="gap" data-answer="AAA"> </span>
+            \(x\) <span class="gap" data-answer="∈∈\in" data-points="1"></span>
+            <span class="gap" data-answer="AAA" data-points="1"> </span>
             \(\Rightarrow x\)
-            <span class="gap" data-answer="∈∈\in">  </span>
-            <span class="gap" data-answer="BBB"></span>
-            \(\ \ \ \forall x \in\) <span class="gap" data-answer="AAA"> </span>
+            <span class="gap" data-answer="∈∈\in" data-points="1">  </span>
+            <span class="gap" data-answer="BBB" data-points="1"></span>
+            \(\ \ \ \forall x \in\) <span class="gap" data-answer="AAA" data-points="1"> </span>
         </div>
         <div class="answer-buttons">
             <!-- Edit the answer buttons here -->
@@ -145,17 +149,17 @@
     </div>
 
     <div class="quiz-container">
-        <div class=topline> Question <span class="pointsandtimer"><span class="gapcount"></span>/ <em class="point">1</em> point</span></div>
+        <div class=topline> Question <span class="pointsandtimer"> <span class="point"></span>/<span class="gapcount"> </span></span></div>
         <div class="quiz-content">
             <!-- Edit the question and gaps here -->
             Let \(A, B\) be sets. \(A \subset B \) is equivalent to
             <br>
-            \(x\) <span class="gap" style="width: 1%;" data-answer="∈∈\in"></span>
-            <span class="gap" style="width: 10px;" data-answer="AAA"> </span>
+            \(x\) <span class="gap" style="width: 1%;" data-answer="∈∈\in" data-points="1"></span>
+            <span class="gap" style="width: 10px;" data-answer="AAA" data-points="1"> </span>
             \(\Rightarrow x\)
-            <span class="gap" style="width: 20px;" data-answer="∈∈\in">  </span>
-            <span class="gap" style="width: 20px;" data-answer="BBB"></span>
-            \(\ \ \ \forall x \in\) <span class="gap" style="width: 20px;" data-answer="AAA"> </span>
+            <span class="gap" style="width: 20px;" data-answer="∈∈\in" data-points="1">  </span>
+            <span class="gap" style="width: 20px;" data-answer="BBB" data-points="1"></span>
+            \(\ \ \ \forall x \in\) <span class="gap" style="width: 20px;" data-answer="AAA" data-points="1"> </span>
         </div>
         <div class="answer-buttons">
             <!-- Edit the answer buttons here -->
@@ -172,7 +176,7 @@
 
     <br>
     <div class="questioncontainer">
-        <div class=topline> Exercise <span class="pointsandtimer"> <em class="point">1</em> point</span> </div>
+        <div class=topline> Exercise <span class="pointsandtimer"> <span class="point">1</span> point</span> </div>
         <div class="question"> Given is the matrix \[A = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9
             \end{pmatrix}.\] What is the value of \(a_{23}\)? </div>
         <div class="answers">
@@ -189,7 +193,7 @@
     <!-- _______________________________________YES NO QUESTION_____________________________________ -->
     <br>
     <div class="questioncontainer">
-        <div class=topline> Question  <span class="pointsandtimer"><em class="point">1</em> point</span> </div>
+        <div class=topline> Question  <span class="pointsandtimer"><span class="point">1</span> point</span> </div>
         <div class="question"> Given is the matrix \[A = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9
             \end{pmatrix}.\] Holds \(a_{23}=6\)? </div>
         <div class="answers">
@@ -208,7 +212,7 @@
             3} \) given via \[A = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{pmatrix}.\]
         </p>
         <div class="questioncontainer" style="border: none">
-            <div class=topline> Question  <span class="pointsandtimer"><em class="point">1</em> point</span> </div>
+            <div class=topline> Question  <span class="pointsandtimer"><span class="point">1</span> point</span> </div>
             <div class="question"> What is the value of \(a_{11}\)? </div>
             <div class="answers">
                 <input class="input-box" type="text" placeholder="...">
@@ -218,7 +222,7 @@
             <div class="feedback"> The value of \(a_{11} = 1\).</div>
         </div>
         <div class="questioncontainer" style="border: none">
-            <div class=topline> Question <span class="pointsandtimer"><em class="point">1</em> point</span> </div>
+            <div class=topline> Question <span class="pointsandtimer"><span class="point">1</span> point</span> </div>
             <div class="question"> What is \(a_{11} + a_{12}\)? </div>
             <div class="answers">
                 <input class="input-box" type="text" placeholder="...">
@@ -228,7 +232,7 @@
             <div class="feedback"> The sum of  \(a_{11} + a_{12}=3\) .</div>
         </div>
         <div class="questioncontainer" style="border: none">
-            <div class=topline> Question <span class="pointsandtimer"><em class="point">1</em> point</span> </div>
+            <div class=topline> Question <span class="pointsandtimer"><span class="point">1</span> point</span> </div>
             <div class="question"> What is \(a_{32}\)? </div>
             <div class="answers">
                 <input class="input-box" type="text" placeholder="...">
@@ -246,7 +250,7 @@
         Find the following entries.
     </p>
     <div class="questioncontainer" style="border: none">
-        <div class=topline> Question <span class="pointsandtimer"><em class="point">1</em> point</span> </div>
+        <div class=topline> Question <span class="pointsandtimer"><span class="point">1</span> point</span> </div>
         <div class="question"> Holds \(a_{23}=a_{33}-3\)? </div>
         <div class="answers">
             <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)">Yes</div>
@@ -257,7 +261,7 @@
     </div>
     </div>
     <div class="questioncontainer" style="border: none">
-        <div class=topline> Question <span class="pointsandtimer"><em class="point">1</em> point</span> </div>
+        <div class=topline> Question <span class="pointsandtimer"><span class="point">1</span> point</span> </div>
         <div class="question"> Holds \(a_{21}=a_{23}-2\)? </div>
         <div class="answers">
             <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)">Yes</div>
@@ -267,7 +271,7 @@
         </div>
     </div>
     <div class="questioncontainer" style="border: none">
-        <div class=topline> Question <span class="pointsandtimer"><em class="point">1</em> point</span> </div>
+        <div class=topline> Question <span class="pointsandtimer"><span class="point">1</span> point</span> </div>
         <div class="question"> Holds \(a_{23}=a_{32}\)? </div>
         <div class="answers">
             <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">Yes</div>
@@ -282,14 +286,10 @@
         <h2>Quiz Summary</h2>
         <p>Total Score: <span id="totalScore">0</span></p>
         <p>Total Time: <span id="totalTime">0h 0m 0s</span></p>
-        <div class="progress-container">
-            <div class="progress-bar" id="progressBar"></div>
-            <div class="progress-label" id="progressLabel">0%</div>
-        </div>
     </div>
     
 
-
+    <script src="../../js/script.js" type="module"></script>
     <script src="../../js/gaptext.js"></script>
     <script src="../../js/Eingabefeldfrage2.js"></script>
     <script src="../../js/QuizQuestion.js"></script>

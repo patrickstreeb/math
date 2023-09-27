@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Course Start Page</title>
+    <style>
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+        }
+
+        .section {
+            flex: 0 0 50%; /* Each section takes up half of the viewport width */
+            text-align: center;
+            padding: 40% 40% 40% 40%;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .section:hover {
+            background-color: #ddd;
+            transform: scale(1.05);
+        }
+        .icon {
+            font-size: 12vh;
+        }
+
+        .label {
+            font-size: 24px;
+            font-family: 'Maven Pro', sans-serif;
+            font-weight: 400; 
+        }
+        .nexttoeachother {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        .login {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: norml;
+            margin-left: 10px;
+            margin-top: 1%;
+            padding-right: 20px;
+            font-size: 18px;
+            font-family: Verdana, sans-serif;
+            background-image: url(https://www.flaticon.com/free-icon/key_149852?term=login&page=1&position=1);
+        }
+        header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            align-items: center;
+            height: 10vh;
+            width: 100%;
+            background-image: url(../pictures/general/footer.png);
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+</style>
+</head>
+<body>
+    <header>
+        <a href="#" class="login"><i class="fas fa-sign-in-alt"></i> login</a>
+    </header>
+
+
+    <h1 style="margin-right: 170px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: lighter;">Welcome to the course  |  math basics</h1> 
+
+
+
+
+    <div class="nexttoeachother frame">
+    <div class="nexttoeachother"> 
+        <a href="menue.html" class="section">
+            <div class="icon">🎓</div>
+            <div class="label">course</div>
+        </a>
+        <a href="test/testmenu.html" class="section">
+            <div class="icon">📝</div>
+            <div class="label">test</div>
+        </a>
+    </div>    
+<div class="nexttoeachother"> 
+    <a href="practice/practicemenu.html" class="section">
+        <div class="icon">📚</div>
+        <div class="label">practice</div>
+    </a>
+    <a href="progress/progress.html" class="section">
+        <div class="icon">🖥️</div>
+        <div class="label">progress</div>
+    </a>
+</div>
+</div>
+
+
+   
+
+    <script>
+        function navigateToSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach((el) => {
+                el.style.display = 'none';
+            });
+
+            // Show the selected section
+            document.getElementById(sectionId).style.display = 'block';
+        }
+    </script>
+</body>
+</html>

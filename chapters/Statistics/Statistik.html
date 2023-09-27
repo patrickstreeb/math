@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>math course</title>
+    <meta name="description" content="course description goes here">
+    <link rel="shortcut icon" href="../pictures/general/logo.png" type="image/x-icon">
+    <meta name="keywords" content="math, functions, sets">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  
+    <h3 style="margin-left: 10px;">Aufgabe 2</h3>
+    <div class="questioncontainer">
+    <p style="margin-left: 10px; font-size: 15pt;"> Betrachte die folgende Abbildung.
+    </p>
+    <img src="/chapters/Statistics/statisticimages/article-mean-mode-median-ger.png" style="width: 100%">
+    <div class="questioncontainer" style="border: none">
+        <div class="question" > Die Abbildungen zeigen bimodale Verteilungen.
+                </div>
+        <div class="answers">
+            <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">Ja</div>
+            <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)">Nein</div>
+        </div>
+        <div class="feedback"> Es handelt sich um unimodale Verteilungen. </div>
+    </div>
+    <div class="questioncontainer" style="border: none">
+        <div class="question">
+            Die linke Abbildung zeigt eine linksschiefe Verteilung. 
+        Für diese gilt \[\overline{X} < \tilde{X} < \overline{X}_M.\]
+        </div>
+        <div class="answers">
+            <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)">Ja</div>
+            <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">Nein</div>
+        </div>
+    </div>
+    <div class="feedback"> Bei einer linksschiefen unimodalen Verteilung ist der Modalwert, 
+        also das Maximum, nach rechts verschoben.
+            </div>
+    </div>
+    <div class="questioncontainer" style="border: none">
+        <div class="question"> Die rechte Abbildung zeigt eine rechtssteile Verteilung.
+                </div>
+        <div class="answers">
+            <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">Ja</div>
+            <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)">Nein</div>
+        </div>
+        <div class="feedback"> rechtssteil ist synonym zu linksschief.
+                </div>
+    </div>
+</div>
+
+<br> <br>
+<h3>Aufgabe 3</h3>
+<div class="questioncontainer">
+    <p style="margin-left: 10px; font-size: 15pt;"> Gegeben ist die allgemeine Stichprobe \[X = (x_1, x_2, \dots, x_n).\]
+    </p>
+    <div class="questioncontainer" style="border: none">
+        <div class="question" > Wie lautet das arithmetische Mittel? </div>
+        <div class="answers">
+            <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">\[\overline{X} =  \sum_{i=1}^n x_i\] </div>
+            <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">\[\overline{X} = \frac{1}{n+1} \sum_{i=1}^n x_i\] </div>
+            <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)">\[\overline{X} = \frac{1}{n} \sum_{i=1}^n x_i\] </div>
+            <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">\[\overline{X} = \frac{1}{n} \sum_{i=1}^n x_n\] </div>
+        </div>
+        <div class="feedback"> Das arithmetische Mittel ist definiert als \[\overline{X} = \frac{1}{n} \sum_{i=1}^n x_i.\] 
+            Die letzte Antwort ist falsch, da jedesmal \(x_n\) summert wird. Dies ergibt:
+            \[\overline{X} = \frac{1}{n} \cdot (x_n + x_n + \ldots + x_n) = \frac{n}{n} \cdot x_n = x_n.\]
+            \(x_i\) wird hingegen immer um \(1\) im Index vergrößert und läuft durch alle Elemente in der Stichprobe.
+        </div>
+    </div>
+    <div class="questioncontainer" style="border: none">
+        <div class="question"> Wie lautet das geometrische Mittel? 
+                </div>
+        <div class="answers">
+            <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> 
+                \[X_{geom} = \sqrt{x_1 \cdot \ldots \cdot x_n} \]</div>
+            <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)"> 
+                \[X_{geom} = \sqrt[n]{x_1 + \ldots + x_n} \] </div>
+            <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">  
+                \[X_{geom} = \sqrt[n]{x_1 \cdot \ldots \cdot x_n} \]</div>
+            <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> 
+                \[X_{geom} = \sqrt[n]{x_1 \cdot \ldots \cdot x_n} \] </div>
+        </div>
+        <div class="feedback"> Das geometrische Mittel ist definiert als die \(n\)te Wurzel des Produkts aller Elemente in der Stichprobe. 
+            \[X_{geom} = \sqrt[n]{x_1 \cdot \ldots \cdot x_n} \]
+        </div>
+    </div>
+    <div class="questioncontainer" style="border: none">
+        <div class="question"> 
+            Wie lautet der Median wenn \(n\) gerade ist?   
+        </div>
+        <div class="answers">
+            <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> 
+                \[\frac{1}{2} \cdot (x_{\frac{n}{2}} + x_{\frac{n+1}{2}})\]
+            </div>
+            <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)">  
+                \[\frac{1}{2} \cdot (x_{\frac{n}{2}} + x_{\frac{n}{2}+1})\]
+                </div>
+            <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">  
+                \[\frac{1}{2} \cdot (x_{\frac{n-1}{2}} + x_{\frac{n}{2}})\]
+            </div>
+            <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> 
+                \[\frac{1}{2} \cdot (x_{\frac{n-1}{2}} + x_{\frac{n+1}{2}})\] 
+            </div>
+        </div>
+        <div class="feedback"> 
+            Der Median ist definiert als der Mittelwert der beiden mittleren Elemente, wenn \(n\) gerade ist. 
+            \[\tilde{X} = \frac{1}{2} \cdot (x_{\frac{n}{2}} + x_{\frac{n}{2}+1})\]
+        </div>
+    </div>
+    <div class="questioncontainer" style="border: none">
+        <div class="question"> Wie lautet der Median wenn \(n\) ungerade ist?   </div>
+        <div class="answers">
+            <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> 
+                \[x_{\frac{n}{2}}\]
+            </div>
+            <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> 
+                \[x_{\frac{n-1}{2}}\] 
+            </div>
+            <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)"> 
+                \[x_{\frac{n+1}{2}}\]
+            </div>
+            <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)"> 
+                \[x_{\frac{n}{2}+1}\] 
+            </div>
+        </div>
+        <div class="feedback"> 
+            Der Median einer ungeraden Stichprobe ist definiert als das mittlere Element. \[\tilde{X} = x_{\frac{n}{2}}\]
+        </div>
+    </div>
+</div>
+
+
+        <script src="js/gaptext.js"></script>
+        <script src="js/Eingabefeldfrage2.js"></script>
+        <script src="js/QuizQuestion.js"></script>
+    </body>
+</html>

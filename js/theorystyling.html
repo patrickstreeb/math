@@ -56,16 +56,8 @@
     <title>Element Animation</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="index.html">Home</a>
-            <a class="paddingleft" href="Courses.html">Courses</a>
-            <a class="paddingleft" href="About.html">About</a>
-            <a class="paddingleft" href="team.html">Instructors</a>
-            <a class="paddingleft" href="contact.html">Contact Us</a>
-        </nav>
-    </header>
-    <h1 style="font-weight: lighter; margin-left: 20px;padding-top: 35px;">Der Median</h1>
+    
+    <h1 style="font-weight: lighter; margin-left: 20px;">Der Median</h1>
     <div class="initialtext"> 
         Der Median ist ein Lagemaß, das den Wert angibt, der in einer geordneten Stichprobe in der Mitte liegt. Für eine ungerade Stichprobe ist der Median das mittlere Element. 
         Für eine gerade Stichprobe ist der Median der Mittelwert aus den beiden mittleren Elemente.
@@ -79,9 +71,10 @@
     </div>
     <div class="animation-container">
         <div class="quiz-container" style="border: none">
-            <div class=topline> <span class="pointsandtimer"><span class="gapcount"></span> / <span class="point">4 Punkte</span> </span></div>
+            <div class="topline"> \({\Large \star}\) Beantworte folgende Fragen. <span class="pointsandtimer"><span class="gapcount"></span>/<span class="point">4 Punkte</span> </span></div>
             <div class="quiz-content">
-              1. <span class="gap" style=": 100px;" data-answer="Das arithmetische Mittel"></span>  lautet \(\frac{x_1 + x_2 + x_3}{3}\). <br> 
+                Gegeben ist die Stichprobe \((x_1 , x_2 , x_3) \). <br>
+              1. <span class="gap" style="padding-left: 100px" data-answer="Das arithmetische Mittel"></span>  lautet \(\frac{x_1 + x_2 + x_3}{3}\). <br> 
               2. <span class="gap" style=": 100px;" data-answer="Der Median"></span> lautet \(x_2\). <br>
               3. <span class="gap" style=": 100px;" data-answer="Der Modalwert"></span> kann 
               ohne Kenntnis der Werte nicht genauer bestimmt werden.  <br>
@@ -99,40 +92,20 @@
     </div>
     <div class="animation-container">
         <div class="definition-box">
-        <div class="definition-title">Example</div>
-        Beispielsweise ist der Median der Stichprobe \((5, 6, 7, 8, 9)\) gegeben durch
+        <div class="definition-title">Beispiel 1</div>
+        Der Median der Stichprobe \((5, 6, 7, 8, 9)\) lautet
         \[\tilde{X} = x_{\frac{5+1}{2}} = x_{3} = 7.\]
         </div>
     </div>
     <div class="animation-container">
         <div class="definition-box">
-        <div class="definition-title">Example</div>
+        <div class="definition-title">Beispiel 2</div>
         Für die Stichprobe \((5, 6, 7, 8, 9, 10)\) ergibt sich da \(n = 6\) gerade ist, dass
         \[\tilde{X} = \frac{1}{2} \cdot (x_{\frac{6}{2}} + x_{\frac{6}{2}+1}) = \frac{1}{2} \cdot (x_3 + x_4) = \frac{1}{2} \cdot (7 + 8) = 7.5.\]
         </div>
     </div>
     <button  class="margindownAnswerbutton" style="max-width: 150px; margin: 20px; border: 1px solid; border-color: #a3a1a1;" onclick="showNextAnimationContainer()" id="addButton">
     weiter </button>
-    <footer class="footer">
-        <div class="footerleft">
-            <h3>Contact Information</h3>
-            <p class="marginbottom">Address: xyz</p>
-            <p class="marginbottom">Phone:123465</p>
-            <p>Email: xyz</p>
-        </div>
-        <div class="footercenter">
-            <h3>Quick Links</h3>
-            <a href="../chapters/sets/sets_introduction.html">Sets</a>
-            <a href="../chapters/functions/functions.html">Functions</a>
-            <a href="../chapters/Statistics/Kreuztabellen.html">Statistics</a>
-        </div>
-        <div class="footerright">
-            <h3>Useful Links</h3>
-            <a href="About.html">About</a>
-            <a href="Course.html">Courses</a>
-            <a href="Contact.html">Contact Us</a>
-        </div>
-    </footer>
     <script>
         let currentContainerIndex = 0;
         const containers = document.querySelectorAll('.animation-container');

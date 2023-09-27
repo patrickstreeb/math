@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>math course</title>
+    <meta name="description" content="course description goes here">
+    <link rel="shortcut icon" href="../../pictures/general/logo.png" type="image/x-icon">
+    <meta name="keywords" content="math, functions, sets">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css">
+
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+</head>
+
+  <body>
+    <div id="content-section">
+      <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+        <div class="progress-label" id="progressLabel"></div>
+    </div>
+        
+  
+          <div class="quiz-container">
+            <div class=topline> Question <span class="pointsandtimer"> <span class="point"></span>/<span class="gapcount"> </span></span></div>
+            <div class="quiz-content">
+                <!-- Edit the question and gaps here -->
+                Let \(A, B\) be sets. \(A \subset B \) is equivalent to
+                <br>
+                \(x\) <span class="gap" style="width: 1%;" data-answer="∈∈\in" data-points="1"></span>
+                <span class="gap" style="width: 10px;" data-answer="AAA" data-points="1"> </span>
+                \(\Rightarrow x\)
+                <span class="gap" style="width: 20px;" data-answer="∈∈\in" data-points="1">  </span>
+                <span class="gap" style="width: 20px;" data-answer="BBB" data-points="1"></span>
+                \(\ \ \ \forall x \in\) <span class="gap" style="width: 20px;" data-answer="AAA" data-points="1"> </span>
+            </div>
+            <div class="answer-buttons">
+                <!-- Edit the answer buttons here -->
+                <button class="button" data-answer="\(\in\)">\(\in\)</button>
+                <button class="button" data-answer="\(\subset\)">\(\subset\)</button>
+                <button class="button" data-answer="\(A\)">\(A\)</button>
+                <button class="button" data-answer="\(B\)">\(B\)</button>
+            </div>
+            <button class="check-answer">Check Answer</button>
+            <span class="feedback">Any element of A is also contained in B.</span>
+        </div>
+    
+    
+
+
+        <div id="summary">
+          <h2>Quiz Summary</h2>
+          <p>Total Score: <span id="totalScore">0</span></p>
+          <p>Total Time: <span id="totalTime">0h 0m 0s</span></p>
+      </div>
+      
+  
+  
+
+    <script src="../../js/pagenavigation.js"></script>
+    <script src="../../js/header.js"></script>
+    <script src="../../js/gaptext.js"></script>
+    <script src="../../js/QuizQuestion.js"></script>
+    <script src="../../js/Eingabefeldfrage2.js"></script>
+    <script src="../../js/showContent.js"></script>
+  </body>
+</html>

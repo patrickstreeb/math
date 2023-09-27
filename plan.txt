@@ -3,10 +3,6 @@ Questioncontainer___________
 	- by clicking on an answerbutton make it right away appear green (take hover effect out) and make it static in general.   	  No second answer should be possible.
 
 summary page______________
-	- add total time studied statistics
-	- add total points statistics
-	- add a graphic which shows a dynamically growing toolbar reaching the achieved points 
-	  showing the relation to the total points.
 	- add styling
 
 header______________
@@ -16,8 +12,17 @@ footer_____________
 	- add theorypage title (each mini course consists of 30 pages and every 5. page introduces a bit of theory. so the theory 	  page plus the four following pages should carry that title in the center of the footer)
 
 Questions_____________
-	- add 2.2 linespace without image moving up
-	- show latex in gaptext.
+  -  multple choice: keep 1 out of 4 with disappearing answers. Each answer is getting shown in a new line.length of the answerblocks 
+     is set to the maximum length of any of the answers. Letters are written in the beginning, as:
+
+    ______________________________________________________________________
+	|        |                                                            |
+	|    A   |     Question goes here.                                    |
+	|________|____________________________________________________________|
+
+  -  new multiple choice type: x out of 4. Answers should stay visible after clicking check answer button, no numbering of the fields.
+     Add a hovering and a slightly darker color after selecting the answer. then turning green or red + feedback under.
+
 
 Practice.html__________________
 	- file with a section per course chapter containing: 1. title of course section, 2. link to print course materials 3. open pracitce section
@@ -35,7 +40,6 @@ chapters folder
 	  test.html is the root html document for fixing and changing the different question types.
 	- then adjust all course sections to the new functionality in the chapters folder. The div structure of the elements have been changed.
 	  copy the structure of the question types in test.html
-	- Eingabefeldfrae2.js new file name
 
 navigation folder
 	- adjust all paths to the new folder structure.
