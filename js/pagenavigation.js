@@ -62,10 +62,6 @@ let submenue2 = document.getElementById("sub-menue2");
         submenue2.style.display = "none";
     }
   }
-
-
-  
-
   // function showSubmenue() {
   //   for (let i = 1; i < 4; i++) {
   //     let submenue = document.getElementById("sub-menue"+i);

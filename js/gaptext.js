@@ -2,7 +2,7 @@ const timeLimitSeconds = 120 * 60;
 let totalTimeElapsed = 0;
 
 // Start a timer to update time elapsed
-const timerInterval = setInterval(() => {
+ timerInterval = setInterval(() => {
     totalTimeElapsed += 1;
     updateTimeElapsed();
 
@@ -26,23 +26,23 @@ function updateTimeElapsed() {
     const timeElapsedDisplay = `${hours}h ${minutes}m ${seconds}s`;
     document.getElementById("totalTime").textContent = timeElapsedDisplay;
 }
-
+let progress = 0;
 document.addEventListener("DOMContentLoaded", function () {
     const quizContainers = document.querySelectorAll('.quiz-container');
-   
+
     quizContainers.forEach(container => {
         const gaps = container.querySelectorAll('.gap');
         const answerButtons = container.querySelectorAll('.answer-buttons .button');
         const checkAnswerButton = container.querySelector('.check-answer');
         const feedback = container.querySelector('.feedback');
         const gapc = container.querySelector('.gapcount');
-        const progressBar = document.getElementById('progressBar');
+        // const progressBar = document.getElementById('progressBar');
         // const progressLabel = document.getElementById('progressLabel');
         const deleteLastGapButton = document.getElementById('delete');
         let point = container.querySelector('.point');
-        let pointss=1;     
-        
-        
+        let pointss = 1;
+
+
         checkAnswerButton.addEventListener('click', () => {
             let gapCount = 0;
             let currentscore = 0;
@@ -60,25 +60,27 @@ document.addEventListener("DOMContentLoaded", function () {
                     gap.classList.remove('correct-gap');
                     gap.classList.add('wrong-gap');
                 }
+
                 checkAnswerButton.style.display = "none";
                 gapCount = gapCount + pointss;
 
             });
-           
-            point.textContent = currentscore;
+            progress += 8; // Increase by 10% for each question
+            document.getElementById('progressBar').style.width = `${progress}%`;
+            point.textContent = currentscore + "/";
             if (gapCount > 1) {
                 gapc.textContent = gapCount + " Points";
             }
             else {
                 gapc.textContent = gapCount + " Point";
             }
-            deleteLastGapButton.style.display="none";
-            const totalpoint = require('script.js');
-            var percentage=(gapCount/totalpoint)*100;
-            var totalpercentage = 0;
-            totalpercentage = totalpercentage + percentage;
-            progressBar.style.width = totalpercentage + '%';
-            console.log(totalpercentage);
+            //deleteLastGapButton.style.display = "none";
+            // const totalpoint = require('script.js');
+            // var percentage=(gapCount/totalpoint)*100;
+            // var totalpercentage = 0;
+            // totalpercentage = totalpercentage + percentage;
+            // progressBar.style.width = totalpercentage + '%';
+            // console.log(totalpercentage);
 
             const allCorrect = Array.from(gaps).every(gap => gap.classList.contains('correct-gap'));
             document.getElementById('totalScore').textContent = score;
@@ -110,32 +112,29 @@ document.addEventListener("DOMContentLoaded", function () {
                 const gaps = container.querySelectorAll('.gap');
                 const selectedAnswer = button.getAttribute('data-answer');
                 const selectedGap = Array.from(gaps).find(gap => gap.textContent.trim() === '');
-
+                console.log(selectedGap);
                 if (selectedGap) {
                     selectedGap.textContent = selectedAnswer;
+
                     MathJax.Hub.Queue(["Typeset", MathJax.Hub, selectedGap]);
 
                     selectedGap.style.padding = "0px";
 
                 }
 
-               
+            });
 
-            });
-          
-            deleteLastGapButton.addEventListener('click', () => {
-                const gaps = container.querySelectorAll('.gap');
-                const lastFilledGap = Array.from(gaps).reverse().find(gap => gap.textContent.trim() !== '');
-                if (lastFilledGap) {
-                    lastFilledGap.textContent = '';
-                    lastFilledGap.style.padding = "20px";
-                    lastFilledGap.style.paddingBottom = "0px";
-                }
-            });
+            // deleteLastGapButton.addEventListener('click', () => {
+            //     const gaps = container.querySelectorAll('.gap');
+            //     const lastFilledGap = Array.from(gaps).reverse().find(gap => gap.textContent.trim() !== '');
+            //     if (lastFilledGap) {
+            //         lastFilledGap.textContent = '';
+            //         lastFilledGap.style.padding = "20px";
+            //         lastFilledGap.style.paddingBottom = "0px";
+            //     }
+            // });
 
         });
-       
-
 
     });
 });

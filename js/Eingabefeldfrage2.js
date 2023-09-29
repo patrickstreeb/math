@@ -1,64 +1,47 @@
-// <!DOCTYPE html>
-// <html lang="en">
-// <head>
-//     <meta charset="UTF-8">
-//     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-//     <title>math course</title>
-//     <meta name="description" content="course description goes here">
-//     <link rel="shortcut icon" href="../pictures/general/logo.png" type="image/x-icon">
-//     <meta name="keywords" content="math, functions, sets">
-//     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-//     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-//     <link rel="stylesheet" type="text/css" href="../style.css">
-// </head>
-// <body>
-//     <div class="questioncontainer">
-//         <div class=topline> <em>Question</em> <span class="pointsandtimer"> <em>1 point</em> </span> </div>
-//         <div class="question">
-//             Given is the matrix \[A = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{pmatrix}.\] What is the value of \(a_{23}\)?
-//         </div>
-//         <div class="answers">
-//             <input class="input-box" type="text" placeholder="...">
-//             <div class="answerbutton" onclick="checkAnswer2(this, this.parentNode.parentNode)">Check Answer</div>
-//         </div>
-//         <div class="solution">6</div>
-//         <div class="feedback">
-//             <p class="feedback-text"> The entry in the second row and third column is \(a_{23} = 6\).</p>
-//         </div>
-//     </div>
+let score = 0;
+function checkAnswer2(button, questioncontainer) {
+    // Get the feedback element for the specific question
+    const feedbackElement = questioncontainer.querySelector(".feedback");
+    const correctAnswer = questioncontainer.querySelector(".solution").innerHTML;
+    const userAnswer = questioncontainer.querySelector(".input-box").value;
+    const Answers = questioncontainer.querySelector(".answers");
+    
+    const gapc = questioncontainer.querySelector('.gapcount');
+    let point = questioncontainer.querySelector('.point');
+    let pointss = 1;
+    let gapCount = 0;
+    let currentscore = 0;
 
 
-let score=0;
-        function checkAnswer2(button, questioncontainer) {
-            // Get the feedback element for the specific question
-            const feedbackElement = questioncontainer.querySelector(".feedback");
-            const correctAnswer = questioncontainer.querySelector(".solution").innerHTML;
-            const userAnswer = questioncontainer.querySelector(".input-box").value;
-            const Answers = questioncontainer.querySelector(".answers");
-            const point = questioncontainer.querySelector('.point').innerHTML;
-            
-        
-            
-        if (userAnswer === correctAnswer) {
-            const correctImg = new Image()
-            correctImg.src = '../../pictures/general/checkmark.png'; 
-            correctImg.style.width = '30px';
-            // Path to the correct feedback image
-            feedbackElement.insertBefore(correctImg, feedbackElement.firstChild);
-            feedbackElement.style.backgroundColor = "rgb(204, 239, 204)";
-            feedbackElement.style.border = "1px solid darkgreen";
-            score = score + parseInt(point);
-        } else {
-            const wrongImg = new Image();
-            wrongImg.src = '../../pictures/general/wrong-sign.png'; // Path to the wrong feedback image
-            wrongImg.style.width = '30px';
-            feedbackElement.insertBefore(wrongImg, feedbackElement.firstChild);
-            feedbackElement.style.backgroundColor = "rgb(247, 172, 172)";
-            feedbackElement.style.border = "1px solid darkred";
-        }
+    if (userAnswer === correctAnswer) {
+        const correctImg = new Image()
+        correctImg.src = '../../pictures/general/checkmark.png';
+        correctImg.style.width = '30px';
+        // Path to the correct feedback image
+        feedbackElement.insertBefore(correctImg, feedbackElement.firstChild);
+        feedbackElement.style.backgroundColor = "rgb(204, 239, 204)";
+        feedbackElement.style.border = "1px solid darkgreen";
+        score = score + pointss;
+        currentscore = currentscore + pointss;
+    } else {
+        const wrongImg = new Image();
+        wrongImg.src = '../../pictures/general/wrong-sign.png'; // Path to the wrong feedback image
+        wrongImg.style.width = '30px';
+        feedbackElement.insertBefore(wrongImg, feedbackElement.firstChild);
+        feedbackElement.style.backgroundColor = "rgb(247, 172, 172)";
+        feedbackElement.style.border = "1px solid darkred";
+    }
+    gapCount = gapCount + pointss;
+    point.textContent = currentscore + "/";
+    gapc.textContent = gapCount + " Point";
+    feedbackElement.style.display = "block";
+    Answers.style.display = "none";
+    document.getElementById('totalScore').textContent = score;
+    progress += 6; // Increase by 10% for each question
+    document.getElementById('progressBar').style.width = `${progress}%`;
 
-            // Show the feedback
-            document.getElementById('totalScore').textContent = score;
-            feedbackElement.style.display = "block";
-            Answers.style.display = "none";
-        }
+    // Show the feedback
+   
+    
+    
+}
