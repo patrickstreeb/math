@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- GENERAL -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>math course</title>
+    <meta name="description" content="course description goes here">
+    <link rel="shortcut icon" href="../../pictures/general/logo.png" type="image/x-icon">
+    <meta name="keywords" content="math, functions, sets">
+    <!-- MATHJAX -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- STYLE IMPORTS -->
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+</head>
+
+<body>
+    <div id="content-section">
+        <header id="toolbar">
+            <div class="titleofsubsection"> convergence </div>
+            <div id="countup-timer"> 00:00</div>
+            
+        </header>
+        <div class="progress-containerc">
+            <div class="progress-bar" id="progressBar"></div>
+            
+        </div>
+        <footer class="footer" style="margin-top: 60px;">
+            <button class="page-button backward-btn" id="backward-btn" onclick="navigatePage(-1)"> <span
+                    class="hidden">back</span> </button>
+            <span id="pageNumber"> </span>
+            <button class="page-button forward-btn" id="forward-btn" onclick="navigatePage(1)"> <span
+                    class="hidden">next</span></button>
+        </footer>
+      <div class="content">
+        <div class="page-content backgroundimage" data-page="0">
+          <div class="coursestartheading">
+            Wurzeln <br>
+            Definition und Rechenregeln
+          </div>
+          <br>
+          <div class="coursestartfont">
+            Einführung und einfache Aufgaben dazu. <br>
+            <br>
+            <button class="forward-btn" class="frame" onclick="navigatePage(1)">
+              start
+            </button>
+          </div>
+        </div>
+        <div class="page-content" data-page="1">
+          <div class="theoryheader">
+            <div class="theorynumber">1</div>
+            <div class="theorytitle">Wurzeln</div>
+          <br>
+          Gesucht ist eine Zahl, die nach dem quadrieren einen vorgegebenen Wert \(a\) ergibt. 
+          Die gesuchte Zahl heißt dann Wurzel von \(a\). <br> <br>
+          Negative reelle Zahlen besitzen keine Wurzel, da das Quadrat immer positiv ist. <br>
+          <br>
+          <div class="definition-box">
+            <div class="definition-title">Definition</div>
+            <div class="definition-content">
+              Sei \(a\) eine positive reelle Zahl.
+            Die Lösung der quadratischen Gleichung \(x^2 = a \) heißt Wurzel aus \(a\).
+            Schreibweise: \[\sqrt{a} \]
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="page-content" data-page="2">
+          <div class="exercise2">
+            <div class=topline> Welche Zahl ergibt quadriert... <span class="pointsandtimer"> </span></span>
+            </div>
+            <p style="margin-left: 10px; font-size: 15pt;">
+            </p>
+            <div class="quizContainers" style="border: none">
+                <div class=topline> <span class="pointsandtimer"><span class="point"></span><span class="gapcount"></span></span> </div>
+                <div class="question">
+                    64?
+                </div>
+                <div class="answers">
+                    <input class="input-box" type="text" placeholder="...">
+                    <button type="button" class="answerbutton" onclick="checkAnswer2(this, this.parentNode.parentNode)">Check Answer</button>
+                </div>
+                <div class="solution">8</div>
+                <div class="feedback"> 
+                    \(8^2=64\)
+                </div>
+            </div>
+            <div class="quizContainers" style="border: none">
+              <div class=topline> <span class="pointsandtimer"><span class="point"></span><span class="gapcount"></span></span> </div>
+              <div class="question">
+                    100?
+                </div>
+                <div class="answers">
+                    <input class="input-box" type="text" placeholder="...">
+                    <button type="button" class="answerbutton" onclick="checkAnswer2(this, this.parentNode.parentNode)">Check Answer</button>
+                </div>
+                <div class="solution">10</div>
+                <div class="feedback"> 
+                    \(10^2=100\)
+                </div>
+            </div>
+            <div class="quizContainers" style="border: none">
+              <div class=topline> <span class="pointsandtimer"><span class="point"></span><span class="gapcount"></span></span> </div>
+              <div class="question"> 
+                    1?
+                </div>
+                <div class="answers">
+                    <input class="input-box" type="text" placeholder="...">
+                    <button type="button" class="answerbutton" onclick="checkAnswer2(this, this.parentNode.parentNode)">Check Answer</button>
+                </div>
+                <div class="solution">1</div>
+                <div class="feedback"> 
+                    \(1^2 = 1\)
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="page-content" data-page="3">
+          <div class="exercise2">
+            <div class=topline> Berechne. <span class="pointsandtimer"> </span></span>
+            </div>
+            <p style="margin-left: 10px; font-size: 15pt;">
+            </p>
+            <div class="quizContainers" style="border: none">
+                <div class=topline> <span class="pointsandtimer"><span class="point"></span><span class="gapcount"></span></span> </div>
+                <div class="question">
+                  \(\sqrt{4} + \sqrt{16} \)
+                </div>
+                <div class="answers">
+                    <input class="input-box" type="text" placeholder="...">
+                    <button type="button" class="answerbutton" onclick="checkAnswer2(this, this.parentNode.parentNode)">Check Answer</button>
+                </div>
+                <div class="solution">6</div>
+                <div class="feedback"> 
+                  \(\sqrt{4} + \sqrt{16} = 2+4 =6\)
+                </div>
+            </div>
+            <div class="quizContainers" style="border: none">
+              <div class=topline> <span class="pointsandtimer"><span class="point"></span><span class="gapcount"></span></span> </div>
+              <div class="question">
+                \( \sqrt{4}(\sqrt{4} + \sqrt{16})\sqrt{25} \)
+                </div>
+                <div class="answers">
+                    <input class="input-box" type="text" placeholder="...">
+                    <button type="button" class="answerbutton" onclick="checkAnswer2(this, this.parentNode.parentNode)">Check Answer</button>
+                </div>
+                <div class="solution">60</div>
+                <div class="feedback"> 
+                    \( \sqrt{4}(\sqrt{4} + \sqrt{16})\sqrt{25} = 2(2+4)5 = 2 \cdot 6 \cdot 5 = 60 \)
+                </div>
+            </div>
+            <div class="quizContainers" style="border: none">
+              <div class=topline> <span class="pointsandtimer"><span class="point"></span><span class="gapcount"></span></span> </div>
+              <div class="question"> 
+                 \(\sqrt{9}(\sqrt{4} + \sqrt{16}) \)
+                </div>
+                <div class="answers">
+                    <input class="input-box" type="text" placeholder="...">
+                    <button type="button" class="answerbutton" onclick="checkAnswer2(this, this.parentNode.parentNode)">Check Answer</button>
+                </div>
+                <div class="solution">18</div>
+                <div class="feedback"> 
+                  \(\sqrt{9}(\sqrt{4} + \sqrt{16}) = 3(2 + 4) = 18 \)
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="page-content" data-page="4">
+          <div class="quiz-container">
+            <div class=topline> Finde folgende Wurzeln. <span class="pointsandtimer"> <span class="point"></span><span class="gapcount"> </span></span></div>
+            <div class="quiz-content">
+                <!-- Edit the question and gaps here -->
+                1. \(\sqrt{4}\) = <span class="gap" style="width: 1%;" data-answer="\( |-x+y |\)" data-points="1" ></span> <br>
+                2. \(\sqrt{25}\) = <span class="gap" style="width: 1%;" data-answer="xxx" data-points="1" ></span> <br>
+                3. \(\sqrt{9}\) =<span class="gap" style="width: 1%;" data-answer="xxx" data-points="1" ></span> <br>
+                4. \(\sqrt{100}\) = <span class="gap" style="width: 1%;" data-answer="xxx" data-points="1" ></span> <br>
+            </div>
+            <div class="answer-buttons">
+                <button class="button" data-answer="10">10</button>
+                <button class="button" data-answer="9">9</button>
+                <button class="button" data-answer="6">6</button>
+                <button class="button" data-answer="5">5</button>
+                <button class="button" data-answer="3">3</button>
+                <button class="button" data-answer="2">2</button>
+            </div>
+            <button id="delete" style="margin-left: 40px;">Eintrag löschen</button> <br> <br>
+            <button class="check-answer">Lösung</button>
+            <span class="feedback">
+            </span>
+          </div>
+        </div>
+        <div class="page-content" data-page="5">
+          <div class="quizContainers">
+            <div class=topline> Frage <span class="pointsandtimer"> <span class="point"></span><span class="gapcount"> </span></span>
+            </div>
+            <div class="question"> Was ergibt \( \sqrt{\sqrt{9}+1}\)?
+            </div>
+            <div class="answers">
+                <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">
+                  \( 2\)
+                </div>
+                <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">
+                  \( 3\)
+                </div>
+                <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)">
+                   \( 4\)
+                </div>
+                <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">
+                    Der Term lässt sich nicht ausrechnen.
+                </div>
+            </div>
+            <div class="feedback"> \( \sqrt{\sqrt{9}+1} = \sqrt{3+1} = \sqrt{4} = 2.\)
+            </div>
+        </div>
+        </div>
+        <div class="page-content" data-page="6">
+          <div class="theoryheader">
+            <div class="theorynumber">3</div>
+            <div class="theorytitle">Rechenregeln für Wurzeln</div>
+          </div>
+          <br>
+           <br>
+          <br>
+          <div class="definition-box">
+            <div class="definition-title"></div>
+            <div class="definition-content">
+              Seien \(x,y \geq 0 \).
+              <ul class="liststyling">
+                <li>
+                  \[\sqrt{x} \cdot \sqrt{y} = \sqrt{xy}\]
+                </li>
+                <li>
+                  \[\sqrt{x}^2 = x\]
+                </li>
+                <li>
+                  \[\sqrt{\frac{x}{y}} = \frac{\sqrt{x}}{\sqrt{y}}\]
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="page-content" data-page="7">
+          <div class="quizContainers">
+            <div class=topline> Aufgabe <span class="pointsandtimer"> <span class="point"></span><span class="gapcount"> </span></span>
+            </div>
+            <div class="question"> Was ist gleich dem folgendem Term?
+                \[ \frac{\sqrt{xy}}{\sqrt{y}}\]
+            </div>
+            <div class="answers">
+                <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">
+                    \[ y\]
+                </div>
+                <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)">
+                  \[  \sqrt{x}\]
+                </div>
+                <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">
+                   \[ \frac{1}{\sqrt{x}}\]
+                </div>
+                <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">
+                    \[ \frac{\sqrt{y}}{\sqrt{x}}\]
+                </div>
+            </div>
+            <div class="feedback"> \( \frac{\sqrt{xy}}{\sqrt{y}} =\sqrt{\frac{xy}{y}}=\sqrt{x} \)
+            </div>
+        </div>
+        </div>
+        <div class="page-content" data-page="8">
+          <div class="quizContainers">
+            <div class=topline> Aufgabe <span class="pointsandtimer"> <span class="point"></span><span class="gapcount"> </span></span>
+            </div>
+            <div class="question"> Was ist gleich dem folgendem Term?
+                \[ \frac{\sqrt{x^2 y}}{\sqrt{y}}\]
+            </div>
+            <div class="answers">
+                <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)">
+                  \(  x\)
+                </div>
+                <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">
+                  \(  \sqrt{x}\)
+                </div>
+                <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">
+                   \( \frac{1}{\sqrt{y}}\)
+                </div>
+                <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">
+                    \( \frac{\sqrt{x}}{\sqrt{y}}\)
+                </div>
+            </div>
+            <div class="feedback"> \( \frac{\sqrt{x^2y}}{\sqrt{y}} =\sqrt{\frac{x^2y}{y}}=\sqrt{x^2} =x \)
+            </div>
+        </div>
+        </div>
+        <div class="page-content" data-page="9">
+          <div class="quizContainers">
+            <div class=topline> Aufgabe <span class="pointsandtimer"> <span class="point"></span><span class="gapcount"> </span></span>
+            </div>
+            <div class="question"> Was ist gleich dem folgendem Term?
+                \[ \frac{\sqrt{4xy^2}}{\sqrt{2y^2}}\]
+            </div>
+            <div class="answers">
+                <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)">
+                  \(  2x\)
+                </div>
+                <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">
+                  \(  \sqrt{2x}\)
+                </div>
+                <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">
+                   \( 2y^2\)
+                </div>
+                <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">
+                    \( 1 \)
+                </div>
+            </div>
+            <div class="feedback"> \( \frac{\sqrt{4xy^2}}{\sqrt{2y^2}} =\sqrt{\frac{4xy^2}{2y^2}}=\sqrt{\frac{4x}{2}}=2x \)
+            </div>
+        </div>
+        </div>
+        <div class="page-content" data-page="10">
+          <div class="quizContainers">
+            <div class=topline> TODO <span class="pointsandtimer"> <span class="point"></span><span class="gapcount"> </span></span>
+            </div>
+            <div class="question"> Was ist gleich dem folgendem Term?
+                \[ sqrt{x^2})^2\]
+            </div>
+            <div class="answers">
+                <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">
+                  \(  x\)
+                </div>
+                <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">
+                  \(  \sqrt{x}\)
+                </div>
+                <div class="answerbutton" onclick="checkAnswer(true, this, this.parentNode.parentNode)">
+                   \( x^2\)
+                </div>
+                <div class="answerbutton" onclick="checkAnswer(false, this, this.parentNode.parentNode)">
+                    \( 1\)
+                </div>
+            </div>
+            <div class="feedback"> \( (\sqrt{x^2})^2 = x^2 \)
+            </div>
+        </div>
+        </div>
+
+  
+        
+      </div>
+      <div class="page-content" data-page="30">
+          <div id="summary">
+              <h2>Quiz Summary</h2>
+              <p>Total Score: <span id="totalScore">0</span></p>
+              <p>Total Time: <span id="totalTime">0h 0m 0s</span></p>
+          </div>
+      </div>
+
+
+  </div>
+
+  <script src="../../js/pagenavigation.js"></script>
+  <script src="../../js/header.js"></script>
+  <!-- <script src="../../js/gaptext.js"></script>
+  <script src="../../js/QuizQuestion.js"></script>
+  <script src="../../js/Eingabefeldfrage2.js"></script> -->
+  <script src="../../js/script.js"></script>
+  <script src="../../js/showContent.js"> </script>
+</body>
+</html>
