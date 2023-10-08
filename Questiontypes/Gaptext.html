@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- GENERAL -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>math course</title>
+    <meta name="description" content="course description goes here">
+    <link rel="shortcut icon" href="../../pictures/general/logo.png" type="image/x-icon">
+    <meta name="keywords" content="math, functions, sets">
+    <!-- MATHJAX -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- STYLE IMPORTS -->
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+</head>
+
+<body>
+<div id="content-section">
+    <header id="toolbar">
+        <div class="titleofsubsection"> convergence </div>
+        <div id="countup-timer"> 00:00</div>
+    </header>
+    <div class="progress-containerc">
+        <div class="progress-bar" id="progressBar"></div> 
+    </div>
+    <footer class="footer" style="margin-top: 60px;">
+        <button class="page-button backward-btn" id="backward-btn" onclick="navigatePage(-1)"> <span
+                class="hidden">back</span> </button>
+        <span id="pageNumber"> </span>
+        <button class="page-button forward-btn" id="forward-btn" onclick="navigatePage(1)"> <span
+                class="hidden">next</span></button>
+    </footer>
+
+
+
+
+
+
+   
+
+    <div class="page-content" data-page="2">
+        <div class="quiz-container">
+          <div class=topline> AUFGABENSTELLUNG <span class="pointsandtimer"> <span class="point"></span><span class="gapcount"> </span></span></div>
+          <div class="quiz-content">
+              FRAGE <span class="gap" style="width: 1%;" data-answer="USERANWER" data-points="1" ></span> <br>
+          </div>
+          <div class="answer-buttons">
+              <button class="button" data-answer="ANSWER">
+                BUTTONLABEL
+              </button>
+              <button class="button" data-answer="ANSWER">
+                BUTTONLABEL
+              </button>
+          </div>
+          <button id="delete">/(\times\)</button> <br> <br>
+          <button class="check-answer">Lösung</button>
+          <span class="feedback">
+            FEEDBACK
+          </span>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+    <div class="page-content" data-page="30">
+        <div id="summary">
+            <h2>Quiz Summary</h2>
+            <p>Total Score: <span id="totalScore">0</span></p>
+            <p>Total Time: <span id="totalTime">0h 0m 0s</span></p>
+        </div>
+    </div>
+</div>
+<script src="../../js/pagenavigation.js"></script>
+<script src="../../js/header.js"></script>
+<!-- <script src="../../js/gaptext.js"></script>
+<script src="../../js/QuizQuestion.js"></script>
+<script src="../../js/Eingabefeldfrage2.js"></script> -->
+<script src="../../js/script.js"></script>
+<script src="../../js/showContent.js"> </script>
+</body>
